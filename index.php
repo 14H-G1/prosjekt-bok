@@ -2,6 +2,7 @@
 <html lang="no">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ARV - pensumbøker</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,22 +21,26 @@
 			<div class="book-thumb">
 				<img src="/img/dmc.jpg" alt="">
 				<a href="#">Descrete mathematics for programming</a>
-				<p>Lorem ipsum dolor</p>
+				<p id="author">Rod Haggarty</p>
+				<p id="price"><span id="new-price">600,-</span> 250,-</p>
 			</div>
 			<div class="book-thumb">
 				<img src="/img/dmc.jpg" alt="">
 				<a href="#">Descrete mathematics for programming</a>
-				<p>Lorem ipsum dolor</p>
+				<p id="author">Rod Haggarty</p>
+				<p id="price"><span id="new-price">600,-</span> 250,-</p>
 			</div>
 			<div class="book-thumb">
 				<img src="/img/dmc.jpg" alt="">
 				<a href="#">Descrete mathematics for programming</a>
-				<p>Lorem ipsum dolor</p>
+				<p id="author">Rod Haggarty</p>
+				<p id="price"><span id="new-price">600,-</span> 250,-</p>
 			</div>
 			<div class="book-thumb">
 				<img src="/img/dmc.jpg" alt="">
 				<a href="#">Descrete mathematics for programming</a>
-				<p>Lorem ipsum dolor</p>
+				<p id="author">Rod Haggarty</p>
+				<p id="price"><span id="new-price">600,-</span> 250,-</p>
 			</div>
 		</section>
 

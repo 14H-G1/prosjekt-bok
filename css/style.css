@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Arial", Arial, Roboto, Helvetica, sans-serif;
   margin: 0; }
 
 .head-wrap {
@@ -15,6 +15,7 @@ body {
     margin: 0 auto;
     padding: 15px; }
     .head-wrap .head-elements h1 {
+      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       margin: 0;
       letter-spacing: 10px;
       font-weight: 300;
@@ -99,19 +100,39 @@ body {
     height: 200px;
     width: 150px; }
   .main-wrap #book-row {
-    height: 100%;
     max-width: 700px;
-    margin: 25px auto;
-    display: block;
-    font-family: "Arial", Arial, Roboto, Helvetica, sans-serif; }
-    .main-wrap #book-row a {
-      margin: 0;
-      font-size: 16px;
-      font-weight: 300;
-      color: #00408d;
-      text-decoration: none; }
+    margin: 10px auto;
+    padding: 10px;
+    display: block; }
     .main-wrap #book-row .book-thumb {
+      margin: 5px;
       float: left;
-      max-width: 25%; }
+      max-width: 23%; }
+      @media screen and (max-width: 670px) {
+        .main-wrap #book-row .book-thumb {
+          max-width: 47%; } }
+      .main-wrap #book-row .book-thumb a {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 300;
+        color: #00408d;
+        text-decoration: none;
+        display: block; }
+        .main-wrap #book-row .book-thumb a:hover {
+          text-decoration: underline; }
+      .main-wrap #book-row .book-thumb #author {
+        margin: 5px 0;
+        font-size: 12px;
+        font-weight: 300; }
+      .main-wrap #book-row .book-thumb #price {
+        float: right;
+        margin: 5px 0;
+        font-size: 24px;
+        font-weight: 300;
+        color: #961c00; }
+        .main-wrap #book-row .book-thumb #price #new-price {
+          font-size: 14px;
+          color: grey;
+          text-decoration: line-through; }
 
 /*# sourceMappingURL=style.css.map */
