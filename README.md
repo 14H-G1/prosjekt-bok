@@ -1,4 +1,4 @@
 Prosjekt Bok
 =========
 
-Kjøpt og salg av pensum bøker mellom studenter.
+Kjøp og salg av pensum bøker mellom studenter.
