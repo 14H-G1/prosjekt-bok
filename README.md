@@ -1,4 +1,4 @@
-Midlertidig prosjektnavn
+Prosjekt Bok
 =========
 
-ompa lompa dompa di da
+Kjøpt og salg av pensum bøker mellom studenter.
