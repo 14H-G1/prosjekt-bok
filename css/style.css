@@ -9,6 +9,18 @@ body {
   margin: 0;
 }
 
+section {
+  height: 100%;
+  max-width: 700px;
+  margin: 25px auto;
+  display: block;
+}
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .button {
   background-color: #fff;
   margin-left: 10px;
@@ -37,7 +49,7 @@ body {
 .head-wrap .head-elements {
   max-width: 700px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 5px;
 }
 .head-wrap .head-elements h1 {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
@@ -47,33 +59,12 @@ body {
   display: inline-block;
 }
 
-#book-wrap {
-  height: 100%;
-  max-width: 700px;
-  margin: 10px auto;
-  padding: 10px;
-  display: block;
-}
-#book-wrap:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#book-wrap .book-thumb {
-  margin: 5px;
+#books .book-thumb {
+  margin: 5px 5px 10px 5px;
   float: left;
   max-width: 23.53%;
 }
-@media screen and (max-width: 670px) {
-  #book-wrap .book-thumb {
-    max-width: 45%;
-  }
-}
-#book-wrap .book-thumb img {
-  height: 200px;
-  width: 100%;
-}
-#book-wrap .book-thumb a {
+#books .book-thumb .title {
   margin: 0;
   font-size: 14px;
   font-weight: 300;
@@ -81,62 +72,54 @@ body {
   text-decoration: none;
   display: block;
 }
-#book-wrap .book-thumb .author {
+#books .book-thumb .author {
   margin: 5px 0;
   font-size: 12px;
   font-weight: 300;
 }
-#book-wrap .book-thumb .price {
+#books .book-thumb .price {
   float: right;
   margin: 5px 0;
   font-size: 24px;
   font-weight: 300;
   color: #961c00;
 }
-#book-wrap .book-thumb .price .new-price {
+#books .book-thumb .price .new-price {
   font-size: 14px;
   color: grey;
   text-decoration: line-through;
 }
-#book-wrap .book-thumb:hover {
+#books .book-thumb:hover {
   cursor: pointer;
 }
-#book-wrap .book-thumb:hover a {
+#books .book-thumb:hover a {
   text-decoration: underline;
 }
-
-#sale-wrap {
-  height: 100%;
-  max-width: 700px;
-  margin: 10px auto;
-  padding: 10px;
-  display: block;
+@media screen and (max-width: 670px) {
+  #books .book-thumb {
+    max-width: 45%;
+  }
 }
-#sale-wrap .container {
+#books .book-thumb img {
+  height: 200px;
   width: 100%;
-  margin-bottom: 25px;
-  position: relative;
 }
-#sale-wrap .container:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#sale-wrap .container #book-img {
+
+#sell-book #book-img {
   float: left;
   position: relative;
   width: 160;
   height: 215;
 }
-#sale-wrap .container #book-img img {
+#sell-book #book-img img {
   width: 160;
   height: 215;
 }
-#sale-wrap .container #book-info {
+#sell-book #book-info {
   position: relative;
   margin-left: 170px;
 }
-#sale-wrap .container #book-info input[type="text"] {
+#sell-book #book-info input[type="text"] {
   width: 100%;
   overflow: auto;
   margin: 0 0 10px 0;
@@ -147,7 +130,23 @@ body {
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
 }
-#sale-wrap .container #book-info input[type="text"]:focus, #sale-wrap .container #book-info input[type="text"].focus {
+#sell-book #book-info input[type="text"]:focus, #sell-book #book-info input[type="text"].focus {
+  border-bottom: solid 2px #969696;
+  outline: none;
+}
+
+#sok input[type="text"] {
+  width: 100%;
+  overflow: auto;
+  margin: 0 0 10px 0;
+  background-color: #efefef;
+  font-size: 16px;
+  padding: 5px 15px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}
+#sok input[type="text"]:focus, #sok input[type="text"].focus {
   border-bottom: solid 2px #969696;
   outline: none;
 }
@@ -158,7 +157,7 @@ footer {
 footer p {
   max-width: 700px;
   margin: 15px auto 0 auto;
-  padding: 20px 15px;
+  padding: 20px 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

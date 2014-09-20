@@ -1,24 +1,11 @@
-#book-wrap
-	height: 100%
-	max-width: 700px
-	margin: 10px auto
-	padding: 10px
-	display: block
-	+clearfix
+#books
 
 	.book-thumb
-		margin: 5px
+		margin: 5px 5px 10px 5px
 		float: left
 		max-width: 23.53%
 
-		@media screen and (max-width: 670px)
-			max-width: 45%
-
-		img
-			height: 200px
-			width: 100%
-
-		a
+		.title
 			margin: 0
 			font-size: 14px
 			font-weight: 300
@@ -48,3 +35,10 @@
 
 			a
 				text-decoration: underline
+
+		@media screen and (max-width: 670px)
+			max-width: 45%
+
+		img
+			height: 200px
+			width: 100%
