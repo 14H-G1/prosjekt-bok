@@ -50,11 +50,11 @@
 	</section>
 
 	<section id="sok-info">
-		<h3>Søk etter tittel</h3>
+		<h2>Søk etter tittel</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque, vitae voluptas perspiciatis. Aliquid autem, fugit fugiat alias animi, impedit quo ipsam ipsum quidem, quasi, error recusandae doloribus praesentium ad!</p>
-		<h3>Søk etter tittel</h3>
+		<h2>Søk etter tittel</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque, vitae voluptas perspiciatis. Aliquid autem, fugit fugiat alias animi, impedit quo ipsam ipsum quidem, quasi, error recusandae doloribus praesentium ad!</p>
-		<h3>Søk etter tittel</h3>
+		<h2>Søk etter tittel</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque, vitae voluptas perspiciatis. Aliquid autem, fugit fugiat alias animi, impedit quo ipsam ipsum quidem, quasi, error recusandae doloribus praesentium ad!</p>
 	</section>
 
