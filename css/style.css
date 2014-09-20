@@ -9,9 +9,8 @@ body {
   margin: 0;
 }
 
-#button {
+.button {
   background-color: #fff;
-  padding: 10px;
   margin-left: 10px;
   font-size: 12px;
   text-decoration: none;
@@ -23,7 +22,7 @@ body {
   position: relative;
   float: right;
 }
-#button:active {
+.button:active {
   top: 7px;
   background-image: linear-gradient(bottom, #64aa1e 100%, #81d433 0%);
   box-shadow: inset 0px 1px 0px #b2f17f, inset 0px -1px 0px #3d6f0d;
@@ -48,35 +47,33 @@ body {
   display: inline-block;
 }
 
-.main-wrap {
+#book-wrap {
   height: 100%;
-}
-.main-wrap .row {
   max-width: 700px;
   margin: 10px auto;
   padding: 10px;
   display: block;
 }
-.main-wrap .row:after {
+#book-wrap:after {
   content: "";
   display: table;
   clear: both;
 }
-.main-wrap .row .book-thumb {
+#book-wrap .book-thumb {
   margin: 5px;
   float: left;
   max-width: 23.53%;
 }
 @media screen and (max-width: 670px) {
-  .main-wrap .row .book-thumb {
-    max-width: 47%;
+  #book-wrap .book-thumb {
+    max-width: 45%;
   }
 }
-.main-wrap .row .book-thumb img {
+#book-wrap .book-thumb img {
   height: 200px;
   width: 100%;
 }
-.main-wrap .row .book-thumb a {
+#book-wrap .book-thumb a {
   margin: 0;
   font-size: 14px;
   font-weight: 300;
@@ -84,55 +81,62 @@ body {
   text-decoration: none;
   display: block;
 }
-.main-wrap .row .book-thumb a:hover {
-  text-decoration: underline;
-}
-.main-wrap .row .book-thumb #author {
+#book-wrap .book-thumb .author {
   margin: 5px 0;
   font-size: 12px;
   font-weight: 300;
 }
-.main-wrap .row .book-thumb #price {
+#book-wrap .book-thumb .price {
   float: right;
   margin: 5px 0;
   font-size: 24px;
   font-weight: 300;
   color: #961c00;
 }
-.main-wrap .row .book-thumb #price #new-price {
+#book-wrap .book-thumb .price .new-price {
   font-size: 14px;
   color: grey;
   text-decoration: line-through;
 }
-.main-wrap .row .book-thumb:hover {
+#book-wrap .book-thumb:hover {
   cursor: pointer;
 }
+#book-wrap .book-thumb:hover a {
+  text-decoration: underline;
+}
 
-.main-wrap .container {
+#sale-wrap {
+  height: 100%;
+  max-width: 700px;
+  margin: 10px auto;
+  padding: 10px;
+  display: block;
+}
+#sale-wrap .container {
   width: 100%;
   margin-bottom: 25px;
   position: relative;
 }
-.main-wrap .container:after {
+#sale-wrap .container:after {
   content: "";
   display: table;
   clear: both;
 }
-.main-wrap .container #book-img {
+#sale-wrap .container #book-img {
   float: left;
   position: relative;
   width: 160;
   height: 215;
 }
-.main-wrap .container #book-img img {
+#sale-wrap .container #book-img img {
   width: 160;
   height: 215;
 }
-.main-wrap .container #book-info {
+#sale-wrap .container #book-info {
   position: relative;
   margin-left: 170px;
 }
-.main-wrap .container #book-info input[type="text"] {
+#sale-wrap .container #book-info input[type="text"] {
   width: 100%;
   overflow: auto;
   margin: 0 0 10px 0;
@@ -143,13 +147,9 @@ body {
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
 }
-.main-wrap .container #book-info input[type="text"]:focus, .main-wrap .container #book-info input[type="text"].focus {
+#sale-wrap .container #book-info input[type="text"]:focus, #sale-wrap .container #book-info input[type="text"].focus {
   border-bottom: solid 2px #969696;
   outline: none;
-}
-.main-wrap .container a {
-  position: absolute;
-  bottom: 0;
 }
 
 footer {

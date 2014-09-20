@@ -1,52 +1,50 @@
-.main-wrap
+#book-wrap
 	height: 100%
+	max-width: 700px
+	margin: 10px auto
+	padding: 10px
+	display: block
+	+clearfix
 
-	.row
-		max-width: 700px
-		margin: 10px auto
-		padding: 10px
-		display: block
-		+clearfix
+	.book-thumb
+		margin: 5px
+		float: left
+		max-width: 23.53%
 
-		.book-thumb
-			margin: 5px
-			float: left
-			max-width: 23.53%
+		@media screen and (max-width: 670px)
+			max-width: 45%
 
-			@media screen and (max-width: 670px)
-				max-width: 47%
+		img
+			height: 200px
+			width: 100%
 
-			img
-				height: 200px
-				width: 100%
+		a
+			margin: 0
+			font-size: 14px
+			font-weight: 300
+			color: #00408d
+			text-decoration: none
+			display: block
+
+		.author
+			margin: 5px 0
+			font-size: 12px
+			font-weight: 300
+
+		.price
+			float: right
+			margin: 5px 0
+			font-size: 24px
+			font-weight: 300
+			color: #961c00
+
+			.new-price
+				font-size: 14px
+				color: grey
+				text-decoration: line-through
+
+		&:hover
+			cursor: pointer
 
 			a
-				margin: 0
-				font-size: 14px
-				font-weight: 300
-				color: #00408d
-				text-decoration: none
-				display: block
-
-				&:hover
-					text-decoration: underline
-
-			#author
-				margin: 5px 0
-				font-size: 12px
-				font-weight: 300
-
-			#price
-				float: right
-				margin: 5px 0
-				font-size: 24px
-				font-weight: 300
-				color: #961c00
-
-				#new-price
-					font-size: 14px
-					color: grey
-					text-decoration: line-through
-
-			&:hover
-				cursor: pointer
+				text-decoration: underline

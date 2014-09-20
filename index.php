@@ -11,66 +11,61 @@
 	<div class="head-wrap">
 		<div class="head-elements">
 			<h1>PEBB</h1>
-			<a id="button" href="/selg.php">legg bok ut for salg</a>
-			<a id="button" href="/sok.php">søk</a>
+			<a class="button" href="/selg.php">legg bok ut for salg</a>
+			<a class="button" href="/sok.php">søk</a>
 		</div>
 	</div>
 
-	<div class="main-wrap">
+	<div id="book-wrap">
 		
-		<section class="row">
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-		</section>
-
-		<section class="row">
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-			<div class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<a href="#">Descrete mathematics for programming</a>
-				<p id="author">Rod Haggarty</p>
-				<p id="price"><span id="new-price">600,-</span> 250,-</p>
-			</div>
-		</section>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p claclass="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
+		<div class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<a href="#">Descrete mathematics for programming</a>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</div>
 
 	</div>
 
