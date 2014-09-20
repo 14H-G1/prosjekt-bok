@@ -1,23 +1,24 @@
 .main-wrap
 	height: 100%
 
-	img
-		height: 200px
-		width: 150px
-
-	#book-row
+	.row
 		max-width: 700px
 		margin: 10px auto
 		padding: 10px
 		display: block
+		+clearfix
 
 		.book-thumb
 			margin: 5px
 			float: left
-			max-width: 23%
+			max-width: 23.53%
 
 			@media screen and (max-width: 670px)
 				max-width: 47%
+
+			img
+				height: 200px
+				width: 100%
 
 			a
 				margin: 0
@@ -46,3 +47,6 @@
 					font-size: 14px
 					color: grey
 					text-decoration: line-through
+
+			&:hover
+				cursor: pointer
