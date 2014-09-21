@@ -17,9 +17,8 @@
 	</div>
 
 	<section id="sell-book">
-			<div id="book-img">
-				<img src="http://dummyimage.com/160x215/f0f0f0/000000&text=bok" alt="">
-			</div>
+			<div id="my-camera" onClick="take_snapshot()"></div>
+			<div id="results"></div>
 
 			<div id="book-info">
 				<input type="text" placeholder="Tittel">
@@ -42,21 +41,12 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa perspiciatis illo voluptatibus culpa, eos nemo beatae ducimus, consequuntur illum obcaecati maxime, possimus cumque alias pariatur vero aperiam. Quo, rem, debitis.</p>
 	</section>
 
-			<!--
-			<div id="results">Your captured image will appear here...</div>
-			<div id="my_camera"></div>
-			<form>
-				<input type=button value="Take Large Snapshot" onClick="take_snapshot()">
-			</form>
-			-->
-
 	<footer>
 		<p>Copyright &copy; G1</p>
 	</footer>
-	
-	<!-- 
+
 	<script type="text/javascript" src="js/webcam.js"></script>
 	<script type="text/javascript" src="js/webcam-settings.js"></script>
-	-->
+
 </body>
 </html>

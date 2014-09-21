@@ -104,7 +104,8 @@ var Webcam = {
 			video.style.height = '' + this.params.dest_height + 'px';
 			
 			if ((scaleX != 1.0) || (scaleY != 1.0)) {
-				elem.style.overflow = 'hidden';
+				//elem.style.overflow = 'hidden';
+				elem.style.position = 'absolute';
 				video.style.webkitTransformOrigin = '0px 0px';
 				video.style.mozTransformOrigin = '0px 0px';
 				video.style.msTransformOrigin = '0px 0px';
@@ -154,7 +155,7 @@ var Webcam = {
 			
 			elem.style.width = '' + scaled_crop_width + 'px';
 			elem.style.height = '' + scaled_crop_height + 'px';
-			elem.style.overflow = 'hidden';
+			//elem.style.overflow = 'hidden';
 			
 			elem.scrollLeft = Math.floor( (this.params.width / 2) - (scaled_crop_width / 2) );
 			elem.scrollTop = Math.floor( (this.params.height / 2) - (scaled_crop_height / 2) );
