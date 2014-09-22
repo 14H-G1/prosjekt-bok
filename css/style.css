@@ -94,7 +94,7 @@ section:after {
 #books .book-thumb:hover a {
   text-decoration: underline;
 }
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 600px) {
   #books .book-thumb {
     max-width: 50%;
   }
@@ -142,6 +142,9 @@ section:after {
   padding: 25px 5px 0 5px;
 }
 
+#sok {
+  padding: 0 5px;
+}
 #sok input[type="text"] {
   width: 100%;
   overflow: auto;
@@ -156,6 +159,10 @@ section:after {
 #sok input[type="text"]:focus, #sok input[type="text"].focus {
   border-bottom: solid 2px #969696;
   outline: none;
+}
+
+#sok-info {
+  padding: 25px 5px 0 5px;
 }
 
 footer {
