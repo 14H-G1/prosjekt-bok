@@ -23,12 +23,12 @@ section:after {
 
 .button {
   background-color: #fff;
-  margin-left: 10px;
   font-size: 12px;
   text-decoration: none;
   color: #666;
   box-shadow: inset 0px 1px 0px #afddbd, 0px 6px 0px #3e7a4f;
   border-radius: 50px;
+  margin-left: 10px;
   padding: 10px 15px;
   display: inline-block;
   position: relative;
@@ -59,9 +59,9 @@ section:after {
 }
 
 #books .book-thumb {
-  margin: 5px 5px 10px 5px;
+  padding: 10px 5px;
   float: left;
-  max-width: 23.53%;
+  max-width: 25%;
 }
 #books .book-thumb .title {
   margin: 0;
@@ -96,7 +96,7 @@ section:after {
 }
 @media screen and (max-width: 670px) {
   #books .book-thumb {
-    max-width: 45%;
+    max-width: 50%;
   }
 }
 #books .book-thumb img {
@@ -104,6 +104,9 @@ section:after {
   width: 100%;
 }
 
+#sell-book {
+  padding: 0 5px 0 5px;
+}
 #sell-book #my-camera, #sell-book #results {
   float: left;
   width: 160;
@@ -135,6 +138,10 @@ section:after {
   outline: none;
 }
 
+#faq {
+  padding: 25px 5px 0 5px;
+}
+
 #sok input[type="text"] {
   width: 100%;
   overflow: auto;
@@ -156,7 +163,7 @@ footer {
 }
 footer p {
   max-width: 700px;
-  margin: 15px auto 0 auto;
+  margin: 0 auto;
   padding: 20px 5px;
 }
 
