@@ -4,6 +4,7 @@
 		padding: 10px 5px
 		float: left
 		max-width: 25%
+		text-decoration: none
 
 		.title
 			margin: 0
@@ -17,6 +18,7 @@
 			margin: 5px 0
 			font-size: 12px
 			font-weight: 300
+			color: tint(black, 20%)
 
 		.price
 			float: right
@@ -33,10 +35,13 @@
 		&:hover
 			cursor: pointer
 
-			a
+			.title
 				text-decoration: underline
 
-		@media screen and (max-width: 600px)
+		@media screen and (max-width: 640px)
+			max-width: 33.3%
+
+		@media screen and (max-width: 500px)
 			max-width: 50%
 
 		img

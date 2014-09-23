@@ -10,9 +10,9 @@
 
 	<div class="head-wrap">
 		<div class="head-elements">
-			<h1>PEBB</h1>
-			<a class="button" href="selg.html">legg bok ut for salg</a>
-			<a class="button" href="index.html">tilbake</a>
+			<a href="index.html"><h1>PEBB</h1></a>
+			<a class="btn" href="selg.html">selg bok</a>
+			<a class="btn btn-selected" href="#">søk</a>
 		</div>
 	</div>
 
@@ -23,30 +23,30 @@
 	</section>
 
 	<section id="books">
-		<div class="book-thumb">
+		<a href="produkt.html" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
-			<a class="title" href="#">Descrete mathematics for programming</a>
+			<p class="title" href="#">Descrete mathematics for programming</p>
 			<p class="author">Rod Haggarty</p>
 			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</div>
-		<div class="book-thumb">
+		</a>
+		<a href="produkt.html" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
-			<a class="title" href="#">Descrete mathematics for programming</a>
+			<p class="title" href="#">Descrete mathematics for programming</p>
 			<p class="author">Rod Haggarty</p>
 			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</div>
-		<div class="book-thumb">
+		</a>
+		<a href="produkt.html" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
-			<a class="title" href="#">Descrete mathematics for programming</a>
+			<p class="title" href="#">Descrete mathematics for programming</p>
 			<p class="author">Rod Haggarty</p>
 			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</div>
-		<div class="book-thumb">
+		</a>
+		<a href="produkt.html" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
-			<a class="title" href="#">Descrete mathematics for programming</a>
+			<p class="title" href="#">Descrete mathematics for programming</p>
 			<p class="author">Rod Haggarty</p>
 			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</div>
+		</a>
 	</section>
 
 	<section id="sok-info">
@@ -59,8 +59,14 @@
 	</section>
 
 	<footer>
-		<p>Copyright &copy; G1</p>
+		<p>Hei, Nataniel Pedersen</p>
 	</footer>
 
+	<script type="text/javascript" src="js/fastclick.js"></script>
+	<script>
+		window.addEventListener('load', function() {
+		    FastClick.attach(document.body);
+		}, false);
+	</script>
 </body>
 </html>

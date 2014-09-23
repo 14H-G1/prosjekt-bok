@@ -21,12 +21,12 @@ section:after {
   clear: both;
 }
 
-.button {
+.btn {
   background-color: #fff;
   font-size: 12px;
   text-decoration: none;
   color: #666;
-  box-shadow: inset 0px 1px 0px #afddbd, 0px 6px 0px #3e7a4f;
+  box-shadow: inset 0px 1px 0px #afddbd, 0px 6px 0px #438356;
   border-radius: 50px;
   margin-left: 10px;
   padding: 10px 15px;
@@ -34,7 +34,14 @@ section:after {
   position: relative;
   float: right;
 }
-.button:active {
+.btn:active {
+  top: 7px;
+  box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #3e7a4f;
+  color: #156785;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn-selected {
   top: 7px;
   box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #3e7a4f;
   color: #156785;
@@ -50,7 +57,8 @@ section:after {
   margin: 0 auto;
   padding: 10px 5px;
 }
-.head-wrap .head-elements h1 {
+.head-wrap .head-elements a h1 {
+  color: #262626;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   margin: 0;
   letter-spacing: 10px;
@@ -62,6 +70,7 @@ section:after {
   padding: 10px 5px;
   float: left;
   max-width: 25%;
+  text-decoration: none;
 }
 #books .book-thumb .title {
   margin: 0;
@@ -75,6 +84,7 @@ section:after {
   margin: 5px 0;
   font-size: 12px;
   font-weight: 300;
+  color: #333333;
 }
 #books .book-thumb .price {
   float: right;
@@ -91,10 +101,15 @@ section:after {
 #books .book-thumb:hover {
   cursor: pointer;
 }
-#books .book-thumb:hover a {
+#books .book-thumb:hover .title {
   text-decoration: underline;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
+  #books .book-thumb {
+    max-width: 33.3%;
+  }
+}
+@media screen and (max-width: 500px) {
   #books .book-thumb {
     max-width: 50%;
   }
@@ -141,6 +156,12 @@ section:after {
 #faq {
   padding: 25px 5px 0 5px;
 }
+#faq h2 {
+  color: #3f3f3f;
+}
+#faq p {
+  color: #595959;
+}
 
 #sok {
   padding: 0 5px;
@@ -164,6 +185,12 @@ section:after {
 #sok-info {
   padding: 25px 5px 0 5px;
 }
+#sok-info h2 {
+  color: #3f3f3f;
+}
+#sok-info p {
+  color: #595959;
+}
 
 footer {
   background-color: #60bc7b;
@@ -172,6 +199,9 @@ footer p {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px 5px;
+}
+footer p a {
+  text-align: right;
 }
 
 /*# sourceMappingURL=style.css.map */
