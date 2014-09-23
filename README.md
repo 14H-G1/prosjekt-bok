@@ -40,4 +40,6 @@ swig
 
 TODO:
 - Dynamic routes
+- Database handling
+- Search algorithm
 - Authentication
