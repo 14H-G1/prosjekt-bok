@@ -39,7 +39,7 @@ swig
 ```
 
 TODO:
-- Dynamic routes
+- ~~Dynamic routes~~
 - Database handling
 - Search algorithm
 - Authentication
