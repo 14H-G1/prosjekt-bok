@@ -1,0 +1,207 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", Arial, Roboto, Helvetica, sans-serif;
+  margin: 0;
+}
+
+section {
+  height: 100%;
+  max-width: 700px;
+  margin: 25px auto;
+  display: block;
+}
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.btn {
+  background-color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  color: #666;
+  box-shadow: inset 0px 1px 0px #afddbd, 0px 6px 0px #438356;
+  border-radius: 50px;
+  margin-left: 10px;
+  padding: 10px 15px;
+  display: inline-block;
+  position: relative;
+  float: right;
+}
+.btn:active {
+  top: 7px;
+  box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #3e7a4f;
+  color: #156785;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn-selected {
+  top: 7px;
+  box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #3e7a4f;
+  color: #156785;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.head-wrap {
+  margin: 0 auto;
+  background-color: #60bc7b;
+}
+.head-wrap .head-elements {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px 5px;
+}
+.head-wrap .head-elements a h1 {
+  color: #262626;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  margin: 0;
+  letter-spacing: 10px;
+  font-weight: 300;
+  display: inline-block;
+}
+
+#books .book-thumb {
+  padding: 10px 5px;
+  float: left;
+  max-width: 25%;
+  text-decoration: none;
+}
+#books .book-thumb .title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #00408d;
+  text-decoration: none;
+  display: block;
+}
+#books .book-thumb .author {
+  margin: 5px 0;
+  font-size: 12px;
+  font-weight: 300;
+  color: #333333;
+}
+#books .book-thumb .price {
+  float: right;
+  margin: 5px 0;
+  font-size: 24px;
+  font-weight: 300;
+  color: #961c00;
+}
+#books .book-thumb .price .new-price {
+  font-size: 14px;
+  color: grey;
+  text-decoration: line-through;
+}
+#books .book-thumb:hover {
+  cursor: pointer;
+}
+#books .book-thumb:hover .title {
+  text-decoration: underline;
+}
+@media screen and (max-width: 640px) {
+  #books .book-thumb {
+    max-width: 33.3%;
+  }
+}
+@media screen and (max-width: 500px) {
+  #books .book-thumb {
+    max-width: 50%;
+  }
+}
+#books .book-thumb img {
+  height: 200px;
+  width: 100%;
+}
+
+#sell-book {
+  padding: 0 5px 0 5px;
+}
+#sell-book #my-camera, #sell-book #results {
+  float: left;
+  width: 160;
+  height: 215;
+  background-color: #eff8f1;
+  position: absolute;
+}
+#sell-book #my-camera #results, #sell-book #results #results {
+  width: 160;
+  height: 215;
+}
+#sell-book #book-info {
+  position: relative;
+  margin-left: 170px;
+}
+#sell-book #book-info input[type="text"] {
+  width: 100%;
+  overflow: auto;
+  margin: 0 0 10px 0;
+  background-color: #efefef;
+  font-size: 16px;
+  padding: 5px 15px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}
+#sell-book #book-info input[type="text"]:focus, #sell-book #book-info input[type="text"].focus {
+  border-bottom: solid 2px #969696;
+  outline: none;
+}
+
+#faq {
+  padding: 25px 5px 0 5px;
+}
+#faq h2 {
+  color: #3f3f3f;
+}
+#faq p {
+  color: #595959;
+}
+
+#sok {
+  padding: 0 5px;
+}
+#sok input[type="text"] {
+  width: 100%;
+  overflow: auto;
+  margin: 0 0 10px 0;
+  background-color: #efefef;
+  font-size: 16px;
+  padding: 5px 15px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}
+#sok input[type="text"]:focus, #sok input[type="text"].focus {
+  border-bottom: solid 2px #969696;
+  outline: none;
+}
+
+#sok-info {
+  padding: 25px 5px 0 5px;
+}
+#sok-info h2 {
+  color: #3f3f3f;
+}
+#sok-info p {
+  color: #595959;
+}
+
+footer {
+  background-color: #60bc7b;
+}
+footer p {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 5px;
+}
+footer p a {
+  text-align: right;
+}
+
+/*# sourceMappingURL=style.css.map */

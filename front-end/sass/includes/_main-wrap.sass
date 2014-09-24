@@ -1,0 +1,49 @@
+#books
+
+	.book-thumb
+		padding: 10px 5px
+		float: left
+		max-width: 25%
+		text-decoration: none
+
+		.title
+			margin: 0
+			font-size: 14px
+			font-weight: 300
+			color: #00408d
+			text-decoration: none
+			display: block
+
+		.author
+			margin: 5px 0
+			font-size: 12px
+			font-weight: 300
+			color: tint(black, 20%)
+
+		.price
+			float: right
+			margin: 5px 0
+			font-size: 24px
+			font-weight: 300
+			color: #961c00
+
+			.new-price
+				font-size: 14px
+				color: grey
+				text-decoration: line-through
+
+		&:hover
+			cursor: pointer
+
+			.title
+				text-decoration: underline
+
+		@media screen and (max-width: 640px)
+			max-width: 33.3%
+
+		@media screen and (max-width: 500px)
+			max-width: 50%
+
+		img
+			height: 200px
+			width: 100%
