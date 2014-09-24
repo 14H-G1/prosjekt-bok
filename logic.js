@@ -4,12 +4,12 @@ var express			= require('express')
   , app				= express()
   , swig			= require('swig')
   , sass			= require('node-sass')
-  , cookies 		= require('cookie-parser')
+  , cookies 			= require('cookie-parser')
   , body			= require('body-parser')
-  , path        	= require('path')
+  , path        		= require('path')
   , glob			= require('glob')
   , options			= require('./options.js')
-  , verbose 		= true;
+  , verbose 			= true;
 
 /* 	assets/
  *		css
@@ -30,13 +30,13 @@ app.set('views', options.views);
 // caching
 app.set('view cache', false);   // false || true
 swig.setDefaults({
-    cache: false				// false || memory
+    cache: false		// false || memory
 });
 
 // Middlewares
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieParser('some secret'));
+app.use(body.json());
+app.use(body.urlencoded({extended: true}));
+app.use(cookies('some secret'));
 app.use(session({
 	secret: 'some secret here as well',
 	resave: true,
@@ -44,7 +44,7 @@ app.use(session({
 }));
 
 // serve static assets
-app.use(express.static(options.assets);
+app.use(express.static(options.assets));
 
 // Routing function
 app.route = function(a, route) {
@@ -62,10 +62,13 @@ app.route = function(a, route) {
     }
 };
 
-// TODO: do routes here
-
-// temp index route
-app.route(require('routes/index.js')(options));
+// Routing
+glob("routes/*.js", {}, function (er, files) {
+  files.forEach(function(file) {
+    app.route(require('./'+file)(options));
+    console.log('Route: '+file);
+  });
+});
 
 // export app logic
 module.exports	= app;
