@@ -15,7 +15,7 @@ node app.js
 - assets/
   - css/
   - js/
-  - images/
+  - img/
 - controllers/
 - models/
 - routes/
