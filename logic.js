@@ -25,7 +25,7 @@ var express			= require('express')
  *	sass/
  */
 
- // Sets rendering engine as SWIG for html files
+// Sets rendering engine as SWIG for html files
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', options.views);
