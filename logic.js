@@ -1,15 +1,17 @@
 // initialize needed modules and objects
 var express			= require('express')
   , session			= require('express-session')
-  , app				= express()
-  , swig			= require('swig')
-  , sass			= require('node-sass')
-  , cookies 			= require('cookie-parser')
-  , body			= require('body-parser')
-  , path        		= require('path')
-  , glob			= require('glob')
+  , app				  = express()
+  , swig			  = require('swig')
+  , sass			  = require('node-sass')
+  , cookies 		= require('cookie-parser')
+  , body			  = require('body-parser')
+  , path        = require('path')
+  , glob			  = require('glob')
+  , debug       = require('debug')('PEBB')
+  , logger      = require('morgan')
   , options			= require('./options.js')
-  , verbose 			= true;
+  , verbose 		= true;
 
 /* 	assets/
  *		css
@@ -34,6 +36,7 @@ swig.setDefaults({
 });
 
 // Middlewares
+app.use(logger('dev'));
 app.use(body.json());
 app.use(body.urlencoded({extended: true}));
 app.use(cookies('some secret'));

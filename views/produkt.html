@@ -4,14 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PEBB - Pensumbøker billig</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
 	{% include 'body.header.html' %}
 
 	<section id="sell-book">
-			<div id="my-camera" onClick="take_snapshot()"></div>
 			<div id="results"></div>
 
 			<div id="book-info">
@@ -26,7 +25,7 @@
 
 	<section id="faq">
 		<h2>Hvordan fungerer dette?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, error, in! Magnam a, officia neque iste voluptas laudantium ex, quibusdam facilis, placeat fugiat accusantium totam quo, similique minus aperiam blanditiis!</p>
+		<p>{{item}}<br/>{{id}}</p>
 		
 		<h2>Hvordan fjerner jeg en solgt bok?</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, ducimus. Esse officia eos earum atque, fuga facilis animi tempora autem beatae impedit ipsam debitis nam ad, distinctio laborum nulla voluptas.</p>
@@ -39,9 +38,7 @@
 		<p>Hei, Nataniel Pedersen</p>
 	</footer>
 
-	<script type="text/javascript" src="js/fastclick.js"></script>
-	<script type="text/javascript" src="js/webcam.js"></script>
-	<script type="text/javascript" src="js/webcam-settings.js"></script>
+	<script type="text/javascript" src="../js/fastclick.js"></script>
 	<script>
 		window.addEventListener('load', function() {
 		    FastClick.attach(document.body);
