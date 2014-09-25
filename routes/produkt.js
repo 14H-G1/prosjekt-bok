@@ -13,7 +13,7 @@ module.exports = function(options) {
 				listAll: false
 			});
 		}
-	}
+	};
 
 	return {
 		'/produkt': {
