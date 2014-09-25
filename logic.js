@@ -1,13 +1,13 @@
 // initialize needed modules and objects
 var express			= require('express')
   , session			= require('express-session')
-  , app				  = express()
-  , swig			  = require('swig')
-  , sass			  = require('node-sass')
+  , app					= express()
+  , swig				= require('swig')
+  , sass				= require('node-sass')
   , cookies 		= require('cookie-parser')
-  , body			  = require('body-parser')
+  , body				= require('body-parser')
   , path        = require('path')
-  , glob			  = require('glob')
+  , glob				= require('glob')
   , debug       = require('debug')('PEBB')
   , logger      = require('morgan')
   , options			= require('./options.js')
@@ -54,7 +54,7 @@ app.route = function(a, route) {
 	route = route || '';
     for (var key in a) {
     	switch (typeof a[key]) {
-        	case 'object': // { '/path': { ... }}
+        case 'object': // { '/path': { ... }}
           		app.route(a[key], route + key);
           	break;
         	case 'function': // get: function(){ ... }
