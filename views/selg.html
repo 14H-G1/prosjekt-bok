@@ -5,43 +5,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PEBB - Pensumbøker billig</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 
 	{% include 'body.header.html' %}
 
-	<section id="sell-book">
-			<div id="my-camera" onClick="take_snapshot()"></div>
-			<div id="results"></div>
-
-			<div id="book-info">
-				<input type="text" placeholder="Tittel">
-				<input type="text" placeholder="Utgitt">
-				<input type="text" placeholder="Pris">
-				<input type="text" placeholder="Hvordan er tilstanden til boken?">
-			</div>
-			
-			<a class="btn" href="#">legg ut for salg</a>
+	<section id="book-info">
+		<p>Fyll ut feltene under</p>
+		<input type="text" placeholder="Tittel">
+		<input type="text" placeholder="Utgitt">
+		<input type="text" placeholder="Pris">
+		<input type="text" placeholder="Hvordan er tilstanden til boken?">
 	</section>
 
-	<section id="faq">
-		<h2>Hvordan fungerer dette?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, error, in! Magnam a, officia neque iste voluptas laudantium ex, quibusdam facilis, placeat fugiat accusantium totam quo, similique minus aperiam blanditiis!</p>
-		
-		<h2>Hvordan fjerner jeg en solgt bok?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, ducimus. Esse officia eos earum atque, fuga facilis animi tempora autem beatae impedit ipsam debitis nam ad, distinctio laborum nulla voluptas.</p>
-		
-		<h2>Hvordan kan dette være gratis?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa perspiciatis illo voluptatibus culpa, eos nemo beatae ducimus, consequuntur illum obcaecati maxime, possimus cumque alias pariatur vero aperiam. Quo, rem, debitis.</p>
+	<section id="upload-img">
+		<p>Legg til et eller flere bilder</p>
+		<div class="file-container">
+			<i class="fa fa-plus fa-3x"></i>
+		</div>
 	</section>
 
-	<footer>
-		<p>Hei, Nataniel Pedersen</p>
-	</footer>
+	<section id="choose-contact">
+		<p>Velg hvordan du vil bli kontaktet</p>
+		<i class="fa fa-facebook fa-4x"></i>
+		<i class="fa fa-twitter fa-4x"></i>
+		<i class="fa fa-envelope fa-4x"></i>
+		<i class="fa fa-phone fa-4x"></i>
+	</section>
+
+	<section id="ready-to-sell" class="text-content">
+		<a class="btn" href="#">legg ut for salg</a>
+	</section>
+
+	{% include 'body.footer.html' %}
 
 	<script type="text/javascript" src="js/fastclick.js"></script>
-	<script type="text/javascript" src="js/webcam.js"></script>
-	<script type="text/javascript" src="js/webcam-settings.js"></script>
 	<script>
 		window.addEventListener('load', function() {
 		    FastClick.attach(document.body);

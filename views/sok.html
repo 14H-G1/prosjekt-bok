@@ -11,12 +11,10 @@
 	{% include 'body.header.html' %}
 
 	<section id="sok">
-		
 		<input type="text" placeholder="Søk">
-
 	</section>
 
-	<section id="books">
+	<section class="books">
 		<a href="produkt.html" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
 			<p class="title" href="#">Descrete mathematics for programming</p>
@@ -43,7 +41,7 @@
 		</a>
 	</section>
 
-	<section id="sok-info">
+	<section class="text-content">
 		<h2>Søk etter tittel</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque, vitae voluptas perspiciatis. Aliquid autem, fugit fugiat alias animi, impedit quo ipsam ipsum quidem, quasi, error recusandae doloribus praesentium ad!</p>
 		<h2>Søk etter tittel</h2>
@@ -52,9 +50,7 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque, vitae voluptas perspiciatis. Aliquid autem, fugit fugiat alias animi, impedit quo ipsam ipsum quidem, quasi, error recusandae doloribus praesentium ad!</p>
 	</section>
 
-	<footer>
-		<p>Hei, Nataniel Pedersen</p>
-	</footer>
+	{% include 'body.footer.html' %}
 
 	<script type="text/javascript" src="js/fastclick.js"></script>
 	<script>
