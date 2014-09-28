@@ -30,5 +30,10 @@
 
 #ready-to-sell
 
-	p
-		float: left
+	a:nth-child(odd)
+		+custom-btn($main-color, white)
+		float: right
+
+	a:nth-child(even)
+		+custom-btn($main-orange, white)
+		float: right

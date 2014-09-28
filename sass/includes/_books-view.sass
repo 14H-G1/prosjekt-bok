@@ -1,8 +1,14 @@
 .books
-	padding: 0 2.5px
+	padding: 0
+
+	@media screen and (max-width: 640px)
+		padding: 15px 2px
+
+	@media screen and (max-width: 500px)
+		padding: 15px 2.5px
 
 	.book-thumb
-		padding: 15px 2.5px
+		padding: 15px 5px
 		float: left
 		max-width: 25%
 		text-decoration: none
@@ -26,7 +32,7 @@
 			margin: 5px 0
 			font-size: 24px
 			font-weight: 300
-			color: #961c00
+			color: $main-red //#961c00
 
 			.new-price
 				font-size: 14px
@@ -40,9 +46,11 @@
 
 		@media screen and (max-width: 640px)
 			max-width: 33.3%
+			padding: 15px 3px
 
 		@media screen and (max-width: 500px)
 			max-width: 50%
+			padding: 15px 2.5px
 
 		img
 			height: 200px

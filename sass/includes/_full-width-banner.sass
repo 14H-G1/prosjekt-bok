@@ -1,11 +1,27 @@
 .full-width-banner
 	margin: 0 auto
 	background-color: $main-color
+	+clearfix
 
 	.head-elements, .footer-elements
 		max-width: $page-width
 		margin: 0 auto
 		padding: 10px 5px
+		+clearfix
+
+		a
+			float: left
+
+		nav
+			float: right
+
+			a
+				+custom-btn(white, black)
+
+		.btn-selected
+			+custom-btn-selected(white, black)
+
+	.head-elements
 
 		a h1
 			color: tint(black, 15%)
@@ -15,9 +31,14 @@
 			font-weight: 300
 			display: inline-block
 
-
 	.footer-elements
 
 		a h1
-			letter-spacing: 5px
-			color: shade($main-color, 10%)
+			color: shade($main-color, 5%)
+			font-family: $helvetica
+			margin: 0
+			display: inline-block
+
+		nav
+			a:nth-child(odd)
+				+custom-btn($main-red, white)
