@@ -9,7 +9,6 @@ var express			= require('express')
   , path        = require('path')
   , glob				= require('glob')
   , debug       = require('debug')('PEBB')
-  , logger      = require('morgan')
   , options			= require('./options.js')
   , verbose 		= true;
 
@@ -36,7 +35,6 @@ swig.setDefaults({
 });
 
 // Middlewares
-app.use(logger('dev'));
 app.use(body.json());
 app.use(body.urlencoded({extended: true}));
 app.use(cookies('some secret'));
