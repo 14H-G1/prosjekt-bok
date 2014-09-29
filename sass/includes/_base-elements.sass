@@ -28,7 +28,7 @@ section
 	padding: 0 5px
 	height: 100%
 	max-width: $page-width
-	margin: 15px auto
+	margin: 30px auto
 	display: block
 	+clearfix
 
@@ -38,13 +38,16 @@ section
 input[type="text"]
 	width: 100%
 	overflow: auto
-	margin: 0 0 10px 0
+	margin: 0 0 5px 0
 	background-color: #efefef
 	font-size: 16px
 	padding: 5px 15px
 	border: none
 	border-bottom: solid 2px #c9c9c9
 	transition: border 0.3s
+
+	&:last-child
+		margin: 0
 
 input[type="text"]:focus, input[type="text"].focus
 	border-bottom: solid 2px #969696

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PEBB - Pensumbøker billig</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	{% include 'body.header.html' %}
+
+	<section id="my-profile">
+		<img src="/img/profil.jpg" alt="">
+		<h2 id="name">Ola Nordmann</h2>
+		<p>Du har solgt 2 bøker og 2 bøker ligger fortsatt ute for salg.</p>
+	</section>
+
+	<section class="books">
+		<h2>Mine bøker</h2>
+		<a href="produkt.html" class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<p class="title" href="#">Descrete mathematics for programming</p>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">SOLGT</span> 250,-</p>
+		</a>
+		<a href="produkt.html" class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<p class="title" href="#">Descrete mathematics for programming</p>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">SOLGT</span> 250,-</p>
+		</a>
+		<a href="produkt.html" class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<p class="title" href="#">Descrete mathematics for programming</p>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</a>
+		<a href="produkt.html" class="book-thumb">
+			<img src="/img/dmc.jpg" alt="">
+			<p class="title" href="#">Descrete mathematics for programming</p>
+			<p class="author">Rod Haggarty</p>
+			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+		</a>
+	</section>
+
+	<section id="account-settings">
+		<h2>Brukervalg</h2>
+		<p>Slett bruker og alle assosierte bøker</p>
+		<a href="#">Slett bruker</a>
+	</section>
+
+	{% include 'body.footer.html' %}
+
+	<script type="text/javascript" src="js/fastclick.js"></script>
+	<script>
+		window.addEventListener('load', function() {
+		    FastClick.attach(document.body);
+		}, false);
+	</script>
+
+</body>
+</html>

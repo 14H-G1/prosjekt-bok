@@ -27,7 +27,7 @@ section {
   padding: 0 5px;
   height: 100%;
   max-width: 700px;
-  margin: 15px auto;
+  margin: 30px auto;
   display: block;
 }
 section:after {
@@ -43,13 +43,16 @@ section:after {
 input[type="text"] {
   width: 100%;
   overflow: auto;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
   background-color: #efefef;
   font-size: 16px;
   padding: 5px 15px;
   border: none;
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
+}
+input[type="text"]:last-child {
+  margin: 0;
 }
 
 input[type="text"]:focus, input[type="text"].focus {
@@ -114,6 +117,7 @@ input[type="text"]:focus, input[type="text"].focus {
 .full-width-banner .footer-elements a h1 {
   color: #5bb274;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 300;
   margin: 0;
   display: inline-block;
 }
@@ -135,23 +139,19 @@ input[type="text"]:focus, input[type="text"].focus {
 }
 
 .books {
-  padding: 0;
-}
-@media screen and (max-width: 640px) {
-  .books {
-    padding: 15px 2px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .books {
-    padding: 15px 2.5px;
-  }
+  padding: 5px 2.5px;
 }
 .books .book-thumb {
-  padding: 15px 5px;
+  padding: 0 2.5px;
+  margin: 10px 0;
   float: left;
   max-width: 25%;
   text-decoration: none;
+}
+@media screen and (max-width: 640px) {
+  .books .book-thumb {
+    margin: 5px 0;
+  }
 }
 .books .book-thumb .title {
   margin: 0;
@@ -185,13 +185,11 @@ input[type="text"]:focus, input[type="text"].focus {
 @media screen and (max-width: 640px) {
   .books .book-thumb {
     max-width: 33.3%;
-    padding: 15px 3px;
   }
 }
 @media screen and (max-width: 500px) {
   .books .book-thumb {
     max-width: 50%;
-    padding: 15px 2.5px;
   }
 }
 .books .book-thumb img {
@@ -224,10 +222,11 @@ input[type="text"]:focus, input[type="text"].focus {
   padding-right: 25px;
 }
 #choose-contact i:hover {
+  cursor: pointer;
   color: #60BC7B;
 }
 
-#ready-to-sell a:nth-child(odd) {
+#ready-to-sell a {
   background-color: #60BC7B;
   color: white;
   font-size: 12px;
@@ -240,16 +239,36 @@ input[type="text"]:focus, input[type="text"].focus {
   position: relative;
   float: right;
 }
-#ready-to-sell a:nth-child(odd):active {
+#ready-to-sell a:active {
   top: 5px;
   box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #488d5c;
 }
-#ready-to-sell a:nth-child(even) {
-  background-color: #FEC182;
+
+#my-profile img {
+  float: left;
+  width: 150px;
+}
+#my-profile h2 {
+  margin-left: 155px;
+}
+#my-profile p {
+  margin-left: 155px;
+}
+
+#account-settings:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#account-settings p {
+  float: left;
+}
+#account-settings a {
+  background-color: #FE9382;
   color: white;
   font-size: 12px;
   text-decoration: none;
-  box-shadow: inset 0px 1px 0px #fee0c0, 0px 5px 0px #cb9a68;
+  box-shadow: inset 0px 1px 0px #fec9c0, 0px 5px 0px #cb7568;
   border-radius: 25px;
   margin-left: 10px;
   padding: 10px 15px;
@@ -257,9 +276,9 @@ input[type="text"]:focus, input[type="text"].focus {
   position: relative;
   float: right;
 }
-#ready-to-sell a:nth-child(even):active {
+#account-settings a:active {
   top: 5px;
-  box-shadow: inset 0px 1px 0px #fee0c0, inset 0px -1px 0px #be9061;
+  box-shadow: inset 0px 1px 0px #fec9c0, inset 0px -1px 0px #be6e61;
 }
 
 /*# sourceMappingURL=style.css.map */
