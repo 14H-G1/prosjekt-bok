@@ -3,6 +3,7 @@ $main-color: #60BC7B
 $main-blue: #538D9E
 $main-red: #FE9382
 $main-orange: #FEC182
+$book-price: #961c00
 $page-width: 700px
 
 /* Base styles */
@@ -18,10 +19,7 @@ body
 h2
 	color: tint(black, 25%)
 
-p
-	color: tint(black, 35%)
-
-i
+p, i
 	color: tint(black, 35%)
 
 section
@@ -73,11 +71,3 @@ input[type="text"]:focus, input[type="text"].focus
 =custom-btn-selected($btn-bg-color, $btn-color)
 	top: 5px
 	box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), inset 0px -1px 0px shade($btn-bg-color, 25%) !important
-
-
-
-
-
-
-
-

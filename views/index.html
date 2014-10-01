@@ -11,79 +11,17 @@
 	{% include 'body.header.html' %}
 
 	<section class="books">
-		
-		<a href="produkt.html" class="book-thumb">
+		{% set productCount = 20 %}
+		{% set productCountAsArray = Array(productCount) %}
+
+		{% for x, y in productCountAsArray %}
+		<a href="produkt" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
 			<p class="title" href="#">Descrete mathematics for programming</p>
 			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
+			<p class="price"><span class="retail-price">600,-</span> 250,-</p>
 		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>		
+		{% endfor %}
 
 	</section>
 

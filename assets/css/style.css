@@ -1,3 +1,5 @@
+/* External lib */
+/* General styles */
 /* Global variables */
 /* Base styles */
 * {
@@ -12,10 +14,7 @@ body {
 h2 {
   color: #3f3f3f; }
 
-p {
-  color: #595959; }
-
-i {
+p, i {
   color: #595959; }
 
 section {
@@ -144,9 +143,9 @@ input[type="text"]:focus, input[type="text"].focus {
       float: right;
       margin: 5px 0;
       font-size: 24px;
-      font-weight: 300;
-      color: #FE9382; }
-      .books .book-thumb .price .new-price {
+      font-weight: thin;
+      color: #961c00; }
+      .books .book-thumb .price .retail-price {
         font-size: 14px;
         color: grey;
         text-decoration: line-through; }
@@ -162,6 +161,7 @@ input[type="text"]:focus, input[type="text"].focus {
       height: 200px;
       width: 100%; }
 
+/* Page spesific */
 #upload-img .file-container {
   height: 200px;
   width: 150px;
@@ -230,5 +230,37 @@ input[type="text"]:focus, input[type="text"].focus {
   #account-settings a:active {
     top: 5px;
     box-shadow: inset 0px 1px 0px #fec9c0, inset 0px -1px 0px #be6e61; }
+
+#product-info:after {
+  content: "";
+  display: table;
+  clear: both; }
+#product-info img {
+  float: left; }
+#product-info #book-info {
+  margin-left: 155px; }
+  #product-info #book-info p {
+    font-size: 16px; }
+  #product-info #book-info #title {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px; }
+  #product-info #book-info #author {
+    margin-top: 0; }
+  #product-info #book-info #price {
+    font-size: 24px;
+    color: #961c00; }
+    #product-info #book-info #price #retail-price {
+      font-size: 14px;
+      color: #FE9382;
+      text-decoration: line-through; }
+
+#kontakt-selger a, #del-bok a {
+  padding-right: 25px;
+  color: #595959;
+  text-decoration: none; }
+  #kontakt-selger a:hover, #del-bok a:hover {
+    cursor: pointer;
+    color: #60BC7B; }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,33 +5,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PEBB - Pensumbøker billig</title>
 	<link rel="stylesheet" href="/css/style.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 
 	{% include 'body.header.html' %}
 
-	<section id="sell-book">
-			<div id="results"></div>
-
-			<div id="book-info">
-				<input type="text" placeholder="Tittel">
-				<input type="text" placeholder="Utgitt">
-				<input type="text" placeholder="Pris">
-				<input type="text" placeholder="Hvordan er tilstanden til boken?">
-			</div>
-			
-			<a class="btn" href="#">legg ut for salg</a>
+	<section id="product-info">
+		<img src="img/dmc.jpg" alt="">
+		<div id="book-info">
+			<p id="title">Descrete mathematics for programming</p>
+			<p id="author">Av Rod Haggarty, <span id="release-date">2009</span></p>
+			<p id="price"><span id="retail-price">600,-</span > 250,-</p>
+		</div>
 	</section>
 
-	<section id="faq">
-		<h2>Hvordan fungerer dette?</h2>
-		<p>{{item}}<br/>{{id}}</p>
-		
-		<h2>Hvordan fjerner jeg en solgt bok?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, ducimus. Esse officia eos earum atque, fuga facilis animi tempora autem beatae impedit ipsam debitis nam ad, distinctio laborum nulla voluptas.</p>
-		
-		<h2>Hvordan kan dette være gratis?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa perspiciatis illo voluptatibus culpa, eos nemo beatae ducimus, consequuntur illum obcaecati maxime, possimus cumque alias pariatur vero aperiam. Quo, rem, debitis.</p>
+	<section id="kontakt-selger">
+		<p>Kom i kontakt med selger av boken</p>
+		<a href="http://facebook.com" class="fa fa-facebook fa-4x"></a>
+		<a href="http://twitter.com" class="fa fa-twitter fa-4x"></a>
+		<a href="mailto:mail@gmail.com" class="fa fa-envelope fa-4x"></a>
+		<a href="tel:1881" class="fa fa-phone fa-4x"></a>
+	</section>
+
+	<section id="del-bok">
+		<p>Del boken</p>
+		<a href="http://facebook.com" class="fa fa-facebook fa-4x"></a>
+		<a href="http://twitter.com" class="fa fa-twitter fa-4x"></a>
 	</section>
 
 	{% include 'body.footer.html' %}
