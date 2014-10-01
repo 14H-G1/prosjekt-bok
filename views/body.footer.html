@@ -3,7 +3,7 @@
 		<a href="/"><h1>2014 &copy; G1</h1></a>
 		<nav>
 			<a href="/">logg ut</a>
-			<a class="{% if id == 'profile' %}btn-selected{% endif %}" href="/profil">profil</a>
+			<a {% if id == 'profil' %}class="btn-selected"{% endif %} href="/profil">profil</a>
 		</nav>
 	</div>
 </div>

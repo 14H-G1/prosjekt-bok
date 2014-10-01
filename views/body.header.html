@@ -2,8 +2,8 @@
 	<div class="head-elements">
 		<a href="/"><h1>PEBB</h1></a>
 		<nav>
-			<a class="{% if id == 'selg' %}btn-selected{% endif %}" href="/selg">selg bok</a>
-			<a class="{% if id == 'sok' %}btn-selected{% endif %}" href="/sok">søk</a>
+			<a {% if id == 'selg' %}class="btn-selected"{% endif %} href="/selg">selg bok</a>
+			<a {% if id == 'sok' %}class="btn-selected"{% endif %} href="/sok">søk</a>
 		</nav>
 	</div>
 </div>
