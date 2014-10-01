@@ -12,12 +12,34 @@
 
 	<section class="books">
 		{% for book in listOfBooks %}
-		<a href="produkt" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">{{ book.title }}</p>
-			<p class="author">{{ book.seller }}</p>
-			<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
-		</a>
+		<div class="book-container">
+			<a href="produkt" class="book-thumb">
+				<img src="/img/dmc.jpg" alt="">
+				<p class="title" href="#">{{ book.title }}</p>
+				<p class="author">{{ book.authors }}</p>
+				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+			</a>
+		</div>
+		{% endfor %}
+		{% for book in listOfBooks %}
+		<div class="book-container">
+			<a href="produkt" class="book-thumb">
+				<img src="/img/dmc.jpg" alt="">
+				<p class="title" href="#">{{ book.title }}</p>
+				<p class="author">{{ book.authors }}</p>
+				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+			</a>
+		</div>
+		{% endfor %}
+		{% for book in listOfBooks %}
+		<div class="book-container">
+			<a href="produkt" class="book-thumb">
+				<img src="/img/dmc.jpg" alt="">
+				<p class="title" href="#">{{ book.title }}</p>
+				<p class="author">{{ book.authors }}</p>
+				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+			</a>
+		</div>
 		{% endfor %}
 
 	</section>

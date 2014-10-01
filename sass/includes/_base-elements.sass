@@ -4,7 +4,7 @@ $main-blue: #538D9E
 $main-red: #FE9382
 $main-orange: #FEC182
 $book-price: #961c00
-$page-width: 700px
+$page-width: 750px
 
 /* Base styles */
 *
@@ -15,6 +15,7 @@ $page-width: 700px
 body
 	font-family: $arial
 	margin: 0
+	background-color: tint($main-color, 95%)
 
 h2
 	color: tint(black, 25%)
@@ -37,7 +38,7 @@ input[type="text"]
 	width: 100%
 	overflow: auto
 	margin: 0 0 5px 0
-	background-color: #efefef
+	background-color: white
 	font-size: 16px
 	padding: 5px 15px
 	border: none
@@ -58,7 +59,7 @@ input[type="text"]:focus, input[type="text"].focus
 	font-size: 12px
 	text-decoration: none
 	box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), 0px 5px 0px shade($btn-bg-color, 20%)
-	border-radius: 25px
+	//border-radius: 25px
 	margin-left: 10px
 	padding: 10px 15px
 	display: inline-block

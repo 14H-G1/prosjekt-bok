@@ -34,15 +34,19 @@
 	.footer-elements
 
 		a h1
-			color: shade($main-color, 5%)
+			color: $main-color
 			font-family: $helvetica
 			font-weight: 300
 			margin: 0
 			display: inline-block
 
 		nav
-			a:nth-child(odd)
+			a
 				+custom-btn($main-red, white)
+			a:first-child
+				+custom-btn($main-blue, white)
+			a:last-child
+				+custom-btn(white, black)
 
 		.btn-selected
 			+custom-btn-selected($main-red, white)
