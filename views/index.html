@@ -11,15 +11,12 @@
 	{% include 'body.header.html' %}
 
 	<section class="books">
-		{% set productCount = 20 %}
-		{% set productCountAsArray = Array(productCount) %}
-
-		{% for x, y in productCountAsArray %}
+		{% for book in listOfBooks %}
 		<a href="produkt" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="retail-price">600,-</span> 250,-</p>
+			<p class="title" href="#">{{ book.title }}</p>
+			<p class="author">{{ book.seller }}</p>
+			<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
 		</a>
 		{% endfor %}
 

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PEBB - Pensumbøker billig</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -18,30 +18,22 @@
 
 	<section class="books">
 		<h2>Mine bøker</h2>
-		<a href="produkt.html" class="book-thumb">
+		{% if bookList == true %}
+			{% for book in books %}
+			<a href="produkt.html" class="book-thumb">
+				<img src="/img/dmc.jpg" alt="">
+				<p class="title" href="#">{{ book.title }}</p>
+				<p class="author">{{ book.authors }}</p>
+				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+			</a>
+			{% endfor %}
+		{% endif %}
+		<!--<a href="produkt.html" class="book-thumb">
 			<img src="/img/dmc.jpg" alt="">
 			<p class="title" href="#">Descrete mathematics for programming</p>
 			<p class="author">Rod Haggarty</p>
 			<p class="price"><span class="new-price">SOLGT</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">SOLGT</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
-		<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">600,-</span> 250,-</p>
-		</a>
+		</a>-->
 	</section>
 
 	<section id="account-settings">

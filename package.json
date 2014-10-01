@@ -2,6 +2,7 @@
 	"name": "PEBB",
 	"description": "PEnsum Bøker Billig",
 	"author": "Nataniel Pedersen <frisksitron @github>, Marcus Alexander Dahl <akethe @github>",
+	"private": true,
 
 	"dependencies": {
 		"body-parser": "1.8.*",

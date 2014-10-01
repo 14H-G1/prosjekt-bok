@@ -12,6 +12,9 @@ var express			= require('express')
   , options			= require('./options.js')
   , verbose 		= true;
 
+var auth        = require('./models/auth.js')
+  , db          = require('./models/database.js');
+
 /* 	assets/
  *		css
  *		js/
@@ -66,10 +69,43 @@ app.route = function(a, route) {
 // Routing
 glob("routes/*.js", {}, function (er, files) {
   files.forEach(function(file) {
-    app.route(require('./'+file)(options));
+    app.route(require('./'+file)(options,db));
     console.log('Route: '+file);
   });
 });
+
+// make test user
+/*var user = new db.userModel({
+  username: "marcus",
+  email: "marcus@pebb.no",
+  password: "abc123",
+  phone: 41418153
+});*/
+/*var book = new db.bookModel({
+  title: "Discrete Mathematics and Computing",
+  authors: ["Rod Haggarty"],
+  retailprice: 689,
+  price: 199,
+  qty: 1,
+  isbn: 9780201730470,
+  seller: "Nataniel"
+});
+
+book.save(function(err) {
+  if (err) {
+    console.log('error: ' + err);
+  }
+  else {
+    console.log('new book: ' + book.title);
+  }
+});*/
+
+/*db.bookModel.findByISBN(9780201730470, function(err, books) {
+  console.log(books);
+});*/
+/*db.bookModel.findBySeller('Marcus', function(err, books) {
+  console.log(books);
+});*/
 
 // export app logic
 module.exports	= app;
