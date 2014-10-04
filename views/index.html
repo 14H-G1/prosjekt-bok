@@ -15,43 +15,15 @@
 		<div class="book-container">
 			<a href="produkt" class="book-thumb">
 				<img src="/img/dmc.jpg" alt="">
-				<p class="title" href="#">{{ book.title }}</p>
+				<h1 class="title" href="#">{{ book.title }}</h1>
 				<p class="author">{{ book.authors }}</p>
 				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
 			</a>
 		</div>
 		{% endfor %}
-		{% for book in listOfBooks %}
-		<div class="book-container">
-			<a href="produkt" class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<p class="title" href="#">{{ book.title }}</p>
-				<p class="author">{{ book.authors }}</p>
-				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
-			</a>
-		</div>
-		{% endfor %}
-		{% for book in listOfBooks %}
-		<div class="book-container">
-			<a href="produkt" class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<p class="title" href="#">{{ book.title }}</p>
-				<p class="author">{{ book.authors }}</p>
-				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
-			</a>
-		</div>
-		{% endfor %}
-
 	</section>
 
 	{% include 'body.footer.html' %}
-
-	<script type="text/javascript" src="js/fastclick.js"></script>
-	<script>
-		window.addEventListener('load', function() {
-		    FastClick.attach(document.body);
-		}, false);
-	</script>
 
 </body>
 </html>

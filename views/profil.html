@@ -20,20 +20,16 @@
 		<h2>Mine bøker</h2>
 		{% if bookList == true %}
 			{% for book in books %}
-			<a href="produkt.html" class="book-thumb">
-				<img src="/img/dmc.jpg" alt="">
-				<p class="title" href="#">{{ book.title }}</p>
-				<p class="author">{{ book.authors }}</p>
-				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
-			</a>
+				<div class="book-container">
+					<a href="produkt" class="book-thumb">
+						<img src="/img/dmc.jpg" alt="">
+						<p class="title" href="#">{{ book.title }}</p>
+						<p class="author">{{ book.authors }}</p>
+						<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+					</a>
+				</div>
 			{% endfor %}
 		{% endif %}
-		<!--<a href="produkt.html" class="book-thumb">
-			<img src="/img/dmc.jpg" alt="">
-			<p class="title" href="#">Descrete mathematics for programming</p>
-			<p class="author">Rod Haggarty</p>
-			<p class="price"><span class="new-price">SOLGT</span> 250,-</p>
-		</a>-->
 	</section>
 
 	<section id="account-settings">
@@ -43,13 +39,6 @@
 	</section>
 
 	{% include 'body.footer.html' %}
-
-	<script type="text/javascript" src="js/fastclick.js"></script>
-	<script>
-		window.addEventListener('load', function() {
-		    FastClick.attach(document.body);
-		}, false);
-	</script>
 
 </body>
 </html>
