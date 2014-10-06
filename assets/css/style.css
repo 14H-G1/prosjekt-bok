@@ -32,7 +32,7 @@ section {
 .text-content {
   padding-bottom: 25px; }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
   width: 100%;
   overflow: auto;
   margin: 0 0 5px 0;
@@ -42,10 +42,11 @@ input[type="text"] {
   border: none;
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s; }
-  input[type="text"]:last-child {
+  input[type="text"]:last-child, input[type="password"]:last-child {
     margin: 0; }
 
-input[type="text"]:focus, input[type="text"].focus {
+input[type="text"]:focus, input[type="text"].focus,
+input[type="password"]:focus, input[type="password"].focus {
   border-bottom: solid 2px #969696;
   outline: none; }
 
@@ -187,7 +188,7 @@ input[type="text"]:focus, input[type="text"].focus {
       float: right;
       margin: 5px 0;
       font-size: 24px;
-      color: #961c00; }
+      color: #961C00; }
       .books .book-thumb .price .retail-price {
         font-size: 14px;
         color: grey;
@@ -195,33 +196,65 @@ input[type="text"]:focus, input[type="text"].focus {
     .books .book-thumb:hover .title {
       text-decoration: underline; }
 
-#login {
-  width: 400px;
-  background: #FFF;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+#login-modal {
+  background: #E9EAED;
+  padding: 14px 22px;
+  width: 600px;
+  position: relative;
   display: none; }
-  #login .header {
-    background: #DDD;
-    border-bottom: 1px solid #CCCCCC;
-    padding: 18px 18px 14px; }
-  #login .header h3 {
-    margin: 0;
-    padding: 0;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); }
-  #login form {
-    padding: 10px 0; }
-  #login .txt {
-    padding: 10px 20px; }
-    #login .txt input {
-      width: 220px;
-      height: 16px;
-      padding: 5px;
-      border: 1px solid #CCC; }
-    #login .txt label {
-      float: left;
-      width: 120px;
-      line-height: 28px;
-      font-size: 13px; }
+  #login-modal #login-modal-form {
+    margin-top: 13px; }
+    #login-modal #login-modal-form:after {
+      content: "";
+      display: table;
+      clear: both; }
+    #login-modal #login-modal-form #login-to-site {
+      background-color: #60BC7B;
+      color: white;
+      font-size: 12px;
+      text-decoration: none;
+      box-shadow: inset 0px 1px 0px #afddbd, 0px 5px 0px #4c9662;
+      margin-left: 10px;
+      padding: 10px 15px;
+      display: inline-block;
+      position: relative;
+      float: right; }
+      #login-modal #login-modal-form #login-to-site:active {
+        top: 5px;
+        box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #488d5c; }
+
+/* Facebook */
+.fb-icon-bg {
+  background: #354f88;
+  height: 37px;
+  margin: 0 0 -37px 0;
+  width: 41px; }
+
+.fb-icon-bg:after {
+  content: url(https://dl.dropboxusercontent.com/u/54149043/CssDeck/fb-icon.png);
+  display: block;
+  padding: 9px 10px 5px 15px; }
+
+.fb-bg {
+  background: #3b5998;
+  display: block;
+  height: 37px;
+  margin: 0 0 30px 41px;
+  width: 280px; }
+  .fb-bg a {
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    top: 10px;
+    left: 8px;
+    color: #fff; }
+
+.fb-bg:hover {
+  cursor: pointer; }
+
+.fb-bg:active {
+  background: #354f88; }
 
 /* Page spesific */
 #upload-img .file-container {
@@ -309,7 +342,7 @@ input[type="text"]:focus, input[type="text"].focus {
     margin-top: 0; }
   #product-info #book-info #price {
     font-size: 24px;
-    color: #961c00; }
+    color: #961C00; }
     #product-info #book-info #price #retail-price {
       font-size: 14px;
       color: #FE9382;
