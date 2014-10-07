@@ -27,9 +27,15 @@ section
 	padding: 0 5px
 	height: 100%
 	max-width: $page-width
-	margin: 30px auto
+	margin: 25px auto
 	display: block
 	+clearfix
+
+	@media screen and (max-width: 640px)
+		margin: 10px auto
+
+	@media screen and (max-width: 500px)
+		margin: 2.5px auto
 
 .text-content
 	padding-bottom: 25px
