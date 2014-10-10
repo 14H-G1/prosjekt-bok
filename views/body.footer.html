@@ -1,4 +1,4 @@
-<div class="full-width-banner">
+<footer class="full-width-banner">
 	<div class="footer-elements">
 		<a href="/"><h1>G1</h1></a>
 		<nav>
@@ -7,8 +7,9 @@
 			<a {% if id == 'profil' %}class="btn-selected"{% endif %} href="/profil">profil</a>
 		</nav>
 	</div>
-</div>
+</footer>
 
+<!-- Login modal -->
 <div id="login-modal">
     <h3 id="see-id">Logg inn eller registrer deg</h3>
     <div id="login-modal-form">
@@ -32,10 +33,10 @@
 </div>
 {% endif %}
 
-<script src="js/jquery.min.js"></script>
-<script src="js/lightboxme.js"></script>
-<script src="js/modalCtrl.js"></script>
-<script type="text/javascript" src="js/fastclick.js"></script>
+<script src="js/libraries.js"></script>
+<script src="js/functions.js"></script>
+
+<!-- Initiate fastclick.js -->
 <script>
 	window.addEventListener('load', function() {
 		FastClick.attach(document.body);

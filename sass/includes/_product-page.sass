@@ -1,35 +1,41 @@
-#product-info
+#product-info, #my-profile
     +clearfix
 
-    img
-        float: left
+    .product-container, .profile-container
+        padding: 5px
+        background-color: white
+        +clearfix
 
-    #book-info
-        margin-left: 155px
+        img
+            float: left
+            max-width: 150px
 
-        p
-            font-size: 16px
+        #book-info, #profile-info
+            margin-left: 155px
+            position: relative
+            +clearfix
 
-        #title
-            color: black
-            font-size: 24px
-            margin-bottom: 10px
+            #title, #name
+                font-size: 24px
+                margin: 0 5px 10px 0
 
-        #author
-            margin-top: 0
+            #author
+                margin-top: 0
 
-        #price
-            font-size: 24px
-            color: $book-price
+            #price
+                color: $book-price
+                font-size: 34px
+                margin: 0
+                bottom: 5px
+                right: 10px
+                position: absolute
 
-            #retail-price
-                font-size: 14px
-                color: $main-red
-                text-decoration: line-through
+                #retail-price
+                    font-size: 18px
+                    color: $main-red
+                    text-decoration: line-through
 
-
-
-#kontakt-selger, #del-bok
+#contact-seller, #share-book
 
     a
         padding-right: 25px

@@ -12,26 +12,34 @@
 	{% include 'body.header.html' %}
 
 	<section id="product-info">
-		<img src="img/dmc.jpg" alt="">
-		<div id="book-info">
-			<p id="title">Descrete mathematics for programming</p>
-			<p id="author">Av Rod Haggarty, <span id="release-date">2009</span></p>
-			<p id="price"><span id="retail-price">600,-</span > 250,-</p>
+		<div class="product-container">
+			<img src="img/dmc.jpg" alt="">
+			<div id="book-info">
+				<h1 id="title">Descrete mathematics for programming</h1>
+				<p id="author">Av Rod Haggarty, <span id="release-date">2009</span></p>
+				<p id="price"><span id="retail-price">600,-</span > 250,-</p>
+			</div>
 		</div>
 	</section>
 
-	<section id="kontakt-selger">
-		<p>Kom i kontakt med selger av boken</p>
-		<a href="http://facebook.com" class="fa fa-facebook fa-4x"></a>
-		<a href="http://twitter.com" class="fa fa-twitter fa-4x"></a>
-		<a href="mailto:mail@gmail.com" class="fa fa-envelope fa-4x"></a>
-		<a href="tel:1881" class="fa fa-phone fa-4x"></a>
+	<section id="contact-seller">
+		<div class="contact-container">
+			<h3>Kontakt { book.seller }</h3>
+			<a href="http://facebook.com" class="fa fa-facebook fa-4x"></a>
+			<a href="http://twitter.com" class="fa fa-twitter fa-4x"></a>
+			<a href="mailto:mail@gmail.com" class="fa fa-envelope fa-4x"></a>
+			<a href="tel:1881" class="fa fa-phone fa-4x"></a>
+		</div>
 	</section>
 
-	<section id="del-bok">
-		<p>Del boken</p>
+	<section id="share-book">
+		<h3>Del boken</h3>
 		<a href="http://facebook.com" class="fa fa-facebook fa-4x"></a>
 		<a href="http://twitter.com" class="fa fa-twitter fa-4x"></a>
+	</section>
+
+	<section id="map-view">
+		<div class="maps"><iframe style="pointer-events: none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1972.6067662070764!2d5.34963099999999!3d60.369136000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x463cfeace6223393%3A0x63214955f30aac37!2sH%C3%B8gskolen+i+Bergen!5e0!3m2!1sno!2sno!4v1412875926087" width="100%" height="300" frameborder="0" style="border:0"></iframe></div>
 	</section>
 
 	{% include 'body.footer.html' %}

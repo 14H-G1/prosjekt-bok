@@ -13,10 +13,10 @@
 
 	<section id="book-info">
 		<p>Fyll ut feltene under</p>
-		<input type="text" placeholder="Tittel">
-		<input type="text" placeholder="Utgitt">
-		<input type="text" placeholder="Pris">
-		<input type="text" placeholder="Hvordan er tilstanden til boken?">
+		<input type="text" name="title" placeholder="Tittel">
+		<input type="text" name="publishDate" placeholder="Utgitt">
+		<input type="text" name="price" placeholder="Pris">
+		<input type="text" name="condition" placeholder="Hvordan er tilstanden til boken?">
 	</section>
 
 	<section id="upload-img">
@@ -35,7 +35,7 @@
 	</section>
 
 	<section id="ready-to-sell" class="text-content">
-		<a href="#">legg ut for salg</a>
+		<a id="send-book" href="javascript:void(0)">legg ut for salg</a>
 	</section>
 
 	{% include 'body.footer.html' %}
