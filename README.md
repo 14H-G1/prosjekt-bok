@@ -47,7 +47,6 @@ PEBB is built using various node modules and MongoDB.
   "node-sass": "0.9.*",
   "swig": "1.4.*",
   "passport": "0.2.*",
-  "passport": "
   "passport-facebook": "1.0.3",
   "passport-local": "^1.0.*",
   "bcrypt-nodejs": "0.0.*",
