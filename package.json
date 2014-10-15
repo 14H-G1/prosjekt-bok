@@ -4,18 +4,19 @@
   "author": "Nataniel Pedersen <frisksitron @github>, Marcus Alexander Dahl <akethe @github>",
   "private": true,
   "dependencies": {
+    "bcrypt-nodejs": "0.0.*",
     "body-parser": "1.8.*",
     "cookie-parser": "1.3.*",
     "debug": "2.0.0",
     "express": "4.9.*",
     "express-session": "1.8.*",
     "glob": "4.0.*",
+    "mongoose": "3.8.*",
     "node-sass": "0.9.*",
-    "swig": "1.4.*",
     "passport": "0.2.*",
-    "passport-facebook": "1.0.3",
-    "bcrypt-nodejs": "0.0.*",
-    "mongoose": "3.8.*"
+    "passport-facebook": "1.0.*",
+    "passport-local": "^1.0.*",
+    "swig": "1.4.*"
   },
   "devDependencies": {
     "gulp": "^3.8.8",

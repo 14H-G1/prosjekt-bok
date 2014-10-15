@@ -1,28 +1,27 @@
 // initialize needed modules and objects
-var express			= require('express')
-  , session			= require('express-session')
-  , app					= express()
-  , swig				= require('swig')
-  , sass				= require('node-sass')
-  , cookies 		= require('cookie-parser')
-  , body				= require('body-parser')
-  , path        = require('path')
-  , glob				= require('glob')
-  , debug       = require('debug')('PEBB')
-  , options			= require('./options.js')
-  , verbose 		= true;
+var express	= require('express')
+  , session	= require('express-session')
+  , app		= express()
+  , passport	= require('passport')
+  , swig	= require('swig')
+  , sass	= require('node-sass')
+  , cookies 	= require('cookie-parser')
+  , body	= require('body-parser')
+  , glob	= require('glob')
+  , config	= require('./config.js')
+  , verbose 	= true;
 
-var auth        = require('./models/auth.js')
-  , db          = require('./models/database.js');
+var db          = require('./models/database.js')
+  , auth	= require('./models/passport.js')(passport);
 
 /* 	assets/
  *		css
  *		js/
- *		images/
+ *		img/
  *
  *	models/
  *	views/
- *	controllers/
+ *	routes/
  *
  *	sass/
  */
@@ -30,38 +29,40 @@ var auth        = require('./models/auth.js')
 // Sets rendering engine as SWIG for html files
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
-app.set('views', options.views);
+app.set('views', config.app.views);
+
 // caching
-app.set('view cache', false);   // false || true
+app.set('view cache', config.app.cache);   // false || true
 swig.setDefaults({
-    cache: false		// false || memory
+    cache: config.app.cache?'memory':false
 });
 
 // Middlewares
 app.use(body.json());
 app.use(body.urlencoded({extended: true}));
-app.use(cookies('some secret'));
+app.use(cookies(config.app.secrets.cookies));
 app.use(session({
-	secret: 'some secret here as well',
-	resave: true,
-	saveUninitialized: true
+    secret: config.app.secrets.session,
+    resave: true,
+    saveUninitialized: true
 }));
 
 // serve static assets
-app.use(express.static(options.assets));
+app.use(express.static(config.app.assets));
 
 // Routing function
 app.route = function(a, route) {
-	route = route || '';
+    route = route || '';
     for (var key in a) {
     	switch (typeof a[key]) {
-        case 'object': // { '/path': { ... }}
-          		app.route(a[key], route + key);
-          	break;
-        	case 'function': // get: function(){ ... }
-          		if (verbose) console.log('%s %s', key, route);
-          		app[key](route, a[key]);
-          	break;
+	    case 'object': // { '/path': { ... }}
+          	app.route(a[key], route + key);
+	    break;
+	
+	    case 'function': // get: function(){ ... }
+          	if (verbose) console.log('%s %s', key, route);
+          	app[key](route, a[key]);
+            break;
       	}
     }
 };
@@ -69,8 +70,7 @@ app.route = function(a, route) {
 // Routing
 glob("routes/*.js", {}, function (er, files) {
   files.forEach(function(file) {
-    app.route(require('./'+file)(options,db));
-    console.log('Route: '+file);
+    app.route(require('./'+file)(config,db));
   });
 });
 
@@ -82,12 +82,12 @@ glob("routes/*.js", {}, function (er, files) {
   phone: 41418153
 });*/
 /*var book = new db.bookModel({
-  title: "Discrete Mathematics and Computing",
-  authors: ["Rod Haggarty"],
-  retailprice: 689,
+  title: "Enda en bok her 2!",
+  authors: ["Writor"],
+  retailprice: 469,
   price: 199,
   qty: 1,
-  isbn: 9780201730470,
+  isbn: 978020535151,
   seller: "Nataniel"
 });
 

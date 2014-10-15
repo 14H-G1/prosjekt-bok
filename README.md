@@ -5,25 +5,32 @@ Prosjekt PEBB
 
 PEBB is an open e-commerce platform for selling and purchasing used curriculum books. You can see the website in action [here](http://pebb.no). If you find a bug, a pull request is much appriciated.
 
+PEBB is built using [Node.js](http://nodejs.org)
+
 ##Installation process
-First clone the git repository
+1) Clone the git repository
 ```
 $ git clone https://github.com/14H-G1/prosjekt-bok.git
 ```
-Then install dependencies
+2) Install dependencies
 ```
 $ cd projekt-bok
 $ npm update
 ```
-> Note that you will need a [MongoDB](http://mongodb.com) database
 
-Lastly run the app
+3) Before running the node application you need to setup a configuration
+> Note that you will need a [MongoDB](https://www.mongodb.org/) database
+```
+TO BE DONE
+```
+
+4) Run the node application
 ```
 $ node app
 ```
 
-##Prepearing a MogngoDB database
-Comming soon...
+##Preparing a MongoDB database
+
 
 ##More on dependencies
 PEBB is built using various node modules and MongoDB.
@@ -40,7 +47,9 @@ PEBB is built using various node modules and MongoDB.
   "node-sass": "0.9.*",
   "swig": "1.4.*",
   "passport": "0.2.*",
+  "passport": "
   "passport-facebook": "1.0.3",
+  "passport-local": "^1.0.*",
   "bcrypt-nodejs": "0.0.*",
   "mongoose": "3.8.*"
 }

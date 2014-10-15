@@ -1,11 +1,9 @@
-module.exports = function(options) {
+module.exports = function(options, db) {
 	var index = {
 		view: function(req, res) {
-			var db = require('../models/database');
-
 			db.bookModel.findAllBooks(function(err, books) {
 				res.render('index', {
-					title: options.index.title,
+					title: options.app.name,
 					id: 'index',
 					listOfBooks: books
 				});
