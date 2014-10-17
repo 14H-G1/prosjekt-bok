@@ -1,7 +1,4 @@
-/* External lib */
-/* General styles */
 /* Global variables */
-/* Base styles */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -13,18 +10,7 @@ body {
   height: 100%;
   background-color: #E9EAED; }
 
-h1 {
-  color: #191919; }
-
-h2 {
-  color: #333333; }
-
-h3 {
-  color: #3f3f3f; }
-
-p, i {
-  color: #595959; }
-
+/* Mixins */
 section {
   padding: 0 5px;
   height: 100%;
@@ -63,7 +49,79 @@ input[type="password"]:focus, input[type="password"].focus {
   border-bottom: solid 2px #969696;
   outline: none; }
 
-/* Mixins */
+h1 {
+  color: #191919; }
+
+h2 {
+  color: #333333; }
+
+h3 {
+  color: #3f3f3f; }
+
+h4 {
+  color: #4c4c4c; }
+
+p, i {
+  color: #595959; }
+
+.books {
+  padding: 0 2.5px; }
+  .books .book-container {
+    float: left;
+    width: 25%; }
+    @media screen and (max-width: 640px) {
+      .books .book-container {
+        width: 33.3%; } }
+    @media screen and (max-width: 500px) {
+      .books .book-container {
+        width: 50%; } }
+    @media screen and (max-width: 319px) {
+      .books .book-container {
+        width: 100%; } }
+  .books .book-thumb {
+    margin: 2.5px;
+    padding: 10px;
+    background-color: white;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    height: 324px; }
+    .books .book-thumb:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .books .book-thumb img {
+      max-height: 200px;
+      max-width: 180px;
+      display: block;
+      margin: 0 auto;
+      padding: 10px 0; }
+    .books .book-thumb .title {
+      margin: 5px 0;
+      font-size: 14px;
+      font-weight: 300;
+      color: #00408d;
+      text-decoration: none;
+      display: block; }
+    .books .book-thumb .author {
+      margin: 5px 0;
+      font-size: 12px;
+      font-weight: 300;
+      color: #333333; }
+    .books .book-thumb .price {
+      margin: 5px 0;
+      font-size: 24px;
+      color: #961C00;
+      position: absolute;
+      bottom: 5px;
+      right: 12.5px; }
+      .books .book-thumb .price .retail-price {
+        font-size: 14px;
+        color: grey;
+        text-decoration: line-through; }
+    .books .book-thumb:hover .title {
+      text-decoration: underline; }
+
 .full-width-banner {
   margin: 0 auto;
   background-color: #60BC7B; }
@@ -155,63 +213,27 @@ input[type="password"]:focus, input[type="password"].focus {
     top: 5px;
     box-shadow: inset 0px 1px 0px #fec9c0, inset 0px -1px 0px #be6e61 !important; }
 
-.books {
-  padding: 0 2.5px; }
-  .books .book-container {
-    float: left;
-    width: 25%; }
-    @media screen and (max-width: 640px) {
-      .books .book-container {
-        width: 33.3%; } }
-    @media screen and (max-width: 500px) {
-      .books .book-container {
-        width: 50%; } }
-    @media screen and (max-width: 319px) {
-      .books .book-container {
-        width: 100%; } }
-  .books .book-thumb {
-    margin: 2.5px;
-    padding: 10px;
-    background-color: white;
-    text-decoration: none;
-    display: block;
-    position: relative;
-    height: 324px; }
-    .books .book-thumb:after {
+.media-object {
+  padding: 5px;
+  background-color: white;
+  margin: 5px 0; }
+  .media-object:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .media-object img {
+    max-width: 150px;
+    float: left; }
+  .media-object .media-body {
+    margin-left: 155px;
+    position: relative; }
+    .media-object .media-body:after {
       content: "";
       display: table;
       clear: both; }
-    .books .book-thumb img {
-      max-height: 200px;
-      max-width: 180px;
-      display: block;
-      margin: 0 auto;
-      padding: 10px 0; }
-    .books .book-thumb .title {
-      margin: 5px 0;
-      font-size: 14px;
-      font-weight: 300;
-      color: #00408d;
-      text-decoration: none;
-      display: block; }
-    .books .book-thumb .author {
-      margin: 5px 0;
-      font-size: 12px;
-      font-weight: 300;
-      color: #333333; }
-    .books .book-thumb .price {
-      margin: 5px 0;
+    .media-object .media-body .media-head {
       font-size: 24px;
-      color: #961C00;
-      position: absolute;
-      bottom: 5px;
-      right: 12.5px; }
-      .books .book-thumb .price .retail-price {
-        font-size: 14px;
-        color: grey;
-        text-decoration: line-through; }
-    .books .book-thumb:hover .title {
-      text-decoration: underline; }
+      margin: 0 5px 10px 0; }
 
 #login-modal {
   background: #E9EAED;
@@ -299,7 +321,52 @@ input[type="password"]:focus, input[type="password"].focus {
 .fb-bg:active {
   background: #354f88; }
 
-/* Page spesific */
+#product-info #author {
+  margin-top: 0; }
+#product-info #price {
+  color: #961C00;
+  font-size: 34px;
+  margin: 0;
+  bottom: 5px;
+  right: 10px;
+  position: absolute; }
+  #product-info #price #retail-price {
+    font-size: 18px;
+    color: #FE9382;
+    text-decoration: line-through; }
+
+#my-books h2 {
+  padding: 0 2.5px; }
+
+#contact-seller a, #share-book a {
+  padding-right: 25px;
+  color: #595959;
+  text-decoration: none; }
+  #contact-seller a:hover, #share-book a:hover {
+    cursor: pointer;
+    color: #60BC7B; }
+
+#account-settings:after {
+  content: "";
+  display: table;
+  clear: both; }
+#account-settings p {
+  float: left; }
+#account-settings a {
+  background-color: #FE9382;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  box-shadow: inset 0px 1px 0px #fec9c0, 0px 5px 0px #cb7568;
+  margin-left: 10px;
+  padding: 10px 15px;
+  display: inline-block;
+  position: relative;
+  float: right; }
+  #account-settings a:active {
+    top: 5px;
+    box-shadow: inset 0px 1px 0px #fec9c0, inset 0px -1px 0px #be6e61; }
+
 #book-info .input-error {
   border-bottom: solid 2px #FE9382; }
 
@@ -343,72 +410,5 @@ input[type="password"]:focus, input[type="password"].focus {
   #ready-to-sell a:active {
     top: 5px;
     box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #488d5c; }
-
-#account-settings:after {
-  content: "";
-  display: table;
-  clear: both; }
-#account-settings p {
-  float: left; }
-#account-settings a {
-  background-color: #FE9382;
-  color: white;
-  font-size: 12px;
-  text-decoration: none;
-  box-shadow: inset 0px 1px 0px #fec9c0, 0px 5px 0px #cb7568;
-  margin-left: 10px;
-  padding: 10px 15px;
-  display: inline-block;
-  position: relative;
-  float: right; }
-  #account-settings a:active {
-    top: 5px;
-    box-shadow: inset 0px 1px 0px #fec9c0, inset 0px -1px 0px #be6e61; }
-
-#product-info:after, #my-profile:after {
-  content: "";
-  display: table;
-  clear: both; }
-#product-info .product-container, #product-info .profile-container, #my-profile .product-container, #my-profile .profile-container {
-  padding: 5px;
-  background-color: white; }
-  #product-info .product-container:after, #product-info .profile-container:after, #my-profile .product-container:after, #my-profile .profile-container:after {
-    content: "";
-    display: table;
-    clear: both; }
-  #product-info .product-container img, #product-info .profile-container img, #my-profile .product-container img, #my-profile .profile-container img {
-    float: left;
-    max-width: 150px; }
-  #product-info .product-container #book-info, #product-info .product-container #profile-info, #product-info .profile-container #book-info, #product-info .profile-container #profile-info, #my-profile .product-container #book-info, #my-profile .product-container #profile-info, #my-profile .profile-container #book-info, #my-profile .profile-container #profile-info {
-    margin-left: 155px;
-    position: relative; }
-    #product-info .product-container #book-info:after, #product-info .product-container #profile-info:after, #product-info .profile-container #book-info:after, #product-info .profile-container #profile-info:after, #my-profile .product-container #book-info:after, #my-profile .product-container #profile-info:after, #my-profile .profile-container #book-info:after, #my-profile .profile-container #profile-info:after {
-      content: "";
-      display: table;
-      clear: both; }
-    #product-info .product-container #book-info #title, #product-info .product-container #book-info #name, #product-info .product-container #profile-info #title, #product-info .product-container #profile-info #name, #product-info .profile-container #book-info #title, #product-info .profile-container #book-info #name, #product-info .profile-container #profile-info #title, #product-info .profile-container #profile-info #name, #my-profile .product-container #book-info #title, #my-profile .product-container #book-info #name, #my-profile .product-container #profile-info #title, #my-profile .product-container #profile-info #name, #my-profile .profile-container #book-info #title, #my-profile .profile-container #book-info #name, #my-profile .profile-container #profile-info #title, #my-profile .profile-container #profile-info #name {
-      font-size: 24px;
-      margin: 0 5px 10px 0; }
-    #product-info .product-container #book-info #author, #product-info .product-container #profile-info #author, #product-info .profile-container #book-info #author, #product-info .profile-container #profile-info #author, #my-profile .product-container #book-info #author, #my-profile .product-container #profile-info #author, #my-profile .profile-container #book-info #author, #my-profile .profile-container #profile-info #author {
-      margin-top: 0; }
-    #product-info .product-container #book-info #price, #product-info .product-container #profile-info #price, #product-info .profile-container #book-info #price, #product-info .profile-container #profile-info #price, #my-profile .product-container #book-info #price, #my-profile .product-container #profile-info #price, #my-profile .profile-container #book-info #price, #my-profile .profile-container #profile-info #price {
-      color: #961C00;
-      font-size: 34px;
-      margin: 0;
-      bottom: 5px;
-      right: 10px;
-      position: absolute; }
-      #product-info .product-container #book-info #price #retail-price, #product-info .product-container #profile-info #price #retail-price, #product-info .profile-container #book-info #price #retail-price, #product-info .profile-container #profile-info #price #retail-price, #my-profile .product-container #book-info #price #retail-price, #my-profile .product-container #profile-info #price #retail-price, #my-profile .profile-container #book-info #price #retail-price, #my-profile .profile-container #profile-info #price #retail-price {
-        font-size: 18px;
-        color: #FE9382;
-        text-decoration: line-through; }
-
-#contact-seller a, #share-book a {
-  padding-right: 25px;
-  color: #595959;
-  text-decoration: none; }
-  #contact-seller a:hover, #share-book a:hover {
-    cursor: pointer;
-    color: #60BC7B; }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,16 +11,16 @@
 	{% include 'body.header.html' %}
 
 	<section id="my-profile">
-		<div class="profile-container">
+		<div class="media-object">
 			<img src="/img/profil.jpg" alt="">
-			<div id="profile-info">
-				<h2 id="name">Ola Nordmann</h2>
-				<p>Du har solgt 2 bøker og 2 bøker ligger fortsatt ute for salg.</p>
+			<div class="media-body">
+				<h2 id="name" class="media-head">Ola Nordmann</h2>
+				<p>Du har tjent { seller.earned } på { seller.amountSold } bøker. Dette tilsvarer 3 store pizzaer fra Peppes, no affiliation.</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="books">
+	<section id="my-books" class="books">
 		<h2>Mine bøker</h2>
 		{% if bookList == true %}
 			{% for book in books %}
@@ -33,6 +33,8 @@
 					</a>
 				</div>
 			{% endfor %}
+		{% else %}
+			<h4>Du har ingen bøker for salg.</h4>
 		{% endif %}
 	</section>
 

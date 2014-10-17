@@ -31,7 +31,7 @@ gulp.task('cc-libs', function() {
 
 gulp.task('sass', function() {
     return gulp.src('sass/style.sass')
-        .pipe(sass())
+        .pipe(sass({ style: "expanded" }))
         .pipe(gulp.dest('assets/css'))
         .pipe(reload({ auto: false }));
 });
