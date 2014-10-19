@@ -9,5 +9,5 @@ app.set('port', config.app.port);
 
 // setup server
 var server = app.listen(app.get('port'), function() {
-  console.log('Server listening on port ' + server.address().port);
+  console.log('> '+config.app.name+' running on port: ' + server.address().port);
 });
