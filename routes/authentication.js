@@ -1,3 +1,9 @@
+/*  Authentication routing
+ *
+ *  1) Setup up passport with various authentication methods which Strategies use
+ *  2) Return routing logic
+ * */
+
 module.exports = function(options, db) {
     var passport = require('passport');
     
@@ -7,6 +13,7 @@ module.exports = function(options, db) {
     });
     
     var facebook = {        
+        
     };
     
     return {

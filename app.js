@@ -1,8 +1,8 @@
 // prepare debugging
 var debug   = require('debug')('PEBB');
-// import app logic
-var app     = require('./logic.js');
-var config  = require('./config.js'); 
+// get configuration and app logic
+var config  = require('./config.js');
+var app     = require('./logic.js')(config);
 
 // set port, default=8080
 app.set('port', config.app.port);

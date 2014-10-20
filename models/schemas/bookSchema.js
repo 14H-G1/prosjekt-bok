@@ -1,4 +1,3 @@
-
 module.exports = function(config, db) {
 
 	var bookSchema = new db.Schema({
@@ -8,13 +7,21 @@ module.exports = function(config, db) {
 		isbn: {type: Number, required: true}
 	});
 	
-	bookSchema.statics.findByISBN = function(ISBNnr, callback) {
-		return this.find({isbn: ISBNnr}, callback);
-	};
-	
-	bookSchema.statics.findAllBooks = function(callback) {
+	bookSchema.static('findByISBN', function(ISBNnr, callback) {
+		return this.findOne({isbn: ISBNnr}, callback);
+	});
+	bookSchema.static('findByPriceAbove', function(number, callback) {
+		return this.find({price: {$gt: number}}, callback);
+	});
+	bookSchema.static('findByPriceBelow', function(number, callback) {
+		return this.find({price: {$lt: number}}, callback);
+	});
+	bookSchema.static('findByPriceRange', function(min, max, callback) {
+		return this.find({price: {$gt: min, $lt: max}}, callback);
+	});
+	bookSchema.static('findAllBooks', function(callback) {
 		return this.find({}, callback);
-	};
+	});
 	
 	return bookSchema;	
 }

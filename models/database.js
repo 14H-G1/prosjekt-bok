@@ -2,17 +2,15 @@
  *	Database handling
  *
  *	1) Connects to MongoDB via Mongoose given an URI (see ~/config.js)
- *	2) Loads Schemas located at ~/models/schemas/*Schema.js
+ *	2) Loads Schemas located at ~/models/schemas/*Schema.js and export as models
+ *	3) Return DB logic
  * */
 
 module.exports = function (config) {
-
+  /* Load mongoose, and glob for utility. Store reference to this DB */ 
   var mongoose		= require('mongoose')
     , glob		= require('glob')
     , db 		= this;
-  
-  db.Schema = mongoose.Schema;
-  
 
   /*	Connects to the MongoDB using info from config
    * */
@@ -29,12 +27,15 @@ module.exports = function (config) {
       }
     }
   });
+  /* Store reference from Mongoose as shorthands */
   db.connection = mongoose.connection;
+  db.Schema = mongoose.Schema;
   
+  /*	Once connection is open and ready */
   db.connection.once('open', function callback () {
-    /*	Loads all Schemas from folder and models them using mongoose.
+    /*	Load all Schemas from folder and model them using mongoose.
      *	Passes on config and referance to this DB handler to each Model
-     *	so mongoose Schema object can be used
+     *	so mongoose Schema object can be referenced and used
      * */
     glob('models/schemas/*.js', {}, function (err, files) {
       /* go through each file found using glob() */

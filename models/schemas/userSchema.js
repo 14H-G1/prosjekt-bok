@@ -1,7 +1,7 @@
-bcrypt = require('bcrypt-nodejs');
-
 module.exports = function(config, db) {
 
+    bcrypt = require('bcrypt-nodejs');
+    
     var userSchema = new db.Schema({
         local: {
             email: String,
