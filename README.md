@@ -2,6 +2,7 @@ Prosjekt PEBB
 =========
 [![Build Status](https://travis-ci.org/14H-G1/prosjekt-bok.svg?branch=master)](https://travis-ci.org/14H-G1/prosjekt-bok)
 [![Dependencies](https://david-dm.org/14H-G1/prosjekt-bok.png)](https://david-dm.org/14H-G1/prosjekt-bok)
+[![devDependency Status](https://david-dm.org/14H-G1/prosjekt-bok/dev-status.svg)](https://david-dm.org/14H-G1/prosjekt-bok#info=devDependencies)
 
 PEBB is an open e-commerce platform for selling and purchasing used curriculum books. You can see the website in action [here](http://pebb.no). If you find a bug, a pull request is much appriciated.
 
