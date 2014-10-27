@@ -1,6 +1,6 @@
 {
   "name": "PEBB",
-  "description": "PEnsum Bøker Billig",
+  "description": "PEBB is an open e-commerce platform for selling and purchasing used curriculum books.",
   "author": "Nataniel Pedersen <frisksitron @github>, Marcus Alexander Dahl <akethe @github>",
   "private": true,
   "dependencies": {

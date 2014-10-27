@@ -25,21 +25,15 @@ $('.maps').on('click', onMapClickHandler);
 
 $(function() {
 
-    $('#open-login').click(function(e) {
-        $('#login-modal').lightbox_me({
-            centered: true,
-            onLoad: function() {
-                $('#login-modal-form').find('input:first').focus();
-            }
-        });
-        e.preventDefault();
-    });
+    /* default settings */
+    $('.venobox').venobox();
 
-    $('#open-upload').click(function(e) {
-        $('#upload-modal').lightbox_me({
-            centered: true
-        });
-        e.preventDefault();
+
+    /* custom settings */
+    $('.venobox_custom').venobox({
+        framewidth: '400px',        // default: ''
+        frameheight: '300px',       // default: ''
+        bgcolor: '#5dff5e',         // default: '#fff'
     });
 
 });
