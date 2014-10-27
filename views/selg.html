@@ -11,23 +11,52 @@
 
 	{% include 'body.header.html' %}
 
-	<section id="book-info">
-		<p>Fyll ut feltene under</p>
-		<input type="text" name="title" placeholder="Tittel">
-		<input type="text" name="publishDate" placeholder="Utgitt">
-		<input type="text" name="price" placeholder="Pris">
-		<input type="text" name="condition" placeholder="Hvordan er tilstanden til boken?">
+	<section id="sok">
+		<input type="text" name="search" placeholder="Søk">
+	</section>
+
+	<section id="sell-info">
+		<h2>Bokinformasjon</h2>
+
+		<div class="book-info">
+			<input type="text" name="title" placeholder="Tittel">
+			<input type="text" name="authors" placeholder="Forfattere">
+			<input type="text" name="publishDate" placeholder="Utgivelsesår">
+		</div>
+
+		<div class="condition-info">
+			<p>Tilstanden på boken er</p>
+			<select name="" id="">
+				<option value="4">veldig bra</option>
+				<option value="3">bra</option>
+				<option value="2">ok</option>
+				<option value="1">dårlig</option>
+			</select>
+		</div>
+
+		<div class="price-info">
+			<input type="text" name="price" placeholder="Pris">
+			<p id="price-tip">På akadmeika.no koster boken { retailPrice }, vi anbefaler at du tar kr { (retailPrice / 2) +/- bookCondition }.</p>
+		</div>
+
 	</section>
 
 	<section id="upload-img">
-		<p>Legg til et eller flere bilder</p>
-		<a id="open-upload" class="file-container">
-			<i class="fa fa-plus fa-3x"></i>
-		</a>
+		<h2>Legg til et eller flere bilder</h2>
+		<div id="images">
+			<div id="first-image">
+				<div id="open-upload"></div>
+				<img id="image-preview" src="#" alt="Book image" />
+			</div>
+			<div id="second-image">
+				<div id="open-upload"></div>
+				<img id="image-preview" src="#" alt="Book image" />
+			</div>
+		</div>
 	</section>
 
 	<section id="choose-contact">
-		<p>Velg hvordan du vil bli kontaktet</p>
+		<h2>Velg hvordan du vil bli kontaktet</h2>
 		<i class="fa fa-facebook fa-4x"></i>
 		<i class="fa fa-twitter fa-4x"></i>
 		<i class="fa fa-envelope fa-4x"></i>

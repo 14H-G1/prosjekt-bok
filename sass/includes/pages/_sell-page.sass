@@ -1,18 +1,51 @@
-#book-info
+#sell-info
+
+	div
+		margin: 10px 0
 
 	.input-error
 		border-bottom: solid 2px $main-red
 
-#upload-img
+	.condition-info
+		display: flex
 
-	.file-container
+		select
+			border: 0
+			background-color: $bg-color
+			font-size: 16px
+			letter-spacing: -1px
+
+			&:focus
+				outline: none
+
+	.price-info
+
+		#price-tip
+			font-size: 12px
+			margin-top: 5px
+			color: tint(black, 50%)
+
+#upload-img
+	#images
+
+		#first-image
+			display: inline-block
+
+		#second-image
+			display: none
+
+	#image-preview
+		height: 200px
+		width: 150px
+		display: none
+
+	#open-upload
 		height: 200px
 		width: 150px
 		background-color: shade(white, 5%)
 		border-width: 2px
 		border-color: shade(white, 20%)
 		border-style: dashed
-		display: inline-block
 
 		i
 			padding: 50% 38%
