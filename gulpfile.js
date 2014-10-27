@@ -8,22 +8,21 @@ var reload      = require('gulp-livereload');
 var uglify      = require('gulp-uglify');
 
 gulp.task('hint', function() {
-    return gulp.src('assets/js/*')
+    return gulp.src('assets/js/partials/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(reload({ auto: false }));
 });
 
-gulp.task('cc-func', function() {
-    return gulp.src('assets/js/functions/*.js')
-        .pipe(concat('functions.js'))
+gulp.task('cc-glob', function() {
+    return gulp.src('assets/js/partials/*.js')
+        .pipe(concat('global.js'))
         .pipe(gulp.dest('assets/js/'));
 });
 
 gulp.task('cc-libs', function() {
-    return gulp.src(['assets/js/libraries/jquery.min.js',
-                     'assets/js/libraries/lightboxme.js',
-                     'assets/js/libraries/fastclick.js'])
+    return gulp.src(['bower_components/jquery/dist/jquery.min.js',
+                     'bower_components/fastclick/lib/fastclick.js'])
         .pipe(concat('libraries.js'))
         .pipe(uglify())
         .pipe(gulp.dest('assets/js/'));
@@ -45,8 +44,7 @@ gulp.task('server', function() {
 gulp.task('front', function() {
     reload.listen();
     gulp.watch('sass/**/*.sass', ['sass']);
-    gulp.watch('assets/js/functions/*.js', ['hint', 'cc-func']);
-    gulp.watch('assets/js/libraries/*.js', ['cc-libs']);
+    gulp.watch('assets/js/partials/*.js', ['cc-glob', 'hint']);
     gulp.watch('views/**').on('change', reload.changed);
 });
 
