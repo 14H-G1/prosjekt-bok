@@ -12,6 +12,7 @@ body {
   background-color: #E9EAED;
 }
 
+/* Grid system for books view */
 /* Sitewide button base */
 section {
   padding: 0 5px;
@@ -86,24 +87,59 @@ p, i, select {
 }
 .books .book-container {
   float: left;
-  width: 25%;
+  width: 24.25%;
 }
-@media screen and (max-width: 640px) {
+.books .book-container:nth-child(n) {
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+.books .book-container:nth-child(4n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 700px) {
   .books .book-container {
-    width: 33.3%;
+    float: left;
+    width: 32.66667%;
+  }
+  .books .book-container:nth-child(n) {
+    margin-right: 1%;
+    margin-bottom: 1%;
+  }
+  .books .book-container:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 540px) {
   .books .book-container {
-    width: 50%;
+    float: left;
+    width: 49.5%;
+  }
+  .books .book-container:nth-child(n) {
+    margin-right: 1%;
+    margin-bottom: 1%;
+  }
+  .books .book-container:nth-child(2n) {
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }
-@media screen and (max-width: 319px) {
+@media (max-width: 400px) {
   .books .book-container {
+    float: left;
     width: 100%;
   }
+  .books .book-container:nth-child(n) {
+    margin-right: 0%;
+    margin-bottom: 0%;
+  }
+  .books .book-container:nth-child(1n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
 }
-.books .book-thumb {
+.books .book-container .book-thumb {
   margin: 2.5px;
   padding: 10px;
   background-color: white;
@@ -112,19 +148,19 @@ p, i, select {
   position: relative;
   height: 324px;
 }
-.books .book-thumb:after {
+.books .book-container .book-thumb:after {
   content: "";
   display: table;
   clear: both;
 }
-.books .book-thumb img {
+.books .book-container .book-thumb img {
   max-height: 200px;
-  max-width: 180px;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
   padding: 10px 0;
 }
-.books .book-thumb .title {
+.books .book-container .book-thumb .title {
   margin: 5px 0;
   font-size: 14px;
   font-weight: 300;
@@ -132,13 +168,13 @@ p, i, select {
   text-decoration: none;
   display: block;
 }
-.books .book-thumb .author {
+.books .book-container .book-thumb .author {
   margin: 5px 0;
   font-size: 12px;
   font-weight: 300;
   color: #333333;
 }
-.books .book-thumb .price {
+.books .book-container .book-thumb .price {
   margin: 5px 0;
   font-size: 24px;
   color: #961C00;
@@ -146,12 +182,12 @@ p, i, select {
   bottom: 5px;
   right: 12.5px;
 }
-.books .book-thumb .price .retail-price {
+.books .book-container .book-thumb .price .retail-price {
   font-size: 14px;
   color: grey;
   text-decoration: line-through;
 }
-.books .book-thumb:hover .title {
+.books .book-container .book-thumb:hover .title {
   text-decoration: underline;
 }
 

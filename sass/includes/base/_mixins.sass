@@ -1,3 +1,15 @@
+/* Grid system for books view */
+=grid-machine($perRow, $margin)
+    float: left
+    width: ((100% - (($perRow - 1) * $margin)) / $perRow)
+
+    &:nth-child(n)
+        margin-right: $margin
+        margin-bottom: $margin
+    &:nth-child(#{$perRow}n)
+        margin-right: 0
+        margin-bottom: 0
+
 /* Sitewide button base*/
 =custom-btn($btn-bg-color, $btn-color)
     background-color: $btn-bg-color
