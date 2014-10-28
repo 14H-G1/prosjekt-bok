@@ -404,6 +404,32 @@ p, i, select {
   display: table;
   clear: both;
 }
+.full-width-banner .call-to-action h1 {
+  margin-top: 0;
+  font-size: 36px;
+  color: white;
+}
+.full-width-banner .call-to-action h4 {
+  color: white;
+}
+.full-width-banner .call-to-action a {
+  background-color: #538D9E;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  box-shadow: inset 0px 1px 0px #a9c6ce, 0px 5px 0px #42707e;
+  margin-left: 10px;
+  padding: 10px 15px;
+  display: inline-block;
+  position: relative;
+}
+.full-width-banner .call-to-action a:active {
+  top: 5px;
+  box-shadow: inset 0px 1px 0px #a9c6ce, inset 0px -1px 0px #3e6976;
+}
+.full-width-banner .call-to-action a:nth-child(3) {
+  margin-left: 0;
+}
 
 .media-object {
   padding: 5px;
