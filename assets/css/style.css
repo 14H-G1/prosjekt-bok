@@ -124,7 +124,7 @@ p, i, select {
 .books .book-container:nth-child(4n+1) {
   clear: left;
 }
-@media (max-width: 700px) {
+@media (max-width: 700px) and (min-width: 540px) {
   .books .book-container {
     float: left;
     display: block;
@@ -142,7 +142,7 @@ p, i, select {
     clear: left;
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 540px) and (min-width: 400px) {
   .books .book-container {
     float: left;
     display: block;
@@ -160,7 +160,7 @@ p, i, select {
     clear: left;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 400px) and (min-width: 0px) {
   .books .book-container {
     float: left;
     display: block;
@@ -316,6 +316,12 @@ p, i, select {
   font-size: 36px;
   color: white;
 }
+.full-width-banner .about-pebb h2 {
+  color: white;
+}
+.full-width-banner .about-pebb p {
+  color: #d8d8d8;
+}
 .full-width-banner .about-pebb .thing {
   float: left;
   display: block;
@@ -386,6 +392,18 @@ p, i, select {
 .full-width-banner .about-us .person:nth-child(7n+1) {
   clear: left;
 }
+.full-width-banner .call-to-action {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 65px 5px;
+  text-align: center;
+}
+.full-width-banner .call-to-action:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 .media-object {
   padding: 5px;
@@ -413,6 +431,78 @@ p, i, select {
 .media-object .media-body .media-head {
   font-size: 24px;
   margin: 0 5px 10px 0;
+}
+
+footer {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 50px auto;
+}
+footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+footer .link-col {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+footer .link-col:last-child {
+  margin-right: 0;
+}
+@media (max-width: 540px) {
+  footer .link-col {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+  }
+  footer .link-col:last-child {
+    margin-right: 0;
+  }
+  footer .link-col:nth-child(2n) {
+    margin-right: 0;
+  }
+  footer .link-col:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media (max-width: 400px) {
+  footer .link-col {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  footer .link-col:last-child {
+    margin-right: 0;
+  }
+  footer .link-col:nth-child(1n) {
+    margin-right: 0;
+  }
+  footer .link-col:nth-child(1n+1) {
+    clear: left;
+  }
+}
+footer .link-col h3 {
+  text-transform: uppercase;
+}
+footer .link-col ul {
+  padding: 0;
+}
+footer .link-col li {
+  list-style: none;
+}
+footer .link-col li a {
+  color: #60BC7B;
+}
+footer .link-col li a:hover {
+  color: #519f68;
 }
 
 #product-info #author {
