@@ -3,8 +3,10 @@
 
 	.book-container
 		+span-columns(3)
-		+omega(4n)
 		margin-bottom: 20px
+
+		@media (min-width: 700px)
+			+omega(4n)
 
 		@media (max-width: 700px) and (min-width: 540px)
 			+span-columns(4)

@@ -118,11 +118,13 @@ p, i, select {
 .books .book-container:last-child {
   margin-right: 0;
 }
-.books .book-container:nth-child(4n) {
-  margin-right: 0;
-}
-.books .book-container:nth-child(4n+1) {
-  clear: left;
+@media (min-width: 700px) {
+  .books .book-container:nth-child(4n) {
+    margin-right: 0;
+  }
+  .books .book-container:nth-child(4n+1) {
+    clear: left;
+  }
 }
 @media (max-width: 700px) and (min-width: 540px) {
   .books .book-container {
@@ -320,7 +322,7 @@ p, i, select {
   color: white;
 }
 .full-width-banner .about-pebb p {
-  color: #d8d8d8;
+  color: #e5e5e5;
 }
 .full-width-banner .about-pebb .thing {
   float: left;
@@ -495,23 +497,6 @@ footer .link-col:last-child {
     margin-right: 0;
   }
   footer .link-col:nth-child(2n+1) {
-    clear: left;
-  }
-}
-@media (max-width: 400px) {
-  footer .link-col {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
-  }
-  footer .link-col:last-child {
-    margin-right: 0;
-  }
-  footer .link-col:nth-child(1n) {
-    margin-right: 0;
-  }
-  footer .link-col:nth-child(1n+1) {
     clear: left;
   }
 }
