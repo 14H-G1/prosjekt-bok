@@ -1,16 +1,29 @@
 .full-width-banner
-	margin: 0 auto
+	+outer-container(100%)
 	background-color: $main-color
 	+clearfix
 
-	.head-elements, .footer-elements
-		max-width: $page-width
+	&:nth-child(5)
+		background-color: $bg-color
+
+	.head-elements
+		+outer-container($page-width)
 		margin: 0 auto
-		padding: 10px 5px
+		padding: 15px 5px 12px 5px
 		+clearfix
 
-		a
-			float: left
+		h1
+
+			font-family: $helvetica
+			margin: 0
+			letter-spacing: 10px
+			font-weight: 300
+			display: inline-block
+
+			a
+				color: tint(black, 15%)
+				text-decoration: none
+				float: left
 
 		nav
 			float: right
@@ -21,32 +34,43 @@
 		.btn-selected
 			+custom-btn-selected(white, black)
 
-	.head-elements
+	.about-pebb
+		+outer-container($page-width)
+		padding: 65px 0
+		text-align: center
 
-		a h1
-			color: tint(black, 15%)
-			font-family: $helvetica
-			margin: 0
-			letter-spacing: 10px
-			font-weight: 300
-			display: inline-block
+		h1
+			margin-top: 0
+			font-size: 36px
+			color: white
 
-	.footer-elements
 
-		a h1
-			color: $main-color
-			font-family: $helvetica
-			font-weight: 300
-			margin: 0
-			display: inline-block
 
-		nav
-			a
-				+custom-btn($main-red, white)
-			a:first-child
-				+custom-btn($main-blue, white)
-			a:last-child
-				+custom-btn(white, black)
+		.thing
+			+span-columns(4)
+			+omega(6n)
 
-		.btn-selected
-			+custom-btn-selected($main-red, white)
+			@media (max-width: 400px)
+				+span-columns(12)
+				+omega(1n)
+
+			i
+				color: $bg-color
+
+	.about-us
+		+outer-container($page-width)
+		padding: 65px 5px
+		text-align: center
+
+		p
+			padding: 0 0 25px 0
+			line-height: 25px
+
+		img
+
+			width: 100%
+			border-radius: 100%
+
+		.person
+			+span-columns(3)
+			+omega(7n)

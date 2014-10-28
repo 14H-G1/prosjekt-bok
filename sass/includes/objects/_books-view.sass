@@ -1,20 +1,27 @@
 .books
-	padding: 0 2.5px
+	+outer-container($page-width)
 
 	.book-container
-		+grid-machine(4, 1%)
+		+span-columns(3)
+		+omega(4n)
+		margin-bottom: 20px
 
 		@media (max-width: 700px)
-			+grid-machine(3, 1%)
+			+span-columns(4)
+			+omega(3n)
+			margin-bottom: 15px
 
 		@media (max-width: 540px)
-			+grid-machine(2, 1%)
+			+span-columns(6)
+			+omega(2n)
+			margin-bottom: 10px
 
 		@media (max-width: 400px)
-			+grid-machine(1, 0%)
+			+span-columns(12)
+			+omega(1n)
+			margin-bottom: 5px
 
 		.book-thumb
-			margin: 2.5px
 			padding: 10px
 			background-color: white
 			text-decoration: none

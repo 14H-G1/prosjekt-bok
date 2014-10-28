@@ -35,6 +35,12 @@ gulp.task('sass', function() {
         .pipe(reload({ auto: false }));
 });
 
+gulp.task('move-libs', function() {
+    return gulp.src(['bower_components/bourbon/**',
+                     'bower_components/neat/**'], {base: './bower_components'})
+        .pipe(gulp.dest('sass/libraries'));
+});
+
 gulp.task('server', function() {
     /* Automatically restarts server on change */
     nodemon({ script: 'app.js' });
