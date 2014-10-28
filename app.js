@@ -4,7 +4,7 @@ var debug = require('debug')('PEBB');
 var app   = require('./logic');
 
 // set port, default=8080
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 80);
 
 // setup server
 var server = app.listen(app.get('port'), function() {
