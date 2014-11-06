@@ -23,21 +23,6 @@ var onMapClickHandler = function (event) {
 // Enable map zooming with mouse scroll when the user clicks the map
 $('.maps').on('click', onMapClickHandler);
 
-$(function() {
-
-    /* default settings */
-    $('.venobox').venobox();
-
-
-    /* custom settings */
-    $('.venobox_custom').venobox({
-        framewidth: '400px',        // default: ''
-        frameheight: '300px',       // default: ''
-        bgcolor: '#5dff5e',         // default: '#fff'
-    });
-
-});
-
 function validateInput(selector, lengthLimit) {
     /* Checks if the length of selector is over the limit,
      * and responds with adding/removing error class */

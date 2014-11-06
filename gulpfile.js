@@ -35,31 +35,24 @@ gulp.task('sass', function() {
         .pipe(reload({ auto: false }));
 });
 
-gulp.task('move-libs', function() {
-    return gulp.src(['bower_components/bourbon/**',
-                     'bower_components/neat/**'], {base: './bower_components'})
-        .pipe(gulp.dest('sass/libraries'));
-});
-
 gulp.task('server', function() {
     /* Automatically restarts server on change */
     nodemon({ script: 'app.js' });
 });
 
-/* For front-end dev */
 gulp.task('front', function() {
+    /* For front-end dev */
     reload.listen();
     gulp.watch('sass/**/*.sass', ['sass']);
     gulp.watch('assets/js/partials/*.js', ['cc-glob', 'hint']);
     gulp.watch('views/**').on('change', reload.changed);
 });
 
-/* For back-end dev */
 gulp.task('back', ['server'], function() {
+    /* For back-end dev */
 
 });
 
-gulp.task('default', function() {
-    gulp.watch('sass/**/*.sass', ['sass']);
-    gulp.watch('assets/js/*.js', ['hint']);
+gulp.task('default', ['cc-glob', 'cc-libs', 'sass', 'hint'], function() {
+
 });

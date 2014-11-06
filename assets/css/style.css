@@ -512,6 +512,7 @@ footer .link-col ul {
 }
 footer .link-col li {
   list-style: none;
+  padding-bottom: 15px;
 }
 footer .link-col li a {
   color: #60BC7B;

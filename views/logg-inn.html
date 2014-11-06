@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="no">
+{% include 'head.html' %}
+
+<body>
+
+    <section id="login">
+        <h1>Logg inn eller registrer deg</h1>
+
+        <input name="email" type="text" placeholder="E-post">
+        <input name="password" type="password" placeholder="Passord">
+
+        <a type="submit" id="login-btn">logg inn</a>
+
+        <h3>Føler du deg holdt utenfor?</h3>
+
+        <div class="fb-icon-bg"></div>
+        <div class="fb-bg">
+            <a href="#login-fb">Registerer deg med FaceBook</a>
+        </div>
+    </section>
+
+    {% include 'body.footer.html' %}
+
+</body>
+</html>
