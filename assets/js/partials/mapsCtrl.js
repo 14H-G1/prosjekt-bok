@@ -5,7 +5,7 @@ var onMapMouseleaveHandler = function (event) {
     that.on('click', onMapClickHandler);
     that.off('mouseleave', onMapMouseleaveHandler);
     that.find('iframe').css("pointer-events", "none");
-}
+};
 
 var onMapClickHandler = function (event) {
     var that = $(this);
@@ -18,7 +18,7 @@ var onMapClickHandler = function (event) {
 
     // Handle the mouse leave event
     that.on('mouseleave', onMapMouseleaveHandler);
-}
+};
 
 // Enable map zooming with mouse scroll when the user clicks the map
 $('.maps').on('click', onMapClickHandler);

@@ -34,7 +34,7 @@ $(function() {
 
             reader.onload = function (e) {
                 $('#image-preview').attr('src', e.target.result);
-            }
+            };
 
             reader.readAsDataURL(input.files[0]);
         }
