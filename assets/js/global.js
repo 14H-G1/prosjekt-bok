@@ -1,4 +1,4 @@
-var onMapClickHandler, onMapMouseleaveHandler, readURL, validateInput;
+var onMapClickHandler, onMapMouseleaveHandler, validateInput;
 
 onMapMouseleaveHandler = function(event) {
   var that;
@@ -26,17 +26,6 @@ validateInput = function(selector, lengthLimit) {
   }
 };
 
-readURL = function(input) {
-  var reader;
-  if (input.files && input.files[0]) {
-    reader = new FileReader();
-    reader.onload = function(e) {
-      $("#image-preview").attr("src", e.target.result);
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-};
-
 $("input[type=text]").on("keyup", function() {
   console.log($(this).val());
   validateInput("input[name=title]", 60);
@@ -49,12 +38,5 @@ $(".fa").click(function() {
 });
 
 $("#send-book").click(function() {
-  alert("Ikke implementert.");
-});
-
-$("#inputImage").change(function() {
-  readURL(this);
-  $("#open-upload").hide();
-  $("#image-preview").css("display", "inline-block");
-  $("#second-image").css("display", "inline-block");
+  return alert("Ikke implementert.");
 });

@@ -6,6 +6,7 @@
 
 	{% include 'body.nav.html' %}
 
+	<form method="post" enctype="multipart/form-data" action="/submit-book">
 	<section id="sell-info">
 		<h2>Bokinformasjon</h2>
 
@@ -27,7 +28,6 @@
 
 		<div class="price-info">
 			<input type="text" name="price" placeholder="Pris">
-			<p id="price-tip">På akadmeika.no koster boken { retailPrice }, vi anbefaler at du tar kr { (retailPrice / 2) +/- bookCondition }.</p>
 		</div>
 
 	</section>
@@ -35,14 +35,7 @@
 	<section id="upload-img">
 		<h2>Legg til et eller flere bilder</h2>
 		<div id="images">
-			<div id="first-image">
-				<div id="open-upload"></div>
-				<img id="image-preview" src="#" alt="Book image" />
-			</div>
-			<div id="second-image">
-				<div id="open-upload"></div>
-				<img id="image-preview" src="#" alt="Book image" />
-			</div>
+			<input type="file" name="thumbnail">
 		</div>
 	</section>
 
@@ -55,8 +48,9 @@
 	</section>
 
 	<section id="ready-to-sell" class="text-content">
-		<a id="send-book" href="javascript:void(0)">legg ut for salg</a>
+		<input type="submit">
 	</section>
+	</form>
 
 	{% include 'body.footer.html' %}
 

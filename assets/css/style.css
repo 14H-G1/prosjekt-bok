@@ -644,7 +644,7 @@ footer .link-col li a:hover {
   color: #bfbfbf;
 }
 
-#ready-to-sell a {
+#ready-to-sell input {
   background-color: #60BC7B;
   color: white;
   font-size: 12px;
@@ -656,7 +656,7 @@ footer .link-col li a:hover {
   position: relative;
   float: right;
 }
-#ready-to-sell a:active {
+#ready-to-sell input:active {
   top: 5px;
   box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #488d5c;
 }
