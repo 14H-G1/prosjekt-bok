@@ -1,50 +1,40 @@
-function validateInput(selector, lengthLimit) {
-    /* Checks if the length of selector is over the limit,
-     * and responds with adding/removing error class */
-    if ($(selector).val().length > lengthLimit)
-        $(selector).addClass("input-error");
-    else
-        $(selector).removeClass("input-error");
-}
+validateInput = (selector, lengthLimit) ->
+	# Checks if the length of selector is over the limit,
+	# * and responds with adding/removing error class
+	if $(selector).val().length > lengthLimit
+		$(selector).addClass "input-error"
+	else
+		$(selector).removeClass "input-error"
+	return
 
-$(function() {
-    /* Check input fields */
-    $("input[type=text]").on('keyup', function() {
-        console.log($(this).val());
+readURL = (input) ->
+	if input.files and input.files[0]
+		reader = new FileReader()
+		reader.onload = (e) ->
+			$("#image-preview").attr "src", e.target.result
+			return
 
-        /* Validating inputs */
-        validateInput("input[name=title]", 60);
-        validateInput("input[name=publishDate]", 4);
-        validateInput("input[name=price]", 4);
-    });
+		reader.readAsDataURL input.files[0]
+	return
 
-    /* Register when contact icons clicked */
-    $(".fa").click(function() {
-        $(this).toggleClass("toggled");
-    });
+$("input[type=text]").on "keyup", ->
+	console.log $(this).val()
+	validateInput "input[name=title]", 60
+	validateInput "input[name=publishDate]", 4
+	validateInput "input[name=price]", 4
+	return
 
-    /* Send book info to server */
-    $("#send-book").click(function() {
-        alert('Ikke implementert.');
-    });
+$(".fa").click ->
+	$(this).toggleClass "toggled"
+	return
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+$("#send-book").click ->
+	alert "Ikke implementert."
+	return
 
-            reader.onload = function (e) {
-                $('#image-preview').attr('src', e.target.result);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#inputImage").change(function() {
-        readURL(this);
-        $("#open-upload").hide();
-        $("#image-preview").css("display", "inline-block");
-        $("#second-image").css("display", "inline-block");
-    });
-
-});
+$("#inputImage").change ->
+	readURL this
+	$("#open-upload").hide()
+	$("#image-preview").css "display", "inline-block"
+	$("#second-image").css "display", "inline-block"
+	return

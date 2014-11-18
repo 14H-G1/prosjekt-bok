@@ -6,6 +6,7 @@ var concat      = require('gulp-concat');
 var nodemon     = require('gulp-nodemon');
 var reload      = require('gulp-livereload');
 var uglify      = require('gulp-uglify');
+var coffee      = require('gulp-coffee');
 
 gulp.task('hint', function() {
     return gulp.src('assets/js/partials/*.js')
@@ -17,6 +18,7 @@ gulp.task('hint', function() {
 gulp.task('cc-glob', function() {
     return gulp.src('assets/js/partials/*.js')
         .pipe(concat('global.js'))
+        .pipe(coffee({bare: true}))
         .pipe(gulp.dest('assets/js/'));
 });
 
