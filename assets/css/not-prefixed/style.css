@@ -3,15 +3,21 @@
  * Copyright 2012-2014 thoughtbot, inc.
  * MIT License */
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
 /* Global variables */
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -578,8 +584,6 @@ footer .link-col li a:hover {
   border-bottom: solid 2px #FE9382;
 }
 #sell-info .condition-info {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 #sell-info .condition-info select {
@@ -643,3 +647,5 @@ footer .link-col li a:hover {
   top: 5px;
   box-shadow: inset 0px 1px 0px #afddbd, inset 0px -1px 0px #488d5c;
 }
+
+/*# sourceMappingURL=style.css.map */

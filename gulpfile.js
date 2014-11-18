@@ -1,12 +1,13 @@
-var gulp        = require('gulp');
-var sass        = require('gulp-ruby-sass');
-var jshint      = require('gulp-jshint');
-var stylish     = require('jshint-stylish');
-var concat      = require('gulp-concat');
-var nodemon     = require('gulp-nodemon');
-var reload      = require('gulp-livereload');
-var uglify      = require('gulp-uglify');
-var coffee      = require('gulp-coffee');
+var gulp            = require('gulp');
+var sass            = require('gulp-ruby-sass');
+var jshint          = require('gulp-jshint');
+var stylish         = require('jshint-stylish');
+var concat          = require('gulp-concat');
+var nodemon         = require('gulp-nodemon');
+var reload          = require('gulp-livereload');
+var uglify          = require('gulp-uglify');
+var coffee          = require('gulp-coffee');
+var autoprefixer    = require('gulp-autoprefixer');
 
 gulp.task('hint', function() {
     return gulp.src('assets/js/partials/*.js')
@@ -33,8 +34,17 @@ gulp.task('cc-libs', function() {
 gulp.task('sass', function() {
     return gulp.src('sass/style.sass')
         .pipe(sass({ style: "expanded" }))
-        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('assets/css/not-prefixed'))
         .pipe(reload({ auto: false }));
+});
+
+gulp.task('prefix', function() {
+        return gulp.src('assets/css/not-prefixed/style.css')
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .pipe(gulp.dest('assets/css'))
 });
 
 gulp.task('server', function() {
@@ -45,7 +55,7 @@ gulp.task('server', function() {
 gulp.task('front', function() {
     /* For front-end dev */
     reload.listen();
-    gulp.watch('sass/**/*.sass', ['sass']);
+    gulp.watch('sass/**/*.sass', ['sass', 'prefix']);
     gulp.watch('assets/js/partials/*.js', ['cc-glob', 'hint']);
     gulp.watch('views/**').on('change', reload.changed);
 });
@@ -55,6 +65,6 @@ gulp.task('back', ['server'], function() {
 
 });
 
-gulp.task('default', ['cc-glob', 'cc-libs', 'sass', 'hint'], function() {
+gulp.task('default', ['cc-glob', 'cc-libs', 'sass', 'prefix', 'hint'], function() {
 
 });
