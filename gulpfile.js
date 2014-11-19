@@ -55,7 +55,8 @@ gulp.task('server', function() {
 gulp.task('front', function() {
     /* For front-end dev */
     reload.listen();
-    gulp.watch('sass/**/*.sass', ['sass', 'prefix']);
+    gulp.watch('sass/**/*.sass', ['sass']);
+    gulp.watch('assets/css/not-prefixed/style.css', ['prefix']);
     gulp.watch('assets/js/partials/*.js', ['cc-glob', 'hint']);
     gulp.watch('views/**').on('change', reload.changed);
 });

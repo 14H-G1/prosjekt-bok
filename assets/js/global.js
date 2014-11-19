@@ -19,7 +19,7 @@ onMapClickHandler = function(event) {
 $(".maps").on("click", onMapClickHandler);
 
 validateInput = function(selector, lengthLimit) {
-  if ($(selector).val().length > lengthLimit) {
+  if ($(selector).val().length >= lengthLimit) {
     $(selector).addClass("input-error");
   } else {
     $(selector).removeClass("input-error");
@@ -27,14 +27,13 @@ validateInput = function(selector, lengthLimit) {
 };
 
 $("input[type=text]").on("keyup", function() {
-  console.log($(this).val());
   validateInput("input[name=title]", 60);
   validateInput("input[name=publishDate]", 4);
-  validateInput("input[name=price]", 4);
+  return validateInput("input[name=price]", 4);
 });
 
 $(".fa").click(function() {
-  $(this).toggleClass("toggled");
+  return $(this).toggleClass("toggled");
 });
 
 $("#send-book").click(function() {
