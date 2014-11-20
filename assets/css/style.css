@@ -261,6 +261,11 @@ p, i, select {
   display: table;
   clear: both;
 }
+.full-width-banner .head-elements img {
+  position: absolute;
+  height: 55px;
+  margin-top: -8px;
+}
 .full-width-banner .head-elements h1 {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   margin: 0;
@@ -272,6 +277,7 @@ p, i, select {
   color: #262626;
   text-decoration: none;
   float: left;
+  margin-left: 55px;
 }
 .full-width-banner .head-elements nav {
   float: right;
