@@ -1,0 +1,16 @@
+<div class="full-width-banner">
+	<div class="head-elements">
+		<a href="/"><h1>PEBB</h1></a>
+		<nav>
+			<a {% if id == 'publish' %}class="btn-selected"{% endif %} href="/publish">selg bok</a>
+			<a {% if id == 'search' %}class="btn-selected"{% endif %} href="/search">søk</a>
+		</nav>
+	</div>
+</div>
+
+{% if messages.alert %}
+<div id="alert">
+	{{ messages.alert }}
+	<div class="close-btn">&#10006;</div>
+</div>
+{% endif %}

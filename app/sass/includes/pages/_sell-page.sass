@@ -1,0 +1,63 @@
+#sell-info
+
+	div
+		margin: 10px 0
+
+	.input-error
+		border-bottom: solid 2px $main-red
+
+	.condition-info
+		display: flex
+
+		select
+			border: 0
+			margin: 10px 0 10px 10px
+
+			&:focus
+				outline: none
+
+#upload-img
+
+	#image-preview
+		height: 200px
+		width: 150px
+		display: none
+
+	#open-upload
+		height: 200px
+		width: 150px
+		background-color: shade(white, 5%)
+		border-width: 2px
+		border-color: shade(white, 20%)
+		border-style: dashed
+
+		i
+			padding: 50% 38%
+
+		&:hover
+			cursor: pointer
+			background-color: shade(white, 10%)
+			border-color: shade(white, 25%)
+
+			i
+				color: $main-color
+
+#choose-contact
+
+	.toggled
+		color: $main-color !important
+
+	i
+		padding-right: 25px
+		color: shade(white, 20%)
+
+
+		&:hover
+			cursor: pointer
+			color: shade(white, 25%)
+
+#ready-to-sell
+
+	input
+		+custom-btn($main-color, white)
+		float: right

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+{% include 'head.html' %}
+
+<body>
+	{% include 'body.nav.html' %}
+
+	<section id="my-profile">
+		<div class="media-object">
+			<img src="/img/profil.jpg" alt="">
+			<div class="media-body">
+				<h2 id="name" class="media-head">Ola Nordmann</h2>
+				<p>Du har tjent { seller.earned } på { seller.amountSold } bøker. Dette tilsvarer 3 store pizzaer fra Peppes, no affiliation.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="my-books" class="books">
+		<h2>Mine bøker</h2>
+		{% if bookList == true %}
+			{% for book in books %}
+				<div class="book-container">
+					<a href="produkt" class="book-thumb">
+						<img src="/img/dmc.jpg" alt="">
+						<p class="title" href="#">{{ book.title }}</p>
+						<p class="author">{{ book.authors }}</p>
+						<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+					</a>
+				</div>
+			{% endfor %}
+		{% else %}
+			<h4>Du har ingen bøker for salg.</h4>
+		{% endif %}
+	</section>
+
+	<section id="account-settings">
+		<h2>Brukervalg</h2>
+		<p>Slett bruker og alle assosierte bøker</p>
+		<a href="#">Slett bruker</a>
+	</section>
+
+	{% include 'body.footer.html' %}
+
+</body>
+</html>

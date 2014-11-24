@@ -1,0 +1,32 @@
+/* Grid system for books view */
+=grid-machine($perRow, $margin)
+    float: left
+    width: ((100% - (($perRow - 1) * $margin)) / $perRow)
+
+    &:nth-child(n)
+        margin-right: $margin
+        margin-bottom: $margin
+    &:nth-child(#{$perRow}n)
+        margin-right: 0
+        margin-bottom: 0
+
+/* Sitewide button base*/
+=custom-btn($btn-bg-color, $btn-color)
+    background-color: $btn-bg-color
+    color: $btn-color
+    font-size: 12px
+    text-decoration: none
+    box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), 0px 5px 0px shade($btn-bg-color, 20%)
+    //border-radius: 25px
+    margin-left: 10px
+    padding: 10px 15px
+    display: inline-block
+    position: relative
+
+    &:active
+        top: 5px
+        box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), inset 0px -1px 0px shade($btn-bg-color, 25%)
+
+=custom-btn-selected($btn-bg-color, $btn-color)
+    top: 5px
+    box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), inset 0px -1px 0px shade($btn-bg-color, 25%) !important

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="no">
+{% include 'head.html' %}
+
+<body>
+
+	{% include 'body.nav.html' %}
+
+	<form method="post" enctype="multipart/form-data" action="/submit-book">
+	<section id="sell-info">
+		<h2>Bokinformasjon</h2>
+
+		<div class="book-info">
+			<input type="text" name="title" placeholder="Tittel" autofocus>
+			<input type="text" name="authors" placeholder="Forfattere">
+			<input type="text" name="publishDate" placeholder="Utgivelsesår">
+		</div>
+
+		<div class="condition-info">
+			<p>Tilstanden på boken er</p>
+			<select name="tilstand" id="">
+				<option value="4">veldig bra</option>
+				<option value="3">bra</option>
+				<option value="2">ok</option>
+				<option value="1">dårlig</option>
+			</select>
+		</div>
+
+		<div class="price-info">
+			<input type="text" name="price" placeholder="Pris">
+		</div>
+
+	</section>
+
+	<section id="upload-img">
+		<h2>Legg til et eller flere bilder</h2>
+		<div id="images">
+			<input type="file" name="thumbnail">
+		</div>
+	</section>
+
+	<section id="choose-contact">
+		<h2>Velg hvordan du vil bli kontaktet</h2>
+		<i class="fa fa-facebook fa-4x"></i>
+		<i class="fa fa-twitter fa-4x"></i>
+		<i class="fa fa-envelope fa-4x"></i>
+		<i class="fa fa-phone fa-4x"></i>
+	</section>
+
+	<section id="ready-to-sell" class="text-content">
+		<input type="submit">
+	</section>
+	</form>
+
+	{% include 'body.footer.html' %}
+
+</body>
+</html>

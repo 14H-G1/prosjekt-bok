@@ -1,61 +1,79 @@
-Prosjekt PEBB
-=========
-[![Build Status](https://travis-ci.org/14H-G1/prosjekt-bok.svg?branch=master)](https://travis-ci.org/14H-G1/prosjekt-bok)
-[![Dependencies](https://david-dm.org/14H-G1/prosjekt-bok.png)](https://david-dm.org/14H-G1/prosjekt-bok)
 
-PEBB is an open e-commerce platform for selling and purchasing used curriculum books. You can see the website in action [here](http://pebb.no). If you find a bug, a pull request is much appriciated.
+#PEBB
+__Before starting make sure you have this installed:__
 
-PEBB is built using [Node.js](http://nodejs.org)
+`node.js`
+`npm`
+`MongoDB`
+`SASS`
 
-##Installation process
-1) Clone the git repository
+FAQ
+--
+[How to install Node.js &  NPM](docs/how-to-install-node-js.md)
+
+[How to install MongoDB](docs/how-to-install-mongodb.md)
+
+[How to install SASS](docs/how-to-install-sass.md)
+
+#Installation
+
+1) Clone repo
+
 ```
-$ git clone https://github.com/14H-G1/prosjekt-bok.git
+$ mkdir where/to/clone/repo && cd where/to/clone/repo
 ```
+
+```
+$ git clone https://github.com/14H-G1/prosjekt-bok.git .
+```
+
 2) Install dependencies
+
 ```
-$ cd projekt-bok
 $ npm update
 ```
 
-3) Before running the node application you need to setup a configuration
-> Note that you will need a [MongoDB](https://www.mongodb.org/) database
-```
-TO BE DONE
-```
+3) Create this file: 'app/config.credentials.js'
 
-4) Run the node application
+>     // In later releases this is where you store i.e. facebook API credentials
+>     module.exports = {
+>	   'cookies': 'some_random_secret_here_for_security',
+>	   'session': 'some_random_secret_here_for_security'
+>     };
+
+4) Edit configuration in your favourite text editor
+
 ```
-$ node app
-```
-
-##Preparing a MongoDB database
-
-
-##More on dependencies
-PEBB is built using various node modules and MongoDB.
-
-###Node Modules
-```
-"dependencies": {
-  "body-parser": "1.8.*",
-  "cookie-parser": "1.3.*",
-  "debug": "2.0.0",
-  "express": "4.9.*",
-  "express-session": "1.8.*",
-  "glob": "4.0.*",
-  "node-sass": "0.9.*",
-  "swig": "1.4.*",
-  "passport": "0.2.*",
-  "passport-facebook": "1.0.3",
-  "passport-local": "^1.0.*",
-  "bcrypt-nodejs": "0.0.*",
-  "mongoose": "3.8.*"
-}
+$ start app/config.js
 ```
 
-##TODO:
-- ~~Dynamic routes~~
-- Database handling
-- Search algorithm
-- Authentication
+4) Start via gulp
+
+```
+$ gulp default front back
+```
+
+API
+--
+
+Lets add a few books
+
+```
+GET /api/books/add/title(Book_1).authors(Ola+Kari).price(199).isbn(123456789)
+```
+
+```
+GET /api/books/add/title(Book_2).authors(Per+Askeladden).price(299).isbn(987654321)
+```
+
+Lets take a look
+
+```
+GET /api/books/list
+```
+
+These two books are now displayed on index!
+
+```
+GET /
+```

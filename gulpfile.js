@@ -1,39 +1,50 @@
-var gulp        = require('gulp');
-var sass        = require('gulp-ruby-sass');
-var jshint      = require('gulp-jshint');
-var stylish     = require('jshint-stylish');
-var concat      = require('gulp-concat');
-var nodemon     = require('gulp-nodemon');
-var reload      = require('gulp-livereload');
-var uglify      = require('gulp-uglify');
+var gulp            = require('gulp');
+var sass            = require('gulp-ruby-sass');
+var jshint          = require('gulp-jshint');
+var stylish         = require('jshint-stylish');
+var concat          = require('gulp-concat');
+var nodemon         = require('gulp-nodemon');
+var reload          = require('gulp-livereload');
+var uglify          = require('gulp-uglify');
+var coffee          = require('gulp-coffee');
+var autoprefixer    = require('gulp-autoprefixer');
 
 gulp.task('hint', function() {
-    return gulp.src('assets/js/*')
+    return gulp.src('app/assets/js/partials/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(reload({ auto: false }));
 });
 
-gulp.task('cc-func', function() {
-    return gulp.src('assets/js/functions/*.js')
-        .pipe(concat('functions.js'))
-        .pipe(gulp.dest('assets/js/'));
+gulp.task('cc-glob', function() {
+    return gulp.src('app/assets/js/partials/*.js')
+        .pipe(concat('global.js'))
+        .pipe(coffee({bare: true}))
+        .pipe(gulp.dest('app/assets/js/'));
 });
 
 gulp.task('cc-libs', function() {
-    return gulp.src(['assets/js/libraries/jquery.min.js',
-                     'assets/js/libraries/lightboxme.js',
-                     'assets/js/libraries/fastclick.js'])
+    return gulp.src(['bower_components/jquery/dist/jquery.min.js',
+                     'bower_components/fastclick/lib/fastclick.js'])
         .pipe(concat('libraries.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('assets/js/'));
+        .pipe(gulp.dest('app/assets/js/'));
 });
 
 gulp.task('sass', function() {
-    return gulp.src('sass/style.sass')
-        .pipe(sass())
-        .pipe(gulp.dest('assets/css'))
+    return gulp.src('app/sass/style.sass')
+        .pipe(sass({ style: "expanded" }))
+        .pipe(gulp.dest('app/assets/css/not-prefixed'))
         .pipe(reload({ auto: false }));
+});
+
+gulp.task('prefix', function() {
+    return gulp.src('app/assets/css/not-prefixed/style.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('app/assets/css'));
 });
 
 gulp.task('server', function() {
@@ -41,21 +52,21 @@ gulp.task('server', function() {
     nodemon({ script: 'app.js' });
 });
 
-/* For front-end dev */
-gulp.task('front', function() {
+gulp.task('front', ['livereload'], function() {
+    /* For front-end dev */
+    gulp.watch('app/sass/**/*.sass', ['sass', 'prefix']);
+    gulp.watch('app/assets/js/partials/*.js', ['cc-glob', 'hint']);
+});
+
+gulp.task('livereload', function() {
     reload.listen();
-    gulp.watch('sass/**/*.sass', ['sass']);
-    gulp.watch('assets/js/functions/*.js', ['hint', 'cc-func']);
-    gulp.watch('assets/js/libraries/*.js', ['cc-libs']);
-    gulp.watch('views/**').on('change', reload.changed);
+    gulp.watch('app/views/**').on('change', reload.changed);
 });
 
-/* For back-end dev */
-gulp.task('back', ['server'], function() {
-
+gulp.task('start', ['cc-glob', 'cc-libs', 'sass', 'prefix', 'server'], function() {
+    /* Starts the server after compiling needed assets */
 });
 
-gulp.task('default', function() {
-    gulp.watch('sass/**/*.sass', ['sass']);
-    gulp.watch('assets/js/*.js', ['hint']);
+gulp.task('default', ['start'], function() {
+    // start server,default thing to do
 });

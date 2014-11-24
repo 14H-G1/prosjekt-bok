@@ -1,13 +1,20 @@
-// prepare debugging
-var debug   = require('debug')('PEBB');
-// get configuration and app logic
-var config  = require('./config.js');
-var app     = require('./logic.js')(config);
+function Application(environment, args) {
+    var spawn = require('child_process').spawn;
+    args = args || ['app/logic.js'];
+    var opts = {
+        cwd: __dirname,
+        env: (function() {
+            process.env.NODE_PATH = '.';
+            process.env.NODE_ENV = environment;
+            if (process.env.NODE_ENV == 'debug') {
+                process.env.DEBUG = 'app:*';
+            }
+            return process.env;
+        }()),
+        stdio: [process.stdin, process.stdout, process.stderr]
+    };
+    spawn(process.execPath, args, opts);
+}
 
-// set port, default=8080
-app.set('port', config.app.port);
-
-// setup server
-var server = app.listen(app.get('port'), function() {
-  console.log('> '+config.app.name+' running on port: ' + server.address().port);
-});
+// change debug into production when ready, disables debugging
+module.exports = new Application('debug');

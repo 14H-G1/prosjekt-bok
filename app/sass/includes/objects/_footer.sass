@@ -1,0 +1,28 @@
+footer
+    +outer-container($page-width)
+    margin: 50px auto
+
+    .link-col
+        +span-columns(3)
+        padding: 0 10px
+        margin-bottom: 10px
+
+        @media (max-width: 540px)
+            +span-columns(6)
+            +omega(2n)
+
+        h3
+            text-transform: uppercase
+
+        ul
+            padding: 0
+
+        li
+            list-style: none
+            padding-bottom: 15px
+
+            a
+                color: $main-color
+
+                &:hover
+                    color: shade($main-color, 15%)

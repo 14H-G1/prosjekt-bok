@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+{% include 'head.html' %}
+
+<body>
+    {% include 'body.nav.html' %}
+    <section id="login">
+        <h1>Logg inn eller registrer deg</h1>
+
+        <form action="/auth/local-login" method="post">
+            <div id="login-modal-form">
+                <input type="text" name="email" placeholder="E-post">
+                <input type="password" name="password" placeholder="Passord">
+
+                <button id="login-btn" type="submit">logg inn</button>
+            </div>
+        </form>
+
+        <h3>Føler du deg holdt utenfor?</h3>
+
+        <div class="fb-icon-bg"></div>
+        <div class="fb-bg">
+            <a href="#login-fb">Logg inn med Facebook</a>
+        </div>
+    </section>
+
+    {% include 'body.footer.html' %}
+
+</body>
+</html>
