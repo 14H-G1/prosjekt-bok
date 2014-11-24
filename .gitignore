@@ -20,3 +20,7 @@ app/assets/css/*.css
 app/assets/css/*.map
 app/assets/css/not-prefixed/*.css
 app/assets/css/not-prefixed/*.map
+*.map
+*.map
+assets/js/libraries.js
+assets/js/global.js

@@ -1,3 +1,8 @@
+Prosjekt PEBB
+=========
+[![Build Status](https://travis-ci.org/14H-G1/prosjekt-bok.svg?branch=master)](https://travis-ci.org/14H-G1/prosjekt-bok)
+[![Dependencies](https://david-dm.org/14H-G1/prosjekt-bok.png)](https://david-dm.org/14H-G1/prosjekt-bok)
+[![devDependency Status](https://david-dm.org/14H-G1/prosjekt-bok/dev-status.svg)](https://david-dm.org/14H-G1/prosjekt-bok#info=devDependencies)
 
 #PEBB
 __Before starting make sure you have this installed:__
