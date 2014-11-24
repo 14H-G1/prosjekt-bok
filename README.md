@@ -31,15 +31,16 @@ $ git clone https://github.com/14H-G1/prosjekt-bok.git .
 
 ```
 $ npm update
+$ bower update
 ```
 
 3) Create this file: 'app/config.credentials.js'
 
->     // In later releases this is where you store i.e. facebook API credentials
->     module.exports = {
->	   'cookies': 'some_random_secret_here_for_security',
->	   'session': 'some_random_secret_here_for_security'
->     };
+    // In later releases this is where you store i.e. facebook API credentials
+    module.exports = {
+	   'cookies': 'some_random_secret_here_for_security',
+	   'session': 'some_random_secret_here_for_security'
+    };
 
 4) Edit configuration in your favourite text editor
 
@@ -50,7 +51,7 @@ $ start app/config.js
 4) Start via gulp
 
 ```
-$ gulp default front back
+$ gulp livereload start
 ```
 
 API
