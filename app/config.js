@@ -51,9 +51,9 @@ function Config() {
 		saltFactor: 10
 	};
 	this.facebook = {
-		id: 		credentials.facebook.id,
-		callback: 	credentials.facebook.callback,
-		secret: 	credentials.facebook.callback
+		id: 		credentials.facebook.id||'',
+		callback: 	credentials.facebook.callback||'',
+		secret: 	credentials.facebook.callback||''
 	};
 
 	return {
