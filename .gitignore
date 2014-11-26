@@ -1,5 +1,6 @@
 # No need to commit cache
 .sass-cache
+<<<<<<< HEAD
 .git
 
 # 'npm update' && 'bower update' instead
@@ -24,3 +25,9 @@ app/assets/css/not-prefixed/*.map
 *.map
 assets/js/libraries.js
 assets/js/global.js
+=======
+node_modules
+bower_components
+sass/bourbon
+sass/neat
+>>>>>>> better-layout

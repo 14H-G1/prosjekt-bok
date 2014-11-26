@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="no">
+{% include 'head.html' %}
+
+<body>
+
+	{% include 'body.nav.html' %}
+
+	<section id="sok">
+		<input type="text" name="search" placeholder="Søk" autofocus>
+	</section>
+
+	<section class="books">
+		{% for book in listOfBooks %}
+		<div class="book-container">
+			<a href="produkt" class="book-thumb">
+				<img src="/img/dmc.jpg" alt="">
+				<h1 class="title" href="#">{{ book.title }}</h1>
+				<p class="author">{{ book.authors }}</p>
+				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+			</a>
+		</div>
+		{% endfor %}
+	</section>
+
+	<section class="full-width-banner">
+		<div class="about-pebb">
+			<h1>Hva er PEBB?</h1>
+			<div class="thing">
+				<i class="fa fa-book fa-5x"></i>
+				<h2>Pensumbøker</h2>
+				<p>Kjøp brukte pensumbøker fra andre studenter i ditt nærområde eller selg dine egne</p>
+			</div>
+			<div class="thing">
+				<i class="fa fa-github fa-5x"></i>
+				<h2>Åpen plattform</h2>
+				<p>Med åpen mener vi at kildekoden til hele nettsiden er tilgjennelig på github</p>
+			</div>
+			<div class="thing">
+				<i class="fa fa-money fa-5x"></i>
+				<h2>Gratis</h2>
+				<p>Det koster ingenting å registere seg og heller ingenting for å legge ut bøker for salg</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="full-width-banner">
+		<div class="about-us">
+			<h1>Møt teamet</h1>
+			<p>Vi er fire svært engasjerte studenter fra HiB som deler visjonen om en lettere og billigere skolestart, ved hjelp av å kjøpe brukte pesnumbøker.
+			Vi vil bidra med å gjøre denne prosessen enklere for alle parter.</p>
+			<div class="person">
+				<img src="img/nataniel.jpg" alt="Nataniel Pedersen">
+				<h3>Nataniel Pedersen</h3>
+			</div>
+			<div class="person">
+				<img src="img/marcus.jpg" alt="Marcus Dahl">
+				<h3>Marcus Dahl</h3>
+			</div>
+			<div class="person">
+				<img src="img/jone.jpg" alt="Jone Dagsland">
+				<h3>Jone Dagsland</h3>
+			</div>
+			<div class="person">
+				<img src="img/orjan.jpg" alt="Ørjan Eide">
+				<h3>Ørjan Eide</h3>
+			</div>
+		</div>
+	</section>
+
+	<section class="full-width-banner">
+		<div class="call-to-action">
+			<h1>Så hva venter du på?</h1>
+			<h4>Registrer deg og bli med på morroa!</h4>
+			<a href="#">Registrer deg</a>
+			<a href="#">Historien</a>
+			<a href="#">FAQ</a>
+		</div>
+	</section>
+
+	{% include 'body.footer.html' %}
+
+</body>
+</html>
