@@ -50,21 +50,21 @@ function Config() {
 		},
 		saltFactor: 10
 	};
-	this.facebook = {
+	/*this.facebook = {
 		id: 		credentials.facebook.id||'',
 		callback: 	credentials.facebook.callback||'',
 		secret: 	credentials.facebook.callback||''
-	};
+	};*/
 
 	return {
 		app: this.app,
 
 		mongodb: this.mongodb,
 
-		facebook: {
+		/*facebook: {
 			id: this.facebook.id,
 			callback: this.facebook.callback
-		}
+		}*/
 	};
 }
 
