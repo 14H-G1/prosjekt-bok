@@ -8,7 +8,7 @@ var coffee          = require('gulp-coffee');
 var autoprefixer    = require('gulp-autoprefixer');
 
 gulp.task('cc-glob', function() {
-    return gulp.src('app/assets/js/partials/*.js')
+    return gulp.src('app/assets/js/partials/*.coffee')
         .pipe(concat('global.js'))
         .pipe(coffee({bare: true}))
         .pipe(gulp.dest('app/assets/js/'));
