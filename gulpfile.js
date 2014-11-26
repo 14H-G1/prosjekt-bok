@@ -20,11 +20,7 @@ gulp.task('cc-glob', function() {
     return gulp.src('app/assets/js/partials/*.js')
         .pipe(concat('global.js'))
         .pipe(coffee({bare: true}))
-<<<<<<< HEAD
         .pipe(gulp.dest('app/assets/js/'));
-=======
-        .pipe(gulp.dest('assets/js/'));
->>>>>>> better-layout
 });
 
 gulp.task('cc-libs', function() {
@@ -38,30 +34,17 @@ gulp.task('cc-libs', function() {
 gulp.task('sass', function() {
     return gulp.src('app/sass/style.sass')
         .pipe(sass({ style: "expanded" }))
-<<<<<<< HEAD
         .pipe(gulp.dest('app/assets/css/not-prefixed'))
-=======
-        .pipe(gulp.dest('assets/css/not-prefixed'))
->>>>>>> better-layout
         .pipe(reload({ auto: false }));
 });
 
 gulp.task('prefix', function() {
-<<<<<<< HEAD
     return gulp.src('app/assets/css/not-prefixed/style.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(gulp.dest('app/assets/css'));
-=======
-        return gulp.src('assets/css/not-prefixed/style.css')
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
-                cascade: false
-            }))
-            .pipe(gulp.dest('assets/css'))
->>>>>>> better-layout
 });
 
 gulp.task('server', function() {
@@ -69,7 +52,6 @@ gulp.task('server', function() {
     nodemon({ script: 'app.js' });
 });
 
-<<<<<<< HEAD
 gulp.task('front', ['livereload'], function() {
     /* For front-end dev */
     gulp.watch('app/sass/**/*.sass', ['sass', 'prefix']);
@@ -80,29 +62,11 @@ gulp.task('livereload', function() {
     reload.listen();
     gulp.watch('app/views/**').on('change', reload.changed);
 });
-=======
-gulp.task('front', function() {
-    /* For front-end dev */
-    reload.listen();
-    gulp.watch('sass/**/*.sass', ['sass']);
-    gulp.watch('assets/css/not-prefixed/style.css', ['prefix']);
-    gulp.watch('assets/js/partials/*.js', ['cc-glob', 'hint']);
-    gulp.watch('views/**').on('change', reload.changed);
-});
-
-gulp.task('back', ['server'], function() {
-    /* For back-end dev */
->>>>>>> better-layout
 
 gulp.task('start', ['sass', 'prefix', 'cc-glob', 'cc-libs', 'server'], function() {
     /* Starts the server after compiling needed assets */
 });
 
-<<<<<<< HEAD
 gulp.task('default', ['start'], function() {
     // start server,default thing to do
-=======
-gulp.task('default', ['cc-glob', 'cc-libs', 'sass', 'prefix', 'hint'], function() {
-
->>>>>>> better-layout
 });

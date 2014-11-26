@@ -16,15 +16,5 @@ function Application(environment, args) {
     spawn(process.execPath, args, opts);
 }
 
-<<<<<<< HEAD
 // change debug into production when ready, disables debugging
 module.exports = new Application('debug');
-=======
-// set port, default=8080
-app.set('port', process.env.PORT || 80);
-
-// setup server
-var server = app.listen(app.get('port'), function() {
-  console.log('Server listening on port ' + server.address().port);
-});
->>>>>>> better-layout
