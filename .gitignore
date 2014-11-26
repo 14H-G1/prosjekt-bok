@@ -1,5 +1,26 @@
+# No need to commit cache
 .sass-cache
-node_modules
-bower_components
-sass/bourbon
-sass/neat
+.git
+
+# 'npm update' && 'bower update' instead
+node_modules/
+bower_components/
+
+# Do not commit credentials
+app/config.credentials.js
+
+# may not be relevant unless you store
+# mongodb data in project folder
+mongodb/
+
+# Do not commit compiled uglified code
+app/assets/js/global.js
+app/assets/js/libraries.js
+app/assets/css/*.css
+app/assets/css/*.map
+app/assets/css/not-prefixed/*.css
+app/assets/css/not-prefixed/*.map
+*.map
+*.map
+assets/js/libraries.js
+assets/js/global.js
