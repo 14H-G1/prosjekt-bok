@@ -16,7 +16,8 @@ gulp.task('cc-glob', function() {
 
 gulp.task('cc-libs', function() {
     return gulp.src(['bower_components/jquery/dist/jquery.min.js',
-                     'bower_components/fastclick/lib/fastclick.js'])
+                     'bower_components/fastclick/lib/fastclick.js',
+                     'bower_components/sweetalert/lib/sweet-alert.js'])
         .pipe(concat('libraries.js'))
         .pipe(uglify())
         .pipe(gulp.dest('app/assets/js/'));
