@@ -1,20 +1,11 @@
 var gulp            = require('gulp');
 var sass            = require('gulp-ruby-sass');
-var jshint          = require('gulp-jshint');
-var stylish         = require('jshint-stylish');
 var concat          = require('gulp-concat');
 var nodemon         = require('gulp-nodemon');
 var reload          = require('gulp-livereload');
 var uglify          = require('gulp-uglify');
 var coffee          = require('gulp-coffee');
 var autoprefixer    = require('gulp-autoprefixer');
-
-gulp.task('hint', function() {
-    return gulp.src('app/assets/js/partials/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter(stylish))
-        .pipe(reload({ auto: false }));
-});
 
 gulp.task('cc-glob', function() {
     return gulp.src('app/assets/js/partials/*.js')
@@ -54,7 +45,8 @@ gulp.task('server', function() {
 
 gulp.task('front', ['livereload'], function() {
     /* For front-end dev */
-    gulp.watch('app/sass/**/*.sass', ['sass', 'prefix']);
+    gulp.watch('sass/**/*.sass', ['sass']);
+    gulp.watch('assets/css/not-prefixed/style.css', ['prefix']);
     gulp.watch('app/assets/js/partials/*.js', ['cc-glob']);
 });
 

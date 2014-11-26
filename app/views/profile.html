@@ -3,6 +3,7 @@
 {% include 'head.html' %}
 
 <body>
+
 	{% include 'body.nav.html' %}
 
 	<section id="my-profile">
@@ -18,19 +19,27 @@
 	<section id="my-books" class="books">
 		<h2>Mine bøker</h2>
 		{% if bookList == true %}
-			{% for book in books %}
-				<div class="book-container">
-					<a href="produkt" class="book-thumb">
-						<img src="/img/dmc.jpg" alt="">
-						<p class="title" href="#">{{ book.title }}</p>
-						<p class="author">{{ book.authors }}</p>
-						<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
-					</a>
-				</div>
-			{% endfor %}
+		{% for book in books %}
+		<div class="book-container">
+			<a href="produkt" class="book-thumb">
+				<img src="/img/dmc.jpg" alt="">
+				<p class="title" href="#">{{ book.title }}</p>
+				<p class="author">{{ book.authors }}</p>
+				<p class="price"><span class="retail-price">{{ book.retailprice }},-</span> {{ book.price }},-</p>
+			</a>
+		</div>
+		{% endfor %}
 		{% else %}
-			<h4>Du har ingen bøker for salg.</h4>
+		<h4>Du har ingen bøker for salg.</h4>
 		{% endif %}
+	</section>
+
+	<section id="choose-contact">
+		<h2>Velg hvordan du vil bli kontaktet</h2>
+		<i class="fa fa-facebook fa-4x"></i>
+		<i class="fa fa-twitter fa-4x"></i>
+		<i class="fa fa-envelope fa-4x"></i>
+		<i class="fa fa-phone fa-4x"></i>
 	</section>
 
 	<section id="account-settings">
