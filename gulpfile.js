@@ -55,7 +55,7 @@ gulp.task('server', function() {
 gulp.task('front', ['livereload'], function() {
     /* For front-end dev */
     gulp.watch('app/sass/**/*.sass', ['sass', 'prefix']);
-    gulp.watch('app/assets/js/partials/*.js', ['cc-glob', 'hint']);
+    gulp.watch('app/assets/js/partials/*.js', ['cc-glob']);
 });
 
 gulp.task('livereload', function() {
@@ -63,7 +63,7 @@ gulp.task('livereload', function() {
     gulp.watch('app/views/**').on('change', reload.changed);
 });
 
-gulp.task('start', ['cc-glob', 'cc-libs', 'sass', 'prefix', 'server'], function() {
+gulp.task('start', ['sass', 'prefix', 'cc-glob', 'cc-libs', 'server'], function() {
     /* Starts the server after compiling needed assets */
 });
 
