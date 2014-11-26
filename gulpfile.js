@@ -43,10 +43,10 @@ gulp.task('server', function() {
     nodemon({ script: 'app.js' });
 });
 
-gulp.task('front', ['livereload'], function() {
+gulp.task('front', function() {
     /* For front-end dev */
-    gulp.watch('sass/**/*.sass', ['sass']);
-    gulp.watch('assets/css/not-prefixed/style.css', ['prefix']);
+    gulp.watch('app/sass/**/*.sass', ['sass']);
+    gulp.watch('app/assets/css/not-prefixed/style.css', ['prefix']);
     gulp.watch('app/assets/js/partials/*.js', ['cc-glob']);
 });
 
