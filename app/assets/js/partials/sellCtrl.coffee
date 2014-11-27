@@ -18,7 +18,6 @@ $('#publish').click ->
 			type: "error"
 			showCancelButton: true
 			cancelButtonText: "Avbryt"
-			cancelButtonColor: "#FE9382"
 			confirmButtonColor: "#60BC7B"
 			confirmButtonText: "Gå til innloggingssiden"
 			closeOnConfirm: false
