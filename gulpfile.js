@@ -25,7 +25,7 @@ gulp.task('cc-libs', function() {
 
 gulp.task('sass', function() {
     return gulp.src('app/sass/style.sass')
-        .pipe(sass({ style: "expanded" }))
+        .pipe(sass({ style: "expanded", bundleExec: false }))
         .pipe(gulp.dest('app/assets/css/not-prefixed'))
         .pipe(reload({ auto: false }));
 });
