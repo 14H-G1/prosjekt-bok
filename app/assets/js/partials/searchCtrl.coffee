@@ -1,5 +1,4 @@
 searchAPI = (what) ->
-    # Ajax GET request to server + some magic
     request = $.ajax (
         url: "/api/books/list"
         type: "GET"
@@ -7,7 +6,7 @@ searchAPI = (what) ->
     )
 
     request.done (msg) ->
-        alert msg
+        alert jQuery.parseJSON(msg)
 
     request.fail (jqXHR, textStatus) ->
         return "Request failed: " + textStatus
