@@ -48,7 +48,7 @@ gulp.task('front', function() {
     /* For front-end dev */
     gulp.watch('app/sass/**/*.sass', ['sass']);
     gulp.watch('app/assets/css/not-prefixed/style.css', ['prefix']);
-    gulp.watch('app/assets/js/partials/*.js', ['cc-glob']);
+    gulp.watch('app/assets/js/partials/*.coffee', ['cc-glob']);
 });
 
 gulp.task('livereload', function() {

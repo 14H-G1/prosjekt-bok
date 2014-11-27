@@ -7,12 +7,9 @@ validateInput = (selector, lengthLimit) ->
 		$(selector).removeClass "input-error"
 	return
 
-$("input[type=text]").on "keyup", ->
-	console.log $(this).val()
-	validateInput "input[name=title]", 60
-	validateInput "input[name=publishDate]", 4
-	validateInput "input[name=price]", 4
-	return
+$("input[type=tile]").on "keyup", -> validateInput "input[name=title]", 60
+$("input[type=publishDate]").on "keyup", -> validateInput "input[name=publishDate]", 4
+$("input[type=price]").on "keyup", -> validateInput "input[name=price]", 4
 
 $(".fa").click ->
 	# If contact method is selected, change color

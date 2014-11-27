@@ -15,7 +15,7 @@
 			<a href="item" class="book-thumb">
 				<img src="/img/dmc.jpg" alt="">
 				<h1 class="title" href="#">{{ book.title }}</h1>
-				<p class="author">{{ book.authors }}</p>
+				<p class="author">{{ book.authors | join(', ') }}</p>
 				<p class="price">{{ book.price }},-</p>
 			</a>
 		</div>
