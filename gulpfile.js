@@ -61,5 +61,5 @@ gulp.task('start', ['sass', 'prefix', 'cc-glob', 'cc-libs', 'server'], function(
 });
 
 gulp.task('default', ['start'], function() {
-    // start server,default thing to do
+    // start server, default thing to do
 });
