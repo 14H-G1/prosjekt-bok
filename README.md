@@ -11,6 +11,8 @@ __Before starting make sure you have this installed:__
 `npm`
 `MongoDB`
 `SASS`
+`bower`
+`gulp`
 
 FAQ
 --
