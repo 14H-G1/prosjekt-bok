@@ -25,11 +25,10 @@ FAQ
 1) Clone repo
 
 ```
-$ mkdir where/to/clone/repo && cd where/to/clone/repo
+$ git clone https://github.com/14H-G1/prosjekt-bok.git
 ```
-
 ```
-$ git clone https://github.com/14H-G1/prosjekt-bok.git .
+$ cd prosjekt-bok/
 ```
 
 2) Install dependencies
