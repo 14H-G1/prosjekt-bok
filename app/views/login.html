@@ -4,24 +4,28 @@
 
 <body>
     {% include 'body.nav.html' %}
+
     <section id="login">
-        <h1>Logg inn eller registrer deg</h1>
+        <h2>Logg inn</h2>
 
         <form action="/auth/local-login" method="post">
-            <div id="login-modal-form">
-                <input type="text" name="email" placeholder="E-post">
-                <input type="password" name="password" placeholder="Passord">
-
-                <button id="login-btn" type="submit">logg inn</button>
-            </div>
+            <input type="text" name="email" placeholder="E-post">
+            <input type="password" name="password" placeholder="Passord">
+            <input type="submit" value="logg inn" id="login-btn" >
         </form>
+    </section>
 
-        <h3>Føler du deg holdt utenfor?</h3>
+    <section id="register">
+        <h2>Føler du deg holdt utenfor? <small>Registrer deg!</small></h2>
 
-        <div class="fb-icon-bg"></div>
-        <div class="fb-bg">
-            <a href="#login-fb">Logg inn med Facebook</a>
-        </div>
+        <form action="/auth/local-register" method="post">
+            <input type="text" name="name" placeholder="Fullt navn">
+            <input type="password" name="password" placeholder="Passord">
+            <input type="password" name="password-repeat" placeholder="Gjennta passord">
+            <input type="text" name="email" placeholder="E-post">
+            <input type="text" name="mobile" placeholder="Mobil">
+            <input type="submit" value="registrer deg" id="register-btn">
+        </form>
     </section>
 
     {% include 'body.footer.html' %}
