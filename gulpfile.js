@@ -56,10 +56,10 @@ gulp.task('livereload', function() {
     gulp.watch('app/views/**').on('change', reload.changed);
 });
 
-gulp.task('start', ['sass', 'prefix', 'cc-glob', 'cc-libs', 'server'], function() {
-    /* Starts the server after compiling needed assets */
+gulp.task('compile', ['sass', 'prefix', 'cc-glob', 'cc-libs'], function() {
+    /* Compiling needed assets */
 });
 
-gulp.task('default', ['start'], function() {
+gulp.task('default', ['compile', 'server'], function() {
     // start server, default thing to do
 });
