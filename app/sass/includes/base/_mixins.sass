@@ -17,7 +17,6 @@
     font-size: 12px
     text-decoration: none
     box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), 0px 5px 0px shade($btn-bg-color, 20%)
-    //border-radius: 25px
     margin-left: 10px
     padding: 10px 15px
     display: inline-block
@@ -26,6 +25,9 @@
     &:active
         top: 5px
         box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), inset 0px -1px 0px shade($btn-bg-color, 25%)
+
+    &:focus
+        outline: none
 
 =custom-btn-selected($btn-bg-color, $btn-color)
     top: 5px
