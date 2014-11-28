@@ -8,6 +8,7 @@
     margin-left: 10px
     padding: 10px 15px
     border: none
+    outline: none
     display: inline-block
     position: relative
 
@@ -16,7 +17,7 @@
         box-shadow: inset 0px 1px 0px tint($btn-bg-color, 50%), inset 0px -1px 0px shade($btn-bg-color, 25%)
 
     &:focus
-        outline: none
+        outline: none !important
 
 =custom-btn-selected($btn-bg-color, $btn-color)
     top: 5px

@@ -10,7 +10,7 @@ isLoggedIn = ->
 	request.fail (jqXHR, textStatus) ->
 		return false
 
-$('#publish').click ->
+$('#publish-nav-btn').click ->
 	if isLoggedIn == true then window.location.href = "/publish"
 	else swal
 			title: "Ikke logget inn!"
