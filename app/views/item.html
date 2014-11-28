@@ -6,13 +6,14 @@
 
 	{% include 'body.nav.html' %}
 
-	<section id="product-info">
+	<section id="item-info">
 		<div class="media-object">
-			<img src="img/no-image.png" alt="">
+			<img src="img/no-image.png" alt="{ book.title }">
 			<div class="media-body">
-				<h1 id="title" class="media-head">Descrete mathematics for programming</h1>
-				<p id="author">Av Rod Haggarty, <span id="release-date">2009</span></p>
-				<p id="price"><span id="retail-price">600,-</span > 250,-</p>
+				<h1 id="title" class="media-head">{ book.title }</h1>
+				<p id="author">{ book.authors }, { book.releaseDate }</p>
+				<p id="condition">Boken er i { book.condition } tilstand</p>
+				<p id="price">{ book.price }</p>
 			</div>
 		</div>
 	</section>
