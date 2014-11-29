@@ -9,7 +9,7 @@
 	.head-elements
 		+outer-container($page-width)
 		margin: 0 auto
-		padding: 15px 5px 12px 5px
+		padding: 15px 10px 12px 10px
 		+clearfix
 
 		img
@@ -89,6 +89,10 @@
 		.person
 			+span-columns(3)
 			+omega(7n)
+
+			@media (max-width: 400px)
+				+span-columns(6)
+				+omega(2n)
 
 
 	.call-to-action

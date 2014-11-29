@@ -15,7 +15,7 @@ $('input[name=search]').on "keyup", (event) ->
     that = $(this).val()
 
     if that == '' then return false
-    if event.keyCode == 13 then console.log "Enter was pressed!"
+    if event.keyCode == 13 then window.location.href = "/search/" + that.replace(' ', '-')
 
     results = []
     res = searchAPI that
