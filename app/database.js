@@ -13,6 +13,7 @@ function Database() {
     self.connection = false;
     self.schemas = glob.sync(config.app.schemas+'*.js', {});
     self.models = {};
+    self.modelNames = {};
     self.queue = [];
 
     // Private functions
@@ -43,13 +44,13 @@ function Database() {
                             self.ready = true;
                             modelize(function(err, models) {
                                 self.models = models;
-                                self.busy = false;
                                 callback(null, models);
                                 while(self.queue.length>0) {
                                     debug('-- Queued callback');
                                     self.queue[0](null, models);
                                     self.queue.shift();
                                 }
+                                self.busy = false;
                             });
                         }
                     }
@@ -74,14 +75,13 @@ function Database() {
         var schemaName = schema.substring(
             config.app.schemas.length,
             (typeof config.mongodb.schemas.suffix !=='undefined')?
-                (schema.length-(config.mongodb.schemas.suffix.length)):
-                schema.length
+                (schema.length-(config.mongodb.schemas.suffix.length)) : schema.length
         );
         var modelName = schemaName.charAt(0).toUpperCase()+schemaName.substring(1).toLowerCase();
         debug('Schema -> Model | '+schemaName+' ~/'+schema);
         callback(null, {
             name: schemaName,
-            model: mongoose.model(modelName, require(schema))
+            data: mongoose.model(modelName, require(schema))
         });
     }
     function modelize(callback) {
@@ -89,18 +89,19 @@ function Database() {
             callback(null, self.models);
         }
         else {
-            debug('> [CONVERT]('+ self.schemas.length +')');
+            debug('> Converting '+ self.schemas.length +' Schemas into Models');
             async.mapSeries(self.schemas, schemaToModel, function(err, results) {
                 async.each(
                     results,
                     function(model, next) {
-                        self.models[model.name] = model.model;
+                        self.models[model.name] = model.data;
+                        self.modelNames.push(model.name);
                         next();
                     },
                     function(err) {
                         if (!err) {
-                            debug('< [/CONVERT]');
-                            callback(err, self.models);
+                            debug('< Converting done');
+                            callback(err, self.models, selv.modelNames);
                         }
                     }
                 );
@@ -109,12 +110,15 @@ function Database() {
     }
     return {
         ready: function(callback) {
-            connect(function(err, models) {
-                callback(err, models);
+            connect(function(err, models, modelNames) {
+                callback(err, models, modelNames);
             });
         },
         models: function() {
             return self.models;
+        },
+        modelNames: function() {
+            return self.modelNames;
         }
     };
 }
