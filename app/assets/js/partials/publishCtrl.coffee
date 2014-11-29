@@ -5,9 +5,11 @@ isLoggedIn = ->
 	)
 
 	request.done (res) ->
-		if res == 1 then return true else return false
+		# Går ut i fra res enten er true eller false
+		return jQuery.parseJSON(res.status)
 
 	request.fail (jqXHR, textStatus) ->
+		# Hvis en feil oppstår sender vi false tilbake
 		return false
 
 $('#publish-nav-btn').click ->
