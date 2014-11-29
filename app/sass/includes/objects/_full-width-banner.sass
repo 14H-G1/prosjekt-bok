@@ -10,6 +10,7 @@
 		+outer-container($page-width)
 		margin: 0 auto
 		padding: 15px 10px 12px 10px
+		height: 66px
 		+clearfix
 
 		img
@@ -24,6 +25,9 @@
 			letter-spacing: 10px
 			font-weight: 300
 			display: inline-block
+
+			@media (max-width: 400px)
+				display: none
 
 			a
 				color: tint(black, 15%)
