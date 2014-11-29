@@ -14,7 +14,7 @@ $('#publish-nav-btn').click ->
 	if isLoggedIn == true then window.location.href = "/publish"
 	else swal
 			title: "Ikke logget inn!"
-			text: "Du må være innlogget for å legge ut en bok, vil du gå til innloggingssiden?"
+			text: "Du må være innlogget for å legge ut en bok."
 			type: "error"
 			showCancelButton: true
 			cancelButtonText: "Avbryt"
