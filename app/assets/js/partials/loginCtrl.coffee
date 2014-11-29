@@ -1,14 +1,14 @@
 # Using valiteInput function from GlobalFunc.coffee
 $("input[name=name]").on "keyup", ->
-    validateInput "input[name=name]", 35
+    validateInput "input[name=name]", 36
     return
 
 $("input[name=email]").on "keyup", ->
-    validateInput "input[name=email]", 55
+    validateInput "input[name=email]", 56
     return
 
 $("input[name=email-register]").on "keyup", ->
-    validateInput "input[name=email-register]", 55
+    validateInput "input[name=email-register]", 56
     return
 
 $("input[name=mobile]").on "keyup", ->
@@ -16,5 +16,5 @@ $("input[name=mobile]").on "keyup", ->
     return
 
 $("input[type=password]").on "keyup", ->
-    validateInput "input[name=password-register]", 35
+    validateInput "input[name=password-register]", 46
     return
