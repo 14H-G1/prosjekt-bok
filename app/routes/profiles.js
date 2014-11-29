@@ -40,7 +40,7 @@ module.exports = function(API) {
 	};
 	return {
 		'/profile': {
-			'get': profile,
+			get: profile,
 			'/:id': {
 				get: profileWithID
 			}
