@@ -22,7 +22,9 @@ require('app/api.js').ready(function(err, API) {
         return;
     }
     app = this;
-
+    app._require = function(path) {
+        return require(path).bind(app);
+    };
     /* Sets rendering engine as SWIG for html files */
     app.engine('html', swig.renderFile);
     app.set('view engine', 'html');

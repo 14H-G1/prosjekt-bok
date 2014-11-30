@@ -1,9 +1,7 @@
-/* Work in progress
+/* Application Programming Interface
 
-    todo:
-    - API routing (nice for ajax POST calls)
-    - pagination on items and books
-*/
+    Restful API:
+        - */
 
 /* Make sure we have an endsWith() function for strings */
 if (typeof String.prototype.endsWith !== 'function') {
@@ -18,13 +16,20 @@ function API() {
     var auth        = require('app/passport.js');
     var debug       = require('debug')('app:api');
 
-    self = this;
     this.models = {};
     this.ready = false;
     this.api = {};
 
+    function buildIntoApp(lication, callback) {
+        var app=lication;
+        var router = app.Router();
+    }
+    function buildMap(callback) {
+
+    }
+
     function build(callback) {
-        database.ready(function(err, models) {
+        database.ready(function(err, models, modelNames) {
             // lazy loading
             if (this.ready) {
                 debug('lazy load API');
@@ -33,16 +38,19 @@ function API() {
             else {
                 debug('building API');
                 this.models = models;
+                this.modelNames = modelNames;
                 this.api = {
                     models: this.models,
+                    modelNames: this.modelNames,
                     find: function (query, value, cb) {
                         var dbg = require('debug')('app:api:find');
                         if (typeof value === 'function') {
                             cb = value;
+                            value = '';
                         }
                         var keys = query.split(' ');
                         switch(keys[0]) {
-                            case 'username':
+                            case 'user':
                                 this.models.user.findUsername(value, function(err, results) {
                                     cb(err, results);
                                 });
@@ -71,37 +79,26 @@ function API() {
                                                 cb(err, results);
                                             });
                                         break;
+                                        case 'price':
+                                            if (keys[2]=='>'||keys[2]==">=") {
+
+                                            }
                                         default:
-                                            cb('couldnt interpret');
-                                        break;
+                                            cb('couldnt interpret '+keys[1]);
+
                                     }
                                 }
                             break;
                             case 'all':
-                                switch(keys[1]) {
-                                    case 'users':
-                                        dbg('all users');
-                                        this.models.user.findAll(function(err, results) {
-                                            cb(err, results);
-                                        });
-                                    break;
-                                    case 'items':
-                                        dbg('all items');
-                                        this.models.item.findAll(function(err, results) {
-                                            cb(err, results);
-                                        });
-                                    break;
-                                    case 'books':
-                                        dbg('all books');
-                                        this.models.book.findAll(function(err, results) {
-                                            cb(err, results);
-                                        });
-                                    break;
+                                if (this.modelNames.indexOf(keys[1])>-1) {
+                                    dbg('all '+keys[1]);
+                                    this.models[keys[1]].findAll(function(err, results) {
+                                        cb(err, results);
+                                    });
                                 }
                             break;
-
                         }
-                    }.bind(self),
+                    }.bind(this),
 
                     authenticated: function (req, res, next) {
                         if (req.isAuthenticated()) {
@@ -114,15 +111,15 @@ function API() {
                 this.ready = true;
                 callback(err, this.api);
             }
-        }.bind(self));
+        }.bind(this));
     }
 
     return {
         ready: function(callback) {
-            debug('requesting database');
+            debug('building process requesting database');
             build(function(err, API) {
-                if (!err) callback(err, API);
-                else debug(err);
+                if (!!err) debug(err);
+                else callback(err, API);
             });
         }
     };
