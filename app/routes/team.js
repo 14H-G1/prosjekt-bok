@@ -1,4 +1,4 @@
-module.exports = exports = function(API) {
+module.exports = exports = function(models) {
 	var config = require('app/config');
 	var debug = require('debug')('app:routes:team');
 

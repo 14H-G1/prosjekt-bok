@@ -1,4 +1,4 @@
-module.exports = function(API) {
+module.exports = function(models) {
 	config = require('app/config');
 	var produkt = {
 		index: function(req,res) {

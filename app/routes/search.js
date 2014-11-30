@@ -1,4 +1,4 @@
-module.exports = function(API) {
+module.exports = function(moels) {
 	var search = function(req, res) {
 		res.render('search', {
 			id: 'search',

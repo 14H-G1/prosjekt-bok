@@ -3,7 +3,7 @@ var prompt = require('prompt');
 var glob = require('glob');
 var async = require('async');
 var child_process = require('child_process');
-var exec = require('child_process').exec;
+var exec = child_process.exec;
 
 function PEBB() {
 	pebb = this;
@@ -11,6 +11,8 @@ function PEBB() {
 	this.modules = glob.sync('_*.js');
 	this.dependencies = {};
 	this.triggers = {};
+	this.app;
+
 	debug('Found plugins: '+this.modules);
 
 	this.hasPackageJSON = require('pebb/pkg.js').npm();
@@ -19,7 +21,10 @@ function PEBB() {
 	this.node_modules = this.hasPackageJSON ? require('package.json').dependencies : {};
 	//this.bower_components = this.hasBowerJSON ? require('bower.json').dependencies : {};
 
-	async.eachSeries(['Framework', 'View', 'Database'], use, function(err) {
+	async.eachSeries(
+		['Framework', 'Database', 'Authentication',
+		'API', 'RouteHandler', 'Server'], use,
+		function(err) {
 		if (err) {
 			debug(err);
 		}
@@ -27,9 +32,10 @@ function PEBB() {
 			pebb.whenReady = function() {
 				trigger('ready', function() {
 					debug('Serving PEBB application ...');
-					pebb.server = require('app.js');
+					//pebb.server = require('app.js');
 				});
 			};
+			//pebb.whenReady();
 			prompt.start();
 			prompt.message = 'Compile SASS and assets using GULP?';
 			prompt.get({
@@ -68,7 +74,9 @@ function PEBB() {
 		if (pebb.modules.indexOf(resolve)>-1) {
 			var plugin_data = require('pebb/'+resolve);
 			var plugin_dependencies = plugin_data.dependencies;
-			var pdl = Object.keys(plugin_dependencies).length;
+			var pdl = plugin_dependencies == {} ?
+				0 :
+				Object.keys(plugin_dependencies).length;
 
 			if (pebb.hasPackageJSON) {
 				var toBeInstalled = {};
@@ -142,13 +150,14 @@ function PEBB() {
 		var type = typeof pebb.triggers[word];
 		switch(type) {
 			case 'undefined':
-				debug(word+' as a word is not a registered trigger');
+				debug(word+' is not a registered trigger');
 				break;
 			case 'object':
 				var trigs = pebb.triggers[word];
 				async.eachSeries(trigs, function(trig, cb) {
-					trig();
-					cb();
+					trig.apply(pebb.app, [
+						function(err) {cb(err);}
+					]);
 				}, function(err) {
 					if (!!err) {
 						debug(err);

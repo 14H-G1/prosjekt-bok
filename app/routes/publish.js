@@ -1,9 +1,10 @@
-module.exports = function(API) {
+module.exports = function(model) {
 	var publish = function(req, res) {
 		/* check if request is authed */
-		API.authenticated(req, res, function() {
+		if (req.isAuthenticated()) {
 			res.render('publish', {id: 'publish'});
-		});
+		}
+		else res.redirect('/');
 	};
 	return {
 		'/publish': {

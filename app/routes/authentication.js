@@ -4,7 +4,7 @@
  *  2) Return routing logic
  * */
 
-module.exports = function(db) {
+module.exports = function(models) {
     var passport = require('passport')
       , config = require('app/config');
 

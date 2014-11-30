@@ -28,7 +28,6 @@ function Config() {
 		// folders
 		assets: 	'app/assets/',
 		routes: 	'app/routes/',
-		schemas: 	'app/schemas/',
 		views: 		'app/views/',
 		sass: 		'app/sass/',
 

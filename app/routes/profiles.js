@@ -1,13 +1,16 @@
-module.exports = function(API) {
+module.exports = function(models) {
 	var config = require('app/config');
 
 	var profile = function(req, res) {
-		API.authenticated(req, res, function () {
+		if (req.isAuthenticated()) {
 			res.render('profile', {
 				id: 'profile',
 				bookList: false
 			});
-		});
+		}
+		else {
+			res.redirect('/');
+		}
 	};
 	var profileWithID = function(req, res) {
 		var id = req.params.id;
@@ -21,7 +24,7 @@ module.exports = function(API) {
 		}
 		/* See if we find a user matching the ID */
 		else {
-			API.find('username matching', id, function (err, user) {
+			/*API.find('username matching', id, function (err, user) {
 				if (!err) {
 					var userBooks = {};
 					var userHasBooks = false;
@@ -35,15 +38,15 @@ module.exports = function(API) {
 						books: userBooks
 					});
 				}
-			});
+			});*/
 		}
 	};
 	return {
 		'/profile': {
-			get: profile,
+			get: profile/*,
 			'/:id': {
 				get: profileWithID
-			}
+			}*/
 		}
 	};
 };
