@@ -5,7 +5,7 @@ module.exports = exports = function(API) {
 	/* prepare index logic given request and response */
 	var index = function(req, res) {
 		/* query API to find all books, currently not paginated */
-		API.find('all books', function(err, results) {
+		API.find('all book', function(err, results) {
 			if (!err) {
 				res.render('index', {
 					title: config.app.name,

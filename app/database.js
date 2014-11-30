@@ -13,7 +13,7 @@ function Database() {
     self.connection = false;
     self.schemas = glob.sync(config.app.schemas+'*.js', {});
     self.models = {};
-    self.modelNames = {};
+    self.modelNames = [];
     self.queue = [];
 
     // Private functions
@@ -42,12 +42,12 @@ function Database() {
                             debug('Successfully connected to: ' + url);
                             self.connection = mongoose.connection;
                             self.ready = true;
-                            modelize(function(err, models) {
+                            modelize(function(err, models, modelNames) {
                                 self.models = models;
-                                callback(null, models);
+                                callback(null, models, modelNames);
                                 while(self.queue.length>0) {
                                     debug('-- Queued callback');
-                                    self.queue[0](null, models);
+                                    self.queue[0](null, models, modelNames);
                                     self.queue.shift();
                                 }
                                 self.busy = false;
@@ -101,7 +101,7 @@ function Database() {
                     function(err) {
                         if (!err) {
                             debug('< Converting done');
-                            callback(err, self.models, selv.modelNames);
+                            callback(err, self.models, self.modelNames);
                         }
                     }
                 );
