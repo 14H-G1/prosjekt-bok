@@ -17,6 +17,7 @@
     "passport": "0.2.*",
     "passport-facebook": "1.0.*",
     "passport-local": "^1.0.*",
+    "prompt": "0.2.*",
     "swig": "1.4.*"
   },
   "devDependencies": {
