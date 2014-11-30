@@ -1,4 +1,4 @@
-var debug = require('debug')('app:fn:route');
+var debug = require('debug')('pebb:fn:route');
 
 /* https://github.com/BernadineComputing/express/tree/master/examples/route-map */
 module.exports = function route(a, route) {
