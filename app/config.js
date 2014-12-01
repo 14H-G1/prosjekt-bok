@@ -55,8 +55,8 @@ function Config() {
 	if (facebookEnabled) {
 		this.facebook = {
 			id: 		credentials.facebook.id,
-			callback: 	credentials.facebook.callback/*,
-			secret: 	credentials.facebook.secret*/
+			callback: 	credentials.facebook.callback,
+			secret: 	credentials.facebook.secret
 		};
 	}
 
@@ -67,8 +67,9 @@ function Config() {
 
 		facebook: facebookEnabled ? {
 			id: this.facebook.id,
-			callback: this.facebook.callback
-		}:{}
+			callback: this.facebook.callback,
+			secret: this.facebook.secret
+		}:false
 	};
 }
 

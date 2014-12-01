@@ -7,6 +7,7 @@ module.exports = function Authentication() {
 		},
 		ready: function(next) {
 			var echo 				= require('debug')('pebb:Authentication');
+			var config 				= require('app/config.js');
 			var passport 			= require('passport');
 			var LocalStrategy       = require('passport-local').Strategy;
 			var FacebookStrategy    = require('passport-facebook').Strategy;
@@ -46,14 +47,6 @@ module.exports = function Authentication() {
 									return done(null, req.flash('alert', 'Feil passord'));
 								}
 							}
-								/*var newLocalUser = new database.models().user();
-								newLocalUser.local.email = email;
-								newLocalUser.local.password = models.user.hashPassword(password);
-								newLocalUser.local.username = 'tutorial';
-								newLocalUser.save(function(err) {
-									if (err) throw err;
-									return done(null, newLocalUser);
-								});*/
 						});
 					}
 				)
@@ -92,6 +85,45 @@ module.exports = function Authentication() {
 					}
 				)
 			);
+
+			if (!!config.facebook) {
+				passport.use(
+					new FacebookStrategy({
+							clientID: config.facebook.id,
+							clientSecret: config.facebook.secret,
+							callbackURL: config.facebook.callback
+						},
+						function(token, refreshToken, profile, done) {
+							process.nextTick(function() {
+								ref.database.models.users.findFacebookID(profile.id, function(err, user) {
+									if (err) return done(err);
+									if (user) {
+										return done(null, user);
+									}
+									else {
+										var temp = new ref.database.models.users();
+
+										temp.facebook.token = token;
+										temp.facebook.id = profile.id;
+										temp.facebook.email = profile.emails[0].value;
+										temp.local.email = temp.facebook.email;
+										temp.local.fullname = profile.name.givenName+' '+profile.name.familyName;;
+										temp.local.username = 'tutorial';
+
+										temp.save(function(err) {
+											if (err) {
+												debug(err);
+												throw err;
+											}
+											return done(null, temp);
+										});
+									}
+								})
+							})
+						}
+					)
+				)
+			}
 
 			echo('Authentication is ready');
 			next();

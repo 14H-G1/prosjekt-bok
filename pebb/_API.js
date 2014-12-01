@@ -100,7 +100,7 @@ module.exports = function API() {
 						},
 						function(err, user) {
 							if (err) res.send(err);
-							res.json({message: 'deleted'});
+							else res.json({message: 'deleted'});
 						}
 					);
 				}

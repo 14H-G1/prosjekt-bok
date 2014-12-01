@@ -15,8 +15,7 @@ var userSchema = new Schema({
 	facebook: {
 		id: String,
 		token: String,
-		email: String,
-		name: String
+		email: String
 	},
 	contact: {
 		facebook: String,

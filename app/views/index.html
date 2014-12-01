@@ -70,15 +70,16 @@
 	<section class="full-width-banner">
 		{% if authed %}
 		<div class="call-to-action">
-			<h1>Så hva venter du på?</h1>
-			<h4>Registrer deg og bli med på morroa!</h4>
-			<a href="/login">Registrer deg</a>
+			<h1>Takk for at du er en registrert bruker!</h1>
+			<h4>Pebb er under stadig utvikling, imens kan du sjekke ut profilen din!</h4>
+			<a href="/profile">Din profil</a>
 		</div>
 		{% else %}
 		<div class="call-to-action">
-			<h1>Takk for du er en registrert bruker!</h1>
-			<h4>Pebb er under stadig utvikling, imens kan du sjekke ut profilen din!</h4>
-			<a href="/profile">Din profil</a>
+			<h1>Så hva venter du på?</h1>
+			<h4>Registrer deg og bli med på morroa!</h4>
+			<a href="/login">Registrer lokalt</a>
+			<a href="/auth/facebook"><i class="fa fa-facebook" style="color: white;font-size:16px;"></i>acebook</a>
 		</div>
 		{% endif %}
 	</section>

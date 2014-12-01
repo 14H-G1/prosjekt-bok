@@ -20,9 +20,6 @@ module.exports = function(models) {
         failureFlash: true
     });
 
-    var facebook = {
-    };
-
     return {
         '/auth': {
             '/local-login': {
@@ -31,6 +28,17 @@ module.exports = function(models) {
             '/local-register': {
                 post: localRegister
             },
+            '/facebook': {
+                get: passport.authenticate('facebook', {
+                    scope: 'email'
+                })
+            },
+            '/facebook/callback': {
+                get: passport.authenticate('facebook', {
+                    successRedirect: '/profile',
+                    failureRedirect: '/login'
+                })
+            }
         },
         '/logout': {
             get: function(req, res) {
