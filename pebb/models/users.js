@@ -9,8 +9,7 @@ var userSchema = new Schema({
 		password: String,
 		verified: Boolean,
 		books: Array,
-		username: {type: String, default: 'tutorial'},
-		facebookEnabled: {type: Boolean, default: false}
+		username: {type: String, default: 'tutorial'}
 	},
 	facebook: {
 		id: String,
@@ -35,18 +34,20 @@ userSchema.static('findUnverified', function(callback) {
 });
 
 userSchema.static('findEmail', function(email, callback) {
-	if (this.facebookEnabled) {
-		return this.findOne({'facebook.email': email}, callback);
-	}
-	else {
-		return this.findOne({'local.email': email}, callback);
-	}
+	return this.findOne({'local.email': email}, callback);
+});
+
+userSchema.static('findFacebookEmail', function(email, callback) {
+	return this.findOne({'facebook.email': email}, callback);
+});
+userSchema.static('findFacebookID', function(email, callback) {
+	return this.findOne({'facebook.id': email}, callback);
 });
 
 userSchema.static('findUsername', function(username, callback) {
 	/* Find all users who have not finished the tutorial */
 	if (username == 'tutorial') {
-		return this.findOne({'local.username': 'tutorial'}, callback);
+		return this.find({'local.username': 'tutorial'}, callback);
 	}
 	/* find a user by username */
 	else {
@@ -58,8 +59,12 @@ userSchema.static('findAll', function(callback) {
 	return this.find({}, callback);
 });
 
+userSchema.methods.facebookEnabled = function() {
+	return this.local.facebook
+}
+
 userSchema.methods.hashPassword = function(password) {
-	return bcrypt.hashSync(password, bcrypt.genSaltSync(config.mongodb.saltFactor), null);
+	return bcrypt.hashSync(password, bcrypt.genSaltSync(config.mongodb.saltFactor||10), null);
 };
 
 userSchema.methods.comparePassword = function(password) {

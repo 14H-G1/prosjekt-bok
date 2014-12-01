@@ -17,7 +17,12 @@
 
 function Config() {
 	var self = this;
+	var debug = require('debug')('pebb:app:config');
 	var credentials = require('app/config.credentials.js');
+
+	var facebookEnabled = typeof credentials['facebook'] === 'object';
+	var twitterEnalbed = typeof credentials['twitter'] === 'object';
+	var googleEnabled = typeof credentials['google'] === 'object';
 
 	this.app = {
 		// general
@@ -37,33 +42,34 @@ function Config() {
 		}
 	};
 	this.mongodb = {
-		url: function(db){return'mongodb://127.0.0.1/'+(db||self.app.name);},
+		url: function(db) {
+			return 'mongodb://127.0.0.1/'+(db||self.app.name);
+		},
 		options: {
 			db: {safe: true},
 			server: {
 				socketOptions: {keepAlive: 1}
 			}
 		},
-		schemas: {
-			suffix: '.js'
-		},
 		saltFactor: 10
 	};
-	/*this.facebook = {
-		id: 		credentials.facebook.id||'',
-		callback: 	credentials.facebook.callback||'',
-		secret: 	credentials.facebook.callback||''
-	};*/
+	if (facebookEnabled) {
+		this.facebook = {
+			id: 		credentials.facebook.id,
+			callback: 	credentials.facebook.callback/*,
+			secret: 	credentials.facebook.secret*/
+		};
+	}
 
 	return {
 		app: this.app,
 
 		mongodb: this.mongodb,
 
-		/*facebook: {
+		facebook: facebookEnabled ? {
 			id: this.facebook.id,
 			callback: this.facebook.callback
-		}*/
+		}:{}
 	};
 }
 
