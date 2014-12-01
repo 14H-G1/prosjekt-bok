@@ -4,6 +4,37 @@
         +custom-btn($main-color, white)
         margin-left: 0
 
+    #alternative-login
+        margin: 35px 0 25px 0
+
+        i
+            color: white
+            left: 10px
+            top: 7px
+            position: absolute
+
+        #facebook-login
+            +custom-btn(#3B5998, white)
+            padding-left: 35px
+            margin-left: 0
+
+            @media (max-width: 570px)
+                margin: 5px 0
+
+        #twitter-login
+            +custom-btn(#55ACEE, white)
+            padding-left: 40px
+
+            @media (max-width: 570px)
+                margin: 5px 0
+
+        #google-login
+            +custom-btn(#dd4b39, white)
+            padding-left: 35px
+
+            @media (max-width: 570px)
+                margin: 5px 0
+
 #register
 
     input[name=register-btn]
