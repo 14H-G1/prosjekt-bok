@@ -11,7 +11,7 @@ module.exports = exports = function() {
 					var list = Object.keys(mods);
 					async.eachSeries(list, function(key, callback) {
 						var pkg = key+'@'+mods[key];
-						debug('installing '+ pkg)
+						debug('installing '.cyan + pkg.yellow)
 						var temp = exec(
 							'npm install --save '+pkg,
 							function(error, stdout, stderr) {
@@ -24,7 +24,7 @@ module.exports = exports = function() {
 						);
 					}, function(err) {
 						if (err) debug(err);
-						else debug('All dependencies successfully installed');
+						else debug('All dependencies successfully installed'.green);
 						cb(err);
 					});
 					break;

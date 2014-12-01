@@ -13,7 +13,7 @@ function PEBB() {
 	this.triggers = {};
 	this.app;
 
-	debug('Found plugins: '+this.modules);
+	debug('Found '+this.modules.length+' plugins');
 
 	this.hasPackageJSON = require('pebb/pkg.js').npm();
 	//this.hasBowerJSON = require('pebb/pkg.js').bower();
@@ -69,7 +69,7 @@ function PEBB() {
 
 	function use(plugin, callback) {
 		var resolve = '_'+plugin+'.js';
-		debug('Activating: '+ resolve);
+		debug('Activating: '+ resolve.yellow);
 
 		if (pebb.modules.indexOf(resolve)>-1) {
 			var plugin_data = require('pebb/'+resolve);
@@ -89,7 +89,9 @@ function PEBB() {
 				}
 				var tbil = Object.keys(toBeInstalled).length;
 				if (tbil > 0) {
-					debug('['+(pdl-tbil)+'/'+pdl+'] installed, needs: '+Object.keys(toBeInstalled));
+					var d1 = '['+(pdl-tbil)+'/'+pdl+'] dependencies installed';
+					debug(d1.green);
+					debug('needs: '.cyan +Object.keys(toBeInstalled));
 					prompt.start();
 					prompt.message = 'Install '+plugin+' dependencies?';
 					prompt.get({
@@ -119,7 +121,7 @@ function PEBB() {
 					);
 				}
 				else {
-					debug('all dependencies installed!');
+					debug('all dependencies installed!'.green);
 					once('ready', plugin_data.ready);
 					callback();
 				}

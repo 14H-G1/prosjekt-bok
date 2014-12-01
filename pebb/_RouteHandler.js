@@ -8,7 +8,7 @@ module.exports = function RouteHandler() {
 			var debug = require('debug')('pebb:RouteHandler');
 			this.app.route = require('pebb/helpers/route.js').bind(this.app);
 			var ref = this;
-			debug('src: '+config.app.routes+"*.js");
+			debug('src: '.green +config.app.routes+"*.js");
 			glob('../'+config.app.routes+'*.js', {}, function(err, files) {
 				if (err) {
 					debug(err);
@@ -17,7 +17,7 @@ module.exports = function RouteHandler() {
 				else {
 					files.forEach(function(file) {
 						var f = file.substring(3);
-						debug(f);
+						debug(f.yellow);
 						ref.app.route(require(f)(ref.database.models));
 					});
 					next();

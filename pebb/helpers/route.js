@@ -10,7 +10,7 @@ module.exports = function route(a, route) {
 			break;
 			case 'function': // get: function(){ ... }
 				this[key](route, a[key]);
-				debug('%s %s', key.toUpperCase(), route);
+				debug('%s %s', key.toUpperCase().yellow, route.cyan);
 			break;
 		}
 	}
