@@ -16,11 +16,9 @@ __Before starting make sure you have this installed:__
 
 FAQ
 --
-[How to install Node.js &  NPM](docs/how-to-install-node-js.md)
+__Q1)__ How to install the above?
 
-[How to install MongoDB](docs/how-to-install-mongodb.md)
-
-[How to install SASS](docs/how-to-install-sass.md)
+__A1)__ See `docs/` folder. Bower and gulp are npm packages
 
 #Installation
 
@@ -32,55 +30,38 @@ $ git clone https://github.com/14H-G1/prosjekt-bok.git
 ```
 $ cd prosjekt-bok/
 ```
+2) Create this file: `app/config.credentials.js`
 
-2) Install dependencies
-
-```
-$ npm update
-$ bower update
-```
-
-3) Create this file: 'app/config.credentials.js'
-
-    // In later releases this is where you store i.e. facebook API credentials
     module.exports = {
-	   'cookies': 'some_random_secret_here_for_security',
-	   'session': 'some_random_secret_here_for_security'
+       cookies: 'some_random_secret_here_for_security',
+       session: 'some_random_secret_here_for_security',
+
+       facebook: { // remove this object to disable fb
+           id:      'clientID',
+           secret:  'clientSecret',
+           callback:'clientCallbackURL'
+       }
     };
 
-4) Edit configuration in your favourite text editor
+3) Edit app configuration in your fav text editor
 
 ```
 $ start app/config.js
 ```
 
-4) Start via gulp
-
+4) Initialize PEBB
 ```
-$ gulp livereload start
+$ node pebb/app.js
 ```
 
-API
+RESTful API
 --
+___Note:___ words prefixed with `:` means it is parsed as a parameter. This is used to dynamically build the API using the models built by the database.
 
-Lets add a few books
-
-```
-GET /api/books/add/title(Book_1).authors(Ola+Kari).price(199).isbn(123456789)
-```
-
-```
-GET /api/books/add/title(Book_2).authors(Per+Askeladden).price(299).isbn(987654321)
-```
-
-Lets take a look
-
-```
-GET /api/books/list
-```
-
-These two books are now displayed on index!
-
-```
-GET /
-```
+HTTP Verb | URL | what it does
+:---: | :---: | :----
+__GET__ | `/api/:model` | Returns all data for specified model
+__POST__ | `/api/:model` | Creates a new model with data provided
+__GET__ | `/api/:model/:id` | Returns data contained by `id`
+__PUT__ | `/api/:model/:id` | Updates `id` with new data
+__DELETE__ | `/api/:model/:id` | Deletes `id`
