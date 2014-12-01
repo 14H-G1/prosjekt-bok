@@ -3,13 +3,13 @@
 {% include 'head.html' %}
 
 <body>
-    
+
     {% include 'body.nav.html' %}
 
     <section id="login">
         <h2>Logg inn</h2>
 
-        <form action="/auth/local-login" method="post">
+        <form action="/auth/local-login" method="post" enctype="application/x-www-form-urlencoded">
             <input type="text" name="email" placeholder="E-post">
             <input type="password" name="password" placeholder="Passord">
             <input type="submit" name="login-btn" value="logg inn">
@@ -20,7 +20,7 @@
         <h2>Føler du deg holdt utenfor? <small>Registrer deg!</small></h2>
 
         <form action="/auth/local-register" method="post">
-            <input type="text" name="name" placeholder="Fullt navn">
+            <input type="text" name="fullname" placeholder="Fullt navn">
             <input type="password" name="password-register" placeholder="Passord">
             <input type="text" name="email-register" placeholder="E-post">
             <input type="text" name="mobile" placeholder="Mobil">

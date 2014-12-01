@@ -5,7 +5,8 @@ module.exports = exports = function(models) {
 	var index = function(req, res) {
 		res.render('history', {
 			title: config.app.name,
-			id: 'history'
+			id: 'history',
+			authed: req.isAuthenticated()
 		});
 	};
 

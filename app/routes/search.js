@@ -2,7 +2,8 @@ module.exports = function(moels) {
 	var search = function(req, res) {
 		res.render('search', {
 			id: 'search',
-			advanced: false
+			advanced: false,
+			authed: req.isAuthenticated()
 		});
 	};
 	var advanced = function(req, res) {
@@ -29,13 +30,15 @@ module.exports = function(moels) {
 		if (query.length > 0) {
 			res.render('search', {
 				id: 'search',
-				advanced: true
+				advanced: true,
+				authed: req.isAuthenticated()
 			});
 		}
 		else {
 			res.render('search', {
 				id: 'search',
-				advanced: true
+				advanced: true,
+				authed: req.isAuthenticated()
 			});
 		}
 	};

@@ -50,8 +50,7 @@ function Config() {
 			server: {
 				socketOptions: {keepAlive: 1}
 			}
-		},
-		saltFactor: 10
+		}
 	};
 	if (facebookEnabled) {
 		this.facebook = {

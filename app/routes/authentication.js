@@ -6,25 +6,36 @@
 
 module.exports = function(models) {
     var passport = require('passport')
-      , config = require('app/config');
+    var config = require('app/config');
 
-    var local = passport.authenticate('local', {
+    var localLogin = passport.authenticate('localLogin', {
+        successRedirect: '/profile',
+        failureRedirect: '/login',
+        failureFlash: true
+    });
+
+    var localRegister = passport.authenticate('localRegister', {
         successRedirect: '/profile',
         failureRedirect: '/login',
         failureFlash: true
     });
 
     var facebook = {
-
     };
 
     return {
         '/auth': {
             '/local-login': {
-                'post': local
+                post: localLogin
             },
-            '/logout': {
-                'get': function(req,res){res.send('local login');}
+            '/local-register': {
+                post: localRegister
+            },
+        },
+        '/logout': {
+            get: function(req, res) {
+                req.logout();
+                res.redirect('/');
             }
         }
     };

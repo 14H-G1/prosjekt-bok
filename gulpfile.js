@@ -41,7 +41,7 @@ gulp.task('prefix', function() {
 
 gulp.task('server', function() {
     /* Automatically restarts server on change */
-    nodemon({ script: 'app.js' });
+    nodemon({ script: 'pebb/app.js' });
 });
 
 gulp.task('front', function() {

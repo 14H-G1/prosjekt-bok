@@ -3,7 +3,8 @@ module.exports = function(models) {
 
 	var login = function(req, res) {
 		res.render('login', {
-			id: 'login'
+			id: 'login',
+			authed: req.isAuthenticated()
 		});
 	};
 

@@ -4,7 +4,11 @@
 		<a href="/"><h1>PEBB</h1></a>
 		<nav>
 			<a {% if id == 'publish' %}class="btn-selected"{% endif %} id="publish-nav-btn" href="javascript:void(0)">selg bok</a>
+			{% if authed %}
+			<a href="/logout" id="login-nav-btn">logg ut</a>
+			{% else %}
 			<a {% if id == 'login' %}class="btn-selected"{% endif %} id="login-nav-btn" href="/login">logg inn</a>
+			{% endif %}
 		</nav>
 	</div>
 </div>

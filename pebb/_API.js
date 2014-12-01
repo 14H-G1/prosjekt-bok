@@ -7,6 +7,14 @@ module.exports = function API() {
 			var models = this.database.models;
 			var modelNames = Object.keys(models);
 
+			this.app.get('/api/isloggedin', function(req, res) {
+				var a = {
+					status: !!req.isAuthenticated()
+				};
+				res.status(200);
+				res.json(a);
+			});
+
 			this.app.get('/api/:model', function(req, res) {
 				var m = req.params.model;
 				if (modelNames.indexOf(m) > -1) {

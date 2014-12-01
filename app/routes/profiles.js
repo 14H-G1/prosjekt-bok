@@ -5,7 +5,8 @@ module.exports = function(models) {
 		if (req.isAuthenticated()) {
 			res.render('profile', {
 				id: 'profile',
-				bookList: false
+				bookList: false,
+				authed: req.isAuthenticated()
 			});
 		}
 		else {
@@ -19,7 +20,8 @@ module.exports = function(models) {
 		if (id == 'tutorial') {
 			res.render('tutorial', {
 				id: 'tutorial',
-				title: 'Learn how to use '+ config.app.name
+				title: 'Learn how to use '+ config.app.name,
+				authed: req.isAuthenticated()
 			});
 		}
 		/* See if we find a user matching the ID */

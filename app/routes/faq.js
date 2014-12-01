@@ -6,7 +6,8 @@ module.exports = exports = function(models) {
 		/* query API to find all books, currently not paginated */
 		res.render('faq', {
 			title: config.app.name,
-			id: 'faq'
+			id: 'faq',
+			authed: req.isAuthenticated()
 		});
 	};
 

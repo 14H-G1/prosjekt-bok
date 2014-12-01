@@ -1,19 +1,14 @@
 isLoggedIn = ->
 	request = $.ajax (
-		url: "/users/isloggedin"
+		url: "/api/isloggedin"
 		type: "GET"
+		dataType: "json"
+		success: (data) ->
+			return data.status
 	)
 
-	request.done (res) ->
-		# Går ut i fra res enten er true eller false
-		return jQuery.parseJSON(res.status)
-
-	request.fail (jqXHR, textStatus) ->
-		# Hvis en feil oppstår sender vi false tilbake
-		return false
-
 $('#publish-nav-btn').click ->
-	if isLoggedIn == true then window.location.href = "/publish"
+	if isLoggedIn then window.location.href = "/publish"
 	else swal
 			title: "Ikke logget inn!"
 			text: "Du må være innlogget for å legge ut en bok."
@@ -30,8 +25,10 @@ $('#publish-nav-btn').click ->
 # Using valiteInput function from GlobalFunc.coffee
 $("input[name=title]").on "keyup", ->
 	validateInput "input[name=title]", 60
+
 $("input[name=publishDate]").on "keyup", ->
 	validateInput "input[name=publishDate]", 4
+
 $("input[name=price]").on "keyup", ->
 	validateInput "input[name=price]", 4
 

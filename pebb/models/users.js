@@ -5,6 +5,7 @@ var config = require('app/config.js');
 
 var userSchema = new Schema({
 	local: {
+		fullname: String,
 		email: String,
 		password: String,
 		verified: Boolean,
@@ -60,11 +61,11 @@ userSchema.static('findAll', function(callback) {
 });
 
 userSchema.methods.facebookEnabled = function() {
-	return this.local.facebook
-}
+	return typeof this.local.facebook.id === 'string';
+};
 
 userSchema.methods.hashPassword = function(password) {
-	return bcrypt.hashSync(password, bcrypt.genSaltSync(config.mongodb.saltFactor||10), null);
+	return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
 };
 
 userSchema.methods.comparePassword = function(password) {

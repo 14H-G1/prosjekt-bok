@@ -3,13 +3,15 @@ module.exports = function(models) {
 	var produkt = {
 		index: function(req,res) {
 			res.render('item', {
-				id: 'item'
+				id: 'item',
+				authed: req.isAuthenticated()
 			});
 		},
 		item: function(req, res) {
 			res.render('item', {
 				id: 'item',
-				item: req.params.id
+				item: req.params.id,
+				authed: req.isAuthenticated()
 			});
 		}
 	};

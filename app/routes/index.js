@@ -10,7 +10,8 @@ module.exports = exports = function(models) {
 				res.render('index', {
 					title: config.app.name,
 					id: 'index',
-					books: results || []
+					books: results || [],
+					authed: req.isAuthenticated()
 				});
 			}
 		});
